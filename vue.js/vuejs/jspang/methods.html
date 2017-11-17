@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1></h1>
+<div id="app">
+    {{a}}
+    <p><button @click="add(2,$event)">add</button></p>
+    <!--
+        自己定义的组件执行方法
+        .native  表示调用本地实例方法
+    -->
+    <p><btn  @click.native="add(3,$event)"></btn></p>
+</div>
+
+<!--vue实例外调用-->
+<button onclick="app.add(4,MouseEvent)">外部Add</button>
+
+<script>
+
+    var btn={
+        template:`<button>组件ADD</button>`
+    }
+
+  var app = new Vue({
+      el:'#app',
+      data:{
+        a:1
+      },
+      components:{
+          "btn":btn
+      },
+      methods:{
+          add:function (num,event) {//$event就是鼠标事件   MouseEvent一样
+              if(num!=''){
+                  this.a+=num;
+              }else{
+                  a++;
+              }
+              console.log(event);
+          }
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

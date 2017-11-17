@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    本场比赛得分{{sorce}}
+<p>
+    <button v-on:click="addSorce">加分</button>
+    <button @click="minusSorce">减分</button>
+    <input type="text" v-on:keyup.enter="onEnter" v-model="sorce2">
+    <!--
+    v-on:keyup.enter  v-on:keyup.13 可以直接写键盘码
+    -->
+</p>
+</div>
+
+<script>
+  var app = new Vue({
+      el:'#app',
+      data:{
+          sorce:0,
+          sorce2:1
+      },
+      methods:{
+          addSorce:function () {
+              this.sorce++;
+          },
+          minusSorce:function () {
+              this.sorce--;
+          },
+          onEnter:function () {
+              this.sorce=this.sorce+parseInt(this.sorce2);
+          }
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

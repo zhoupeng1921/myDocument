@@ -1,0 +1,13 @@
+declare
+--变量、记录类型等的声明
+v_sal number(8,2) := 0;
+v_emp_id number(10);
+begin
+  --程序执行部分
+  select salary , employee_id into v_sal,v_emp_id from employees where employee_id = 123;
+  dbms_output.put_line(v_emp_id||',salary:'||v_sal);
+--exception
+  --异常的处理
+
+end;
+

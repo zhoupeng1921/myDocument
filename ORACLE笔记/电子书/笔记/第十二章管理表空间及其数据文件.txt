@@ -1,0 +1,43 @@
+1可以从DAB_DATA_FILES数据字典中查到表空间和对应的数据文件信息。
+	select tablespace_name,file_name,bytes from dab_data_file order by tablespace_name;
+2 system表空间，存储数据字典，包括表、视图、存储过程定义等。
+	可以从DBA_SEGMENTS数据字典中查到某个表空间所存储的对象的类型
+	select distinct segment_type, owner,tablespace_name from dba_segments where tablespace_name='system' order by owner,segment_type;
+	查询各用户在system表空间存放的对象数量
+	select owner,count(*) from dbs_segments where tablespace_name='system' group by owner;
+3 sysaux表空间，system表空间的辅助空间，一些选件的对象存放在此表空间，以减少system表空间的负荷。
+	查询sysaux表空间存放的用户对象
+	select owner,count(*) from dba_segments where tablespace_name = 'sysaux' group by owner;
+4 TEMP表空间，存储SQL语句处理的表和索引的信息
+5 USERS存储数据库用户创建的数据库对象
+6 创建表空间：基于以下几点
+	创建小文件表空间还是大文件表空间（默认小）
+	使用局部盘区管理方式还是使用传统的目录盘区管理方式（默认为局部盘区管理）
+	手工管理段表空间还是自动管理段表空间（默认是自动）
+	是否用于临时段或者撤销段的特殊表空间
+	创建本地管理表空间tbs_1,其扩展大小为128K
+	create tablespace tbs_1 datafile 'file_1.dbf' size 10M extent management local uniform size 128k;
+	创建一个本地管理的表空间tbs_2,该表空间的扩展大小为自动管理
+	create tablespace tbs_2 datafile 'file_2.dbf' size 10M extent management local autoallocate;
+	创建一个本地管理的表空间tbs_1,改表空间的扩展大小是自动管理，段空间的管理方式为手工
+	create tablespace tbs_1
+	datafile 'tbs01.ora'
+	size 25G extent management local autoallocate
+	segment space management manual;
+	创建一个本地管理的表空间tbs_1,该表空间扩展大小是自动管理，段空间的管理方式为自动
+	create tablespace tbs_1
+	datafile 'tbs01.ora'
+	size 25G extent management local autoallocate
+	segment space management auto;
+7 315
+
+
+
+
+
+
+
+
+
+
+

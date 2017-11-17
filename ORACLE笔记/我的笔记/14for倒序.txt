@@ -1,0 +1,9 @@
+--使用循环语句打印1-100
+declare
+
+begin
+  for c in reverse 1..100 loop
+    dbms_output.put_line(c);
+   end loop;
+
+end;

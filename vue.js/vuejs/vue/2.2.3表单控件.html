@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<body>
+<!--
+Vue.js 中提供 v-model 的指令对表单元素进行双向数据绑定，在修改表单元素值的
+同时，实例 vm 中对应的属性值也同时更新，反之亦然。
+-->
+<div id="app">
+    <!--1．Text
+    输入框示例，用户输入的内容和 vm.message 直接绑定：-->
+    <input type="text" v-model="message"/>
+    <span>Your input is : {{ message }}</span>
+    <br/>
+    <!--2．Radio
+    单选框示例：-->
+    <label><input type="radio" value="male" v-model="gender "> 男 </label>
+    <label><input type="radio" value="female" v-model="gender "> 女 </label>
+    <p>{{ gender }}</p>
+    <br/>
+
+    <!--    3．Checkbox
+        Checkbox 分两种情况：单个勾选框和多个勾选框。
+        单个勾选框，v-model 即为布尔值，此时 input 的 value 并不影响 v-model 的值。-->
+    <input type="checkbox" v-model="checked"/>
+    <span>checked : {{ checked }}</span>
+    <br/>
+    <!-- 多个勾选框，v-model 使用相同的属性名称，且属性为数组。-->
+    <label><input type="checkbox" value="1" v-model=" multiChecked">1</label>
+    <label><input type="checkbox" value="2" v-model=" multiChecked">2</label>
+    <label><input type="checkbox" value="3" v-model=" multiChecked">3</label>
+    <p>MultiChecked: {{ multiChecked.join('|') }}</p>
+
+
+    <!--    4．Select
+        同 Checkbox 元素一样，Select 也分单选和多选两种，多选的时候也需要绑定到一个数组。
+        单选：-->
+    <select v-model="selected1">
+        <option selected>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <span>Selected: {{ selected1 }}</span>
+    <!--多选-->
+    <select v-model="multiSelected1" multiple>
+        <option selected>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br>
+    <span>MultiSelected: {{ multiSelected1.join('|') }}</span>
+
+    <!--表单控件的值同样可以绑定在 Vue 实例的动态属性上，用 v-bind 实现
+    1．Checkbox-->
+    <input type="checkbox" v-model="checked1" v-bind:true-value="a" v-bind:false-value="b">
+    <!--
+    选中：vm.checked1 == vm.a　　// -> true
+    未选中：vm.checked1 == vm.b // -> true
+    -->
+
+    <!--2．Radio-->
+    <input type="radio" v-model="checked2" , v-bind:value="a">
+    <!-- 选中 : vm.checked2 == vm.a // -> true-->
+
+    <!-- 3．Select Options-->
+    <select v-model="selected2">
+        <!-- 对象字面量 -->
+        <option v-bind:value="{ number: 123 }">123</option>
+    </select>
+    <!--  选中：
+      typeof vm.selected2 // -> 'object'
+      vm.selected2.number // -> 123
+  -->
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            a:'',
+            b:'',
+            message: '',
+            gender: '',
+            checked: '',
+            checked1: '',
+            checked2: '',
+            multiChecked: [],
+            multiChecked1: [],
+            selected: '',
+            selected1: '',
+            selected2: '',
+            multiSelected: [],
+            multiSelected1: []
+        }
+    });
+
+
+</script>
+</body>
+</html>

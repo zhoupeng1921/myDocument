@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+
+</head>
+<body>
+<!-- view -->
+<!--可以用v-else指令为v-if添加一个“else块”。v-else元素必须立即跟在v-if元素的后面——否则它不能被识别。-->
+<!--
+v-else元素是否渲染在HTML中，取决于前面使用的是v-if还是v-show指令。
+这段代码中v-if为true，后面的v-else不会渲染到HTML；v-show为false，后面的v-else然渲染到HTML了
+-->
+<div id="app">
+
+
+    <div id="app">
+        <h1 v-if="age >= 25">Age: {{ age }}</h1>
+        <h1 v-else>Name: {{ name }}</h1>
+        <h1>---------------------分割线---------------------</h1>
+        <h1 v-show="name.indexOf('keep') >= 0">Name: {{ name }}</h1>
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            age: 28,
+            name: 'keepfool',
+            sex: 'Male'
+        }
+    })
+</script>
+</body>
+</html>

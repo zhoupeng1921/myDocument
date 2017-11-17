@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1>computed option</h1>
+<div id="app">
+    <p>{{newPrice}}</p>
+    <ul>
+        <li v-for="item in reverNews">{{item.title}}---{{item.date}}</li>
+    </ul>
+
+</div>
+
+<script>
+    var newList=[
+    {'title':'adf','date':'2017/7/24'},
+    {'title':'zadfd','date':'2017/3/24'},
+    {'title':'dadf','date':'2017/4/24'},
+    {'title':'fadf','date':'2017/1/24'}
+    ];
+  var app = new Vue({
+      el:'#app',
+      data:{
+        price:100,
+          newList:newList
+      },
+      computed:{
+          newPrice:function () {
+              return this.price='￥'+this.price+'元';
+          },
+          reverNews:function () {
+              return this.newList.reverse();//反转输出
+          }
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

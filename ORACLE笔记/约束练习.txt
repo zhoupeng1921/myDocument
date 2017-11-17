@@ -1,0 +1,21 @@
+create table goods(goodsId char(8) primary key,
+goodsName varchar2(30),
+unitprice number(10,2) check(unitprice>0),
+category varchar2(8),
+provider varchar2(30)
+)
+
+create table customer(customerid char(8) primary key,
+name nvarchar2(50) not null,
+address nvarchar2(50),
+email varchar2(50) unique,
+sex char(2) default 'ÄÐ' check(sex in('ÄÐ','Å®')),
+cardid char(18)
+)
+
+create table purchase(
+customerId char(8) references customer(customerid),
+goodsid char(8) references goods(goodsid),
+nums number(5) check(nums between 1 and 30)
+)
+

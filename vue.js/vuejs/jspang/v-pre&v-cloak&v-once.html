@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <div v-pre>{{message}}</div>
+    <div v-cloak>渲染完后，才显示</div>
+    <div>{{message}}</div>
+    <div v-once>{{message}}只进行一次渲染</div>
+    <input type="text" v-model="message"/>
+</div>
+
+<script>
+  var app = new Vue({
+      el:'#app',
+      data:{
+        message:"hello world"
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

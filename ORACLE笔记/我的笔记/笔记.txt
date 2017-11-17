@@ -1,0 +1,13 @@
+@加文件地址导入到数据库 换成/
+select 函数名 from dual;执行函数   或者在dbms_output.put_line(函数名);
+show errors;显示异常
+
+SQL语句分为以下三种类型：
+  DML：数据库操纵语言 insert update delete select 
+  DDL：数据定义语言 create table, alter table, drop table, create index, drop index
+  DCL：数据控制语言 grant revoke commit rollback savepoint lock
+sysdate日期：可以做加减
+sys.guid()生成guid
+连接符 ||  select last_name||'job is '||job_id from employees
+别名是用双引号，其他都是单引号日期，字符串等
+取消重复行 select distinct department_id from employees

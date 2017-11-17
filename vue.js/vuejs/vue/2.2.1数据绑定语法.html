@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <!--文本插值 -->
+    <span>Hello {{ name }}</span>
+    <!--即首次赋值后再更改 vm 实例属性值不会引起 DOM 变化-->
+    <span v-once=”name”>{{name}}</span>
+
+    <!--
+    html属性
+    Mustache 标签也同样适用于 HTML 属性中
+        修改标签id
+    -->
+    <div v-bind:id="'id-' + id"/>
+
+    <!--绑定表达式
+    并不支持 JavaScript 语句
+    不支持正则表达式
+    -->
+    {{ index + 1 }}
+    {{ index == 0 ? 'a' : 'b'}}
+    {{ name.split('').join('|') }}
+    <br/>
+
+
+    <!--过滤器
+    Vue.js 允许在表达式后添加可选的过滤器，以管道符“|”指示
+    -->
+    {{ name | uppercase }}
+<!--
+同时也允许多个过滤器链式使用
+{{ name | filterA | filterB }}-->
+    <br/>
+    {{ name.split('')|limitBy 2 1}}
+
+    <!--
+    Vue.js 内置了 10 个过滤器，下面简单介绍它们的功能和用法。
+① capitalize ：字符串首字符转化成大写
+② uppercase ：字符串转化成大写
+③ lowercase ：字符串转化成小写
+④ currency 参数为{String}[货币符号] ,{Number} [小数位]，将数字转化成货币符号，
+并且会自动添加数字分节号。例如：
+{{ amount | currency ' ￥' 2 }} // -> 若 amount 值为 10000，则输出￥10,000.00
+⑤ pluralize 参数为 {String} single, [double, triple]，字符串复数化。如果接收的是一
+个参数，那复数形式就是在字符串末尾直接加一个“s”。如果接收多个参数，则会被当成数组
+处理，字符串会添加对应数组下标的值。如果字符串的个数多于参数个数，多出部分会都添加
+最后一个参数的值。例如：
+<p v-for="c in count">{{ c | pluralize 'item' }} {{ c | pluralize 'st'
+'nd' 'rd' 'th' }}</p>
+输出结果：
+⑥ json 参数为 {Number}[indent] 空格缩进数，与 JSON.stringify() 作用相同，将 json
+对象数据输出成符合 json 格式的字符串。
+⑦ debounce 传入值必须是函数，参数可选，为 {Number}[wait]，即延时时长。作用是
+当调用函数 n 毫秒后，才会执行该动作，若在这 n 毫秒内又调用此动作则将重新计算执行时
+间。例如：
+<input v-on:keyup ="onKeyup | debounce 500"> // input元素上监听了keyup事件，
+并且延迟 500ms 触发
+⑧ limitBy 传入值必须是数组，参数为 {Number}limit，{Number}[offset], limit 为显
+示个数，offset 为开始显示数组下标。例如：
+<div v-for="item in items | limitBy 10"></div> // items 为数组，且只显示数
+组中的前十个元素
+⑨ filterBy 传入值必须是数组，参数为 {String | Function} targetStringOrFunction，
+即需要匹配的字符串或函数（通过函数返回值为 true 或 false 来判断匹配结果）；“in” （可选
+分隔符）；{String}[…searchKeys]，为检索的属性区域。
+⑩ orderBy 传入值必须是数组，参数为 {String|Array|Function}sortKeys，即指定排序
+策略。这里可以使用单个键名，也可以传入包含多个排序键名的数组。也可以像 Array.Sort()
+那样传入自己的排序策略函数。第二个参数为可选参数 {String}[order]，即选择升序或降序，
+order>=0 为升序，order<0 为降序
+    -->
+
+
+
+    <!--指令-->
+    <img v-bind:src="avatar" />
+<!--    指令 v-bind 可以在后面带一个参数，用冒号（:）隔开，src 即为参数。此时 img 标签
+    中的 src 会与 vm 实例中的 avatar 绑定，等同于 :-->
+    <img src="{{avatar}}" />
+    <!--修饰符（Modifiers）是以半角句号 . 开始的特殊后缀，用于表示指令应该以特殊方式绑定。-->
+    <button v-on:click.stop="doClick"></button>
+<!--    v-on 的作用是在对应的 DOM 元素上绑定事件监听器，doClick 为函数名，而 stop 即为
+    修饰符，作用是停止冒泡，相当于调用了 e. stopPropagation()。-->
+
+</div>
+
+
+<script>
+    var vm = new Vue({
+        el : '#app',
+        data: {
+            id : 1,
+            index : 0,
+            name : 'Vue',
+            avatar : 'http://……',
+            count : [1, 2, 3, 4, 5],
+            names : ['Vue1.0', 'Vue2.0'],
+            items : [
+                { name : 'Vue1.0', version : '1.0' },
+                { name : 'Vue1.1', version : '1.0' }
+            ]
+        }
+    });
+
+</script>
+</body>
+</html>

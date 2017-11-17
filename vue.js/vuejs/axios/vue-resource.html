@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="../js/axios.mini.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <h1>vue-resource插件讲解</h1>
+    <a href="javascript:" @click="get">Get请求</a>
+    <a href="javascript:" @click="post">Post请求</a>
+    <a href="javascript:" @click="jsonp">JSONP请求</a>
+    <p>
+        {{msg}}
+    </p>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg:''
+        } ,
+        mounted:function(){
+            Vue.http.interceptors.push(function(request,next){
+                console.log("request init.");
+                next(function(response){
+                    console.log("response init.");
+                    return response;
+                });
+            })
+        },
+        http:{
+            /*配置全局的地址，通过绝对路径加载后面的请求*/
+            root:"http://localhost:63342/vuejs"
+        },
+        methods: {
+            get:function(){
+                this.$http.get("axios/package.json",{
+                    params:{
+                        userId:"101"
+                    },
+                    headers:{
+                        token:'abck'
+                    }
+                }).then(res=>{
+                    this.msg=res.data;
+                },error=>{
+                    this.msg=error;
+                });
+            },
+            post:function(){
+                this.$http.post("axios/package.json",{
+                    userId:"102"
+                },{
+                    headers:{
+                        token:'access'
+                    }
+                }).then(function(res){
+                    this.msg=res.data;
+                });
+            },
+            jsonp:function(){
+                this.$http.jsonp("",{})
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

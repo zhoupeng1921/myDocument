@@ -1,0 +1,10 @@
+declare
+ v_sal employees.salary%type;
+begin
+  select salary into v_sal from employees where employee_id = 150;
+
+  if v_sal >=10000 then dbms_output.put_line('salary>=10000');
+  elsif v_sal>=5000 then dbms_output.put_line('5000 <= salary < 10000');
+  else dbms_output.put_line('salary<5000');
+  end if;
+end;

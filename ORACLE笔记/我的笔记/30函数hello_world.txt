@@ -1,0 +1,6 @@
+--函数的helloword: 返回一个helloword 字符串
+create or replace function hello_world
+return varchar2
+is
+begin return 'helloworld';
+end;

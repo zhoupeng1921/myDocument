@@ -1,0 +1,21 @@
+--打印出80部门的所有员工的工资salary:xxx
+declare
+  v_sal employees.salary%type;
+  v_empid employees.employee_id%type;
+  --定义游标
+  cursor emp_sal_cursor is select salary ,employee_id from employees where department_id = 80;
+begin
+  --打开游标
+  open emp_sal_cursor;
+
+  --提取游标
+  fetch emp_sal_cursor into v_sal,v_empid;
+
+  while emp_sal_cursor%found loop
+    dbms_output.put_line('empid:'||v_empid||'salary:'||v_sal);
+    fetch emp_sal_cursor into v_sal,v_empid;
+  end loop;
+
+  --关闭游标
+  close emp_sal_cursor;
+end;

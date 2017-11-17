@@ -1,0 +1,11 @@
+--隐式游标 更新指定员工的salary，如果没有找到，输出查无此人
+declare
+
+begin
+       update employees set salary = salary +10
+       where employee_id = 101;
+
+       if sql%notfound then dbms_output.put_line('查无此人');
+       end if;
+
+end;

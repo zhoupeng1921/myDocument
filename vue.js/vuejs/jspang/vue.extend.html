@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+
+</head>
+<body>
+<h1>Vue.extend扩展实例构造器</h1>
+<author></author>
+<div id="author">建议这种写法</div>
+
+<script>
+    var authorExtend = Vue.extend({
+        template: '<p><a :href="authorURL">{{authorName}}</a></p>',
+        data: function () {
+            return {
+                authorName: '百度',
+                authorURL: "http://www.baidu.com"
+            }
+        }
+    });
+    new authorExtend().$mount('author');
+    new authorExtend().$mount('#author');
+
+</script>
+</body>
+</html>

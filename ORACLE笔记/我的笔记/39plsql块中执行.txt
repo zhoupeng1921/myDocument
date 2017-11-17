@@ -1,0 +1,3 @@
+begin
+  dbms_output.put_line(add_param(3,4));
+end;

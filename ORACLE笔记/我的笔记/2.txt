@@ -1,0 +1,11 @@
+declare
+--声明变量
+  v_sal employees.salary%type; --动态获取数据类型
+  v_email employees.email%type;
+  v_hire_date employees.hire_date%type;
+begin
+  --sql语句操作：select ... into ... from... where...
+  select salary,email,hire_date into v_sal,v_email,v_hire_date from employees where employee_id = 100;
+  --打印
+  dbms_output.put_line(v_sal||','||v_email||','||v_hire_date);
+end;

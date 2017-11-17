@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1></h1>
+<div id="app">
+    <!-- form-here直接写死  :here做绑定  -->
+    <panda :here="message" from-here="sichuang"></panda>
+
+</div>
+<div id="ppa">
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message:'China'
+        },
+        components: {
+            "panda":{
+                template: `<div style="color:red">组件加属性{{here}} {{fromHere}}</div>`,
+                props:['here','fromHere']
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1>父子组件嵌套</h1>
+<div id="app">
+    <panda></panda>
+
+</div>
+<div id="ppa">
+
+</div>
+
+<script>
+    <!--必须写在父组件上面，要么找不到这个变量，从上往下加载js-->
+    var cityComponent = {
+        template: `<div style="color:green">sichuang of china</div>`
+    };
+
+    var pandaComponent = {
+        template: `
+        <div>
+            <p>Panda from china</p>
+            <city></city>
+        </div>
+        `,
+        components:{
+            "city":cityComponent
+        }
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        components: {
+            "panda": pandaComponent
+        }
+    });
+
+
+</script>
+</body>
+</html>

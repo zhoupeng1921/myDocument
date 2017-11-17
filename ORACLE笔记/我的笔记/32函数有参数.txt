@@ -1,0 +1,6 @@
+create or replace function hello_world1(v_logo varchar2)
+return varchar2
+is
+begin
+  return 'helloworld'||v_logo;
+end;

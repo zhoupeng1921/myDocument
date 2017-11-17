@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<body>
+<!--Vue.js 实例在创建时有一系列的初始化步骤，例如建立数据观察，编译模板，创建数据
+绑定等。在此过程中，我们可以通过一些定义好的生命周期钩子函数来运行业务逻辑-->
+
+<script>
+    var vm = new Vue({
+        data: {
+            a: 1
+        },
+        created: function () {
+            console.log('created')
+        }
+    })
+    /*
+    * Vue.js 实例生命周期（原图出自于 Vue.js 官网），如图 2-2 所示。
+init: 在实例开始初始化时同步调用。此时数据观测、事件等都尚未初始化。2.0 中更名
+为 beforeCreate。
+created ：在实例创建之后调用。此时已完成数据绑定、事件方法，但尚未开始 DOM 编
+译，即未挂载到 document 中。
+beforeCompile: 在 DOM 编译前调用。2.0 废弃了该方法，推荐使用 created。
+beforeMount: 2.0 新增的生命周期钩子，在 mounted 之前运行。
+compiled: 在编译结束时调用。此时所有指令已生效，数据变化已能触发 DOM 更新，但
+不保证 $el 已插入文档。2.0 中更名为 mounted。
+ready ：在编译结束和 $el 第一次插入文档之后调用。2.0 废弃了该方法，推荐使用 mounted。这
+个变化其实已经改变了ready这个生命周期状态，相当于取消了在$el首次插入文档后的钩子函数。
+attached ：在 vm.$el 插入 DOM 时调用，ready 会在第一次 attached 后调用。操作 $el
+必须使用指令或实例方法（例如 $appendTo()），直接操作 vm.$el 不会触发这个钩子。2.0 废
+弃了该方法，推荐在其他钩子中自定义方法检查是否已挂载。
+detached: 同 attached 类似，该钩子在 vm.$el 从 DOM 删除时调用，而且必须是指令或
+实例方法。2.0 中同样废弃了该方法。
+beforeDestroy: 在开始销毁实例时调用，此刻实例仍然有效。
+destroyed: 在实例被销毁之后调用。此时所有绑定和实例指令都已经解绑，子实例也被销毁。
+beforeUpdate: 2.0 新增的生命周期钩子，在实例挂载之后，再次更新实例（例如更新
+data）时会调用该方法，此时尚未更新 DOM 结构。
+updated:2.0 新增的生命周期钩子，在实例挂载之后，再次更新实例并更新完 DOM 结构
+后调用。
+activated ：2.0 新增的生命周期钩子，需要配合动态组件 keep-live 属性使用。在动态
+组件初始化渲染的过程中调用该方法。
+deactivated ：2.0 新增的生命周期钩子，需要配合动态组件 keep-live 属性使用。在动
+态组件移出的过程中调用该方法。
+    * */
+</script>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        init: function () {
+            console.log('init');
+        },
+
+        created: function () {
+            console.log('created');
+        },
+        beforeCompile: function () {
+            console.log('beforeCompile');
+        },
+        compiled: function () {
+            console.log('compiled');
+        },
+        attached: function () {
+            console.log('attached');
+        },
+        dettached: function () {
+            console.log('dettached');
+        },
+        beforeDestroy: function () {
+            console.log('beforeDestroy');
+        },
+        destroyed: function () {
+            console.log('destroyed');
+        },
+        ready: function () {
+            console.log('ready');
+            // 组件完成后调用 $destory() 函数，进行销毁
+            this.$destroy();
+        }
+    });
+
+</script>
+</body>
+</html>

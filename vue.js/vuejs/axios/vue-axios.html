@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <a href="javascript:" @click="get">get请求</a>
+    <a href="javascript:" @click="post">Post请求</a>
+    <a href="javascript:" @click="http">http请求</a>
+    <p>{{message}}</p>
+</div>
+
+<script>
+  var app = new Vue({
+      el:'#app',
+      data:{
+          message:'aa'
+      },
+
+      methods:{
+          get:function(){
+              let _this = this;
+              axios.get("http://localhost:8080/query",{
+                  params:{
+                      id:1234
+                  },
+                  headers:{
+                      token:'abcdefg'
+                  }
+              }).then(function(response){
+                 console.log(response.data);
+                 _this.message=response.data.success;
+              }).catch(function(res){
+                  console.log("出错了:"+res);
+              })
+          },
+          post:function(){
+              let _this = this;
+              axios.post("http://localhost:8080/query",{
+                  userId:888
+              },{
+                  headers:{
+                      token:"aaaa"
+                  }
+              }).then(function(res){
+                  _this.message=res.data
+              }).catch(function(res){
+                  console.log("出错了:"+res);
+              })
+          },
+          http:function(){
+              let _this = this;
+              axios({
+                  url:"http://localhost:8080/query",
+                  method:"post",
+                  data:{
+                      userId:'101'
+                  },
+                  headers:{
+                      token:"http-test"
+                  }
+              }).then(function(res){
+                  _this.message=res.data
+              }).catch(function(res){
+                  console.log("出错了:"+res);
+              })
+          }
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

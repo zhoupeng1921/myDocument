@@ -1,0 +1,11 @@
+--使用循环语句打印1-100
+declare
+  --初始化条件
+  v_i number(4) := 1;
+begin
+  while v_i <=100 loop
+    dbms_output.put_line(v_i);
+    v_i:=v_i+1;
+    end loop;
+
+end;

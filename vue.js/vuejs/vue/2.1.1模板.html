@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<!--
+el ：类型为字符串，DOM 元素或函数。其作用是为实例提供挂载元素。
+一般来说我们会 使用 css 选择符，或者原生的 DOM 元素。
+例如 el:'#app'。在初始项中指定了 el，实例将立即进入编译过程。
+ template ：类型为字符串。默认会将 template 值替换挂载元素
+ （即 el 值对应的元素）， 并合并挂载元素和模板根节点的属性
+-->
+
+<div id="app"> 　
+    <p>123</p>
+</div>
+
+<script id="tpl" type="x-template"> 　
+    <div class='tpl'> 　　
+        <p>This is a tpl from script tag</p> 　
+    </div>
+</script>
+
+<!--经常用 '#tpl' 的方式赋值，并且在 body 内容添加 <scrip id="tpl" type="x-template"> 为标签包含的 HTML 内容，这样就能将 HTML 从 js 中分离开来，-->
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        template: '#tpl'
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+
+    <p>{{ firstName }}</p>
+    <p>{{ lastName }}</p>
+    <p>{{ fullName }}</p>
+    <!--对 vm.firstName 和 vm.lastName 进行修改，始终会影响 vm.fullName-->
+
+
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Gavin',
+            lastName: 'CLY'
+        },
+        computed: {
+            fullName: function () {
+                // this 指向 vm 实例
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    });
+
+
+    <!--setter-->
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            cents: 100,
+        },
+        computed: {
+            price: {
+                set: function (newValue) {
+                    this.cents = newValue * 100;
+                },
+                get: function () {
+                    return (this.cents / 100).toFixed(2);
+                }
+            }
+        }
+    });
+    /*
+    * vm.price=2
+    * vm.cents
+    * 200
+    * */
+</script>
+</body>
+</html>

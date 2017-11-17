@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1></h1>
+<div id="app">
+    <!--vue自己定义的标签，可以让我们动态的使用下面已经声明的组件-->
+    <component v-bind:is="who">
+    </component>
+    <button @click="changeComponent">改变组件</button>
+
+</div>
+
+<script>
+    var componentA={
+        template:`<div style="color:red">I'm componentA.</div>`
+    }
+    var componentB={
+        template:`<div style="color:pink">I'm componentB.</div>`
+    }
+    var componentC={
+        template:`<div style="color:blue">I'm componentC.</div>`
+    }
+  var app = new Vue({
+      el:'#app',
+      data:{
+        who: "componentA"
+      },
+    components:{
+          "componentA":componentA,
+          "componentB":componentB,
+          "componentC":componentC
+    },
+      methods:{
+          changeComponent:function(){
+              if(this.who=="componentA"){
+                  this.who="componentB";
+              }else  if(this.who=="componentB"){
+                  this.who="componentC";
+              }
+              else {
+                  this.who="componentA";
+              }
+          }
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

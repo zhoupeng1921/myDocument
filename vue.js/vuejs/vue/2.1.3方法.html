@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+</head>
+<body>
+<!--我们可以通过选项属性methods对象来定义方法，
+并且使用v-on指令来监听DOM事件-->
+<div id="app">
+    <button v-on:click="alert">alert</button>
+</div>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {a: 1},
+        methods: {
+            alert: function () {
+                alert(this.a);
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+create or replace procedure add_sal(dept_id number, temp_sal out number)
+is
+       cursor sal_cursor is select employee_id, salary,hire_date from employees where department_id = dept_id;
+       v_i number(4,2) :=0;
+begin
+  temp_sal:=0;
+  for c in sal_cursor loop
+    if to_char(c.hire_date,'yyyy') <'1995' then v_i := 0.05;
+    elsif to_char(c.hire_date,'yyyy') < '1998' then v_i := 0.03;
+    else v_i := 0.01;
+    end if;
+
+    --更新工资
+    update employees set salary = salary * (1+v_i) where employee_id = c.employee_id;
+    --付出的成本
+    temp_sal:=temp_sal+c.salary * v_i;
+  end loop;
+end;

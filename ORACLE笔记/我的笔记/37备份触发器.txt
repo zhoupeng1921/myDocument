@@ -1,0 +1,8 @@
+create or replace trigger delete_emp_trigger
+before
+delete on my_emp
+for each row
+begin
+  insert into my_emp_bak
+  values(:old.employee_id,:old.salary);
+end;

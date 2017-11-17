@@ -1,0 +1,12 @@
+declare
+ e_too_high_sal exception;
+ v_sal employees.salary%type;
+
+begin
+  select salary into v_sal from employees where employee_id = 100;
+  if v_sal > 10000 then
+    raise e_too_high_sal; --用户自定义异常，抛出异常
+  end if;
+exception
+  when e_too_high_sal then dbms_output.put_line('工资太高');
+end;

@@ -1,0 +1,23 @@
+declare
+/*
+--变量、记录类型等的声明
+type emp_record is record(
+v_sal employees.salary%type,
+v_emp_id employees.employee_id%type
+);
+v_emp_record emp_record;
+*/
+--获取所有字段
+v_emp_record employees%rowtype;
+
+begin
+  --程序执行部分
+  select * into v_emp_record from employees where employee_id = 123;
+ -- dbms_output.put_line(v_emp_record.v_emp_id||',salary:'||v_emp_record.v_sal);
+  dbms_output.put_line(v_emp_record.employee_id||','||v_emp_record.email||','||v_emp_record.salary);
+
+--exception
+  --异常的处理
+
+end;
+

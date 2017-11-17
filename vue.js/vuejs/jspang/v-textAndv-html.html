@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <span>{{message}}</span>
+    <!--用v-text ，若js出错不会直接显示{{xxx}}这个东西-->
+    <span v-text="message"></span>
+    <hr>
+
+    <span>{{dodo}}</span>
+    <!--按html标签输出，不安全-->
+    <span v-html="dodo"></span>
+</div>
+
+<script>
+  var app = new Vue({
+      el:'#app',
+      data:{
+        message:'hello world',
+          dodo:'<h2>h2h2h2标签</h2>'
+      }
+  })
+
+
+
+</script>
+</body>
+</html>

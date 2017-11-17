@@ -1,0 +1,8 @@
+create or replace trigger update_emp_trigger1
+after
+       update on emp
+for each row
+begin
+    dbms_output.put_line('helloworld');
+end;
+

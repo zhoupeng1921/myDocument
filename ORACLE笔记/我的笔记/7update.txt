@@ -1,0 +1,12 @@
+declare
+ v_emp_id number(20);
+
+begin
+  v_emp_id :=123;
+  update employees
+  set salary = salary + 100
+  where employee_id=v_emp_id;
+
+  dbms_output.put_line('success');
+ end;
+

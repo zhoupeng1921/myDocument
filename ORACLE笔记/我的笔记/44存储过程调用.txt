@@ -1,0 +1,5 @@
+declare
+ v_sal number := 0;
+begin
+  get_sal1(80,v_sal);
+end;

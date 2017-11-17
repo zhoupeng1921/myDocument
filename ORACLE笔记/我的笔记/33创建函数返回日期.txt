@@ -1,0 +1,8 @@
+create or replace function get_sysdate
+return date
+is
+v_date date;
+begin
+  v_date := sysdate;
+  return v_date;
+end;

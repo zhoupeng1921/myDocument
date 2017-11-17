@@ -1,0 +1,16 @@
+1.pl/sql基本的语法格式
+2.记录类型type ... is record(...,....,...);
+3.流程控制：
+    3.1条件判断
+        if...then elsif then .. else  ... end if;
+        case ... when... then ...end;
+    3.2循环
+        loop ...  exit when ... end loop;
+        while ... loop....end loop;
+        for i in ... loop ... end loop;
+    3.3 goto\exit
+4.游标的使用（类似于iterator）
+5.异常的处理（三种方式）
+6.会写一个存储函数（有返回值）、存储过程（无返回值）
+7.会写一个触发器
+

@@ -1,0 +1,17 @@
+--输出2--100之间的质数
+declare
+
+v_flag number(1) := 1;
+begin
+  for v_i in 2..100 loop
+    for v_j in 2..sqrt(v_i) loop
+      if mod(v_i,v_j)=0 then v_flag :=0;
+       end if;
+
+      end loop;
+    if v_flag = 1 then dbms_output.put_line(v_i);
+    end if;
+    v_flag :=1;
+   end loop;
+
+end;

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <h1>自定义指令</h1>
+    <p>
+    <div v-jspang="color">{{num}}</div>
+    <button @click="add">Add</button>
+    </p>
+    <p>
+    <div v-jspang2="color">{{num2}}</div>
+    <button @click="add2">Add</button>
+    </p>
+
+    <p>
+        <button onclick="unbind()">解绑</button>
+    </p>
+</div>
+
+<script>
+    <!--解绑-->
+    function unbind(){
+        app.$destroy();
+    }
+
+    /*自动会加v-  el就是这个标签*/
+    Vue.directive("jspang", function (el, binding) {
+        console.log(el);
+        console.log(binding);
+        console.log(binding.name); //jspang
+        console.log(binding.expression); //color
+        el.style = "color:" + binding.value; //red
+    })
+    Vue.directive("jspang2", {
+        bind: function () {//被绑定
+            console.log('1 - bind');
+        },
+        inserted: function () {//绑定到节点
+            console.log('2 - inserted');
+        },
+        update: function () {//组件更新
+            console.log('3 - update');
+        },
+        componentUpdated: function () {//组件更新完成
+            console.log('4 - componentUpdated');
+        },
+        unbind: function () {//解绑
+            console.log('5 - unbind');
+        }
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num: 10,
+            num2: 5,
+            color: 'red'
+        },
+        methods: {
+            add: function () {
+                this.num++;
+            },
+            add2: function () {
+                this.num2++;
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

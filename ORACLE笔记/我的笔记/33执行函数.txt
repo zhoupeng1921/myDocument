@@ -1,0 +1,7 @@
+--select hello_world1('atguigu') from dual; --执行方式一
+
+--执行方式2
+begin
+  dbms_output.put_line(hello_world1('atguigu'));
+end;
+

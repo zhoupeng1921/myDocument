@@ -1,0 +1,24 @@
+--输出2--100之间的质数
+declare
+v_i number(3):=2;
+v_j number(3):=2;
+v_flag number(1) := 1;
+begin
+  while v_i <= 100 loop
+
+    while v_j <= sqrt(v_i) loop
+
+      if v_i mod v_j=0 then v_flag :=0;
+      end if;
+
+      v_j:=v_j+1;
+     end loop;
+
+     if v_flag = 1 then dbms_output.put_line(v_i);
+     end if;
+     v_j := 2;
+    v_i:=v_i+1;
+    v_flag := 1;
+   end loop;
+
+end;

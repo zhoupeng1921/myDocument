@@ -1,0 +1,10 @@
+--定义一个函数：获取给定部门的工资总和 和 该部门的员工总数（定义为out类型的参数）。
+--要求：部门号定义为参数，工资总额定义为返回值
+
+declare
+     v_num number := 0;
+begin
+  dbms_output.put_line(get_sal_count(80,v_num));
+  dbms_output.put_line(v_num);
+end;
+

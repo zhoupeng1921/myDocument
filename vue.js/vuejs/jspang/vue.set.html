@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    {{count}}
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+    <p><button onclick="add()">add</button></p>
+</div>
+
+<script>
+    
+    function add() {
+       // Vue.set(outData,'count',2)
+       // app.count++;
+       // outData.count++;
+
+     //    app.arr[1]='ddd';//数组不会动态变化
+        Vue.set(app.arr,1,'ddddd');//这样数组会变化
+    }
+    
+    
+    var outData={
+        count:1,
+        goods:'car',
+        arr:['aaa','bbb','ccc']
+    }
+  var app = new Vue({
+      el:'#app',
+      data:outData
+  });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1></h1>
+<div id="app">
+    {{num}}
+    <p>
+        <button @click="add">add</button>
+    </p>
+</div>
+<p>
+    <button onclick="reduce()">reduce</button>
+</p>
+<p>
+    <button onclick="reduceOnce()">reduceOnce</button>
+</p><p>
+    <button onclick="off()">off</button>
+</p>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num: 1
+        },
+        methods: {
+            add: function () {
+                this.num++;
+            }
+        }
+    });
+
+    app.$on("reduce", function () {
+        console.log("执行了reduce方法");
+        this.num--;
+    })
+    app.$once('reduceOnce',function () {
+        console.log('只执行一次的方法');
+        this.num--;
+    })
+    function off() {
+        app.$off('reduce');
+    }
+
+    function reduce() {
+        app.$emit('reduce');
+    }
+    function reduceOnce() {
+        app.$emit('reduceOnce')
+    }
+
+
+</script>
+</body>
+</html>

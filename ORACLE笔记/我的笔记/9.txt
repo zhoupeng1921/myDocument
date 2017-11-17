@@ -1,0 +1,13 @@
+declare
+ v_sal employees.salary%type;
+
+ v_temp varchar2(40);
+begin
+  select salary into v_sal from employees where employee_id = 150;
+
+  if v_sal >=10000 then v_temp := 'salary>=10000';
+  elsif v_sal>=5000 then v_temp := '5000 <= salary < 10000';
+  else v_temp :='salary<5000';
+  end if;
+  dbms_output.put_line(v_sal||','||v_temp);
+end;

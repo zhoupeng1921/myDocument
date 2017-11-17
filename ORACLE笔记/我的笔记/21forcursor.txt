@@ -1,0 +1,36 @@
+--打印出80部门的所有员工的工资salary:xxx
+declare
+--声明一个记录类型
+type emp_record is record(
+     v_sal employees.salary%type,
+  v_empid employees.employee_id%type
+);
+
+--声明记录类型变量
+v_emp_record emp_record;
+
+  --定义游标   存的顺序要和定义个顺序一样
+  cursor emp_sal_cursor is select salary ,employee_id from employees where department_id = 80;
+begin
+
+
+  for c in emp_sal_cursor loop
+     dbms_output.put_line('empid:'||c.salary||'salary:'||c.employee_id);
+   end loop;
+
+  /*
+  --打开游标
+  open emp_sal_cursor;
+
+  --提取游标
+  fetch emp_sal_cursor into v_emp_record;
+
+  while emp_sal_cursor%found loop
+    dbms_output.put_line('empid:'||v_emp_record.v_empid||'salary:'||v_emp_record.v_sal);
+    fetch emp_sal_cursor into v_emp_record;
+  end loop;
+
+  --关闭游标
+  close emp_sal_cursor;
+  */
+end;

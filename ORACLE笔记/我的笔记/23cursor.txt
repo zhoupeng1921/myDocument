@@ -1,0 +1,34 @@
+--利用游标，调整公司中员工的工资
+--调整工资
+
+declare
+  cursor emp_sal_cursor is select employee_id,salary from employees;
+  --用于记录调整基数
+  v_temp number(4,2);
+
+  --v_empid employees.employee_id%type;
+--  v_sal  employees.salary%type;
+
+begin
+ for c in emp_sal_cursor loop
+   if c.salary < 5000 then v_temp := 0.05;
+   elsif c.salary <10000 then v_temp := 0.05;
+    elsif c.salary <15000 then v_temp :=0.02;
+    else v_temp := 0.01;
+    end if;
+    update employees set salary=salary*(1+v_temp) where employee_id=c.employee_id;
+   end loop;
+
+/*
+  while emp_sal_cursor%found loop
+    if v_sal<5000 then v_temp := 0.05;
+    elsif v_sal <10000 then v_temp := 0.05;
+    elsif v_sal <15000 then v_temp :=0.02;
+    else v_temp := 0.01;
+    end if;
+    dbms_output.put.line(v_empid||','||v_sal);
+   update employees set salary=salary*(1+v_temp) where employee_id=v_empid;
+   fetch emp_sal_cursor into v_empid,v_sal;
+   end loop;
+*/
+end;

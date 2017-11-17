@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <!--循环哪个标签，在哪个标签上写v-for-->
+        <li v-for="item in sortItems">
+            {{item}}
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(student,index) in sortStudents">
+            {{index+1}}:{{student.name}}-{{student.age}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [90, 50, 60, 70, 80, 10, 7],
+            students: [
+                {name:"jspang",age:33},
+                {name:"panda",age:13},
+                {name:"panpan",age:23},
+                {name:"king",age:18}
+            ]
+        },
+        computed: {
+            sortItems: function () {
+                return this.items.sort(sortNumber);
+            },
+            sortStudents:function () {
+                return sortByKey(this.students,'age');
+            }
+        }
+    });
+
+    /*自定义排序，否则按字符排序*/
+    function sortNumber(a, b) {
+        return a - b;
+    }
+
+    //数组对象方法排序:
+    function sortByKey(array,key){
+        return array.sort(function(a,b){
+            var x=a[key];
+            var y=b[key];
+            return ((x<y)?-1:((x>y)?1:0));
+        });
+    }
+
+</script>
+</body>
+</html>

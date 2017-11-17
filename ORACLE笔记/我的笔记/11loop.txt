@@ -1,0 +1,15 @@
+--使用循环语句打印1-100
+declare
+  --初始化条件
+  v_i number(4) := 1;
+begin
+  loop
+    --循环体
+    dbms_output.put_line(v_i);
+    --循环条件
+    exit when v_i >=100;
+    --迭代条件
+         v_i := v_i +1;
+   end loop;
+
+end;

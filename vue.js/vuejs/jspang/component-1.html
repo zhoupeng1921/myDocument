@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+<h1></h1>
+<div id="app">
+    <jspang></jspang>
+    <panda></panda>
+
+</div>
+<div id="ppa">
+
+</div>
+
+<script>
+    //只能在vue实例的作用域内使用
+    Vue.component('jspang', {
+        template: `<div style="color:red">我是全局的组件</div>`
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        components: {
+            "panda":{
+                template: `<div style="color:red">我是局部的组件</div>`
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>
