@@ -1,0 +1,2 @@
+javaConfig方式：用java代码，加载datasource和mybatis配置文件
+spring方式：在配置文件中注入数据库连接和mybatis配置
