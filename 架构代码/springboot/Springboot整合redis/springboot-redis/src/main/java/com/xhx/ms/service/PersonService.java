@@ -1,4 +1,4 @@
-package com.xhx.ms.service;
+﻿package com.xhx.ms.service;
 
 import com.xhx.ms.entity.Person;
 import com.xhx.ms.repository.PersonRepository;
@@ -30,7 +30,7 @@ public class PersonService {
 
     }
 
-    @Cacheable(value="person")
+    @Cacheable(value="person") //key为序列化生成的key,原理 缓存存储入参和出参
     public Person findById(String id){
         System.out.println("------findById-----id = "+id);
         return personRepository.findOne(id);
