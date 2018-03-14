@@ -16,6 +16,8 @@
 		<module>socket-server</module>
         <module>jaxws-first-service</module>
         <module>jaxws-first-client</module>
+        <module>http-client</module>
+        <module>area-server</module>
     </modules>
 
 	<properties>

@@ -53,8 +53,8 @@
         </javaClientGenerator>
 
         <!-- 配置表信息 schema="CASE_RECORD"-->
-        <table tableName="DJ_CONNECTION_TRANSFER"
-                domainObjectName="ConnectionTransfer" enableCountByExample="false"
+        <table tableName="DJ_MEMBER" schema="SIT_BASIC_INFO"
+                domainObjectName="Member" enableCountByExample="false"
                 enableDeleteByExample="false" enableSelectByExample="false"
                 enableUpdateByExample="false">
             <property name="constructorBased" value="false"/>

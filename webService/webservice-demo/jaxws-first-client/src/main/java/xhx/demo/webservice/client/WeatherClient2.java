@@ -10,7 +10,7 @@ public class WeatherClient2 {
     public static void main(String[] args) throws Exception{
 
         //wsdl路径
-        URL wsdlDocumentLocation = new URL("http://127.0.0.1:12345/weather?wsdl");
+        URL wsdlDocumentLocation = new URL("http://127.0.0.1:54321/weather?wsdl");
 
         //从wsdl中找到服务视图
         //第一个参数：wsdl的命名空间
