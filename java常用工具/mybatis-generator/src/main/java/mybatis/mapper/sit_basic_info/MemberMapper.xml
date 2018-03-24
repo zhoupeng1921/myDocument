@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnpc.dj.party.repository.MemberMapper">
+  <resultMap id="BaseResultMap" type="com.cnpc.dj.party.entity.Member">
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="HEAD_IMG" jdbcType="VARCHAR" property="headImg" />
+    <result column="REAL_NAME" jdbcType="VARCHAR" property="realName" />
+    <result column="IDENTITY_CARD" jdbcType="VARCHAR" property="identityCard" />
+    <result column="SAP_NO" jdbcType="VARCHAR" property="sapNo" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="NATION" jdbcType="VARCHAR" property="nation" />
+    <result column="EDU_LEVEL" jdbcType="VARCHAR" property="eduLevel" />
+    <result column="DEGREE" jdbcType="VARCHAR" property="degree" />
+    <result column="NATIVE_PLACE" jdbcType="VARCHAR" property="nativePlace" />
+    <result column="MOBILE_PHONE" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="COMPANY" jdbcType="VARCHAR" property="company" />
+    <result column="BIRTH_DATE" jdbcType="VARCHAR" property="birthDate" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="BIRTH_ADDRESS" jdbcType="VARCHAR" property="birthAddress" />
+    <result column="HOME_ADDRESS" jdbcType="VARCHAR" property="homeAddress" />
+    <result column="NEW_SOCIAL_PERSONNEL" jdbcType="VARCHAR" property="newSocialPersonnel" />
+    <result column="DUTY" jdbcType="VARCHAR" property="duty" />
+    <result column="BEGIN_WORK_DATE" jdbcType="VARCHAR" property="beginWorkDate" />
+    <result column="JOB" jdbcType="VARCHAR" property="job" />
+    <result column="JOB_START_DATE" jdbcType="VARCHAR" property="jobStartDate" />
+    <result column="PRO_TECHNICAL_DUTY" jdbcType="VARCHAR" property="proTechnicalDuty" />
+    <result column="ORG_ID" jdbcType="DECIMAL" property="orgId" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_USERID" jdbcType="DECIMAL" property="createUserid" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_USERID" jdbcType="DECIMAL" property="updateUserid" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="TRANSFER_STATUS" jdbcType="DECIMAL" property="transferStatus" />
+    <result column="IS_HR" jdbcType="DECIMAL" property="isHr" />
+    <result column="OWN_ADDRESS_COM" jdbcType="VARCHAR" property="ownAddressCom" />
+    <result column="OWN_TWO_COM" jdbcType="VARCHAR" property="ownTwoCom" />
+    <result column="OWN_THREE_COM" jdbcType="VARCHAR" property="ownThreeCom" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, HEAD_IMG, REAL_NAME, IDENTITY_CARD, SAP_NO, GENDER, NATION, EDU_LEVEL, DEGREE, 
+    NATIVE_PLACE, MOBILE_PHONE, TELEPHONE, EMAIL, COMPANY, BIRTH_DATE, ADDRESS, BIRTH_ADDRESS, 
+    HOME_ADDRESS, NEW_SOCIAL_PERSONNEL, DUTY, BEGIN_WORK_DATE, JOB, JOB_START_DATE, PRO_TECHNICAL_DUTY, 
+    ORG_ID, IS_DELETE, CREATE_USERID, CREATE_TIME, UPDATE_USERID, UPDATE_TIME, USER_ID, 
+    TRANSFER_STATUS, IS_HR, OWN_ADDRESS_COM, OWN_TWO_COM, OWN_THREE_COM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from DJ_MEMBER
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+    delete from DJ_MEMBER
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.cnpc.dj.party.entity.Member">
+    insert into DJ_MEMBER (ID, HEAD_IMG, REAL_NAME, 
+      IDENTITY_CARD, SAP_NO, GENDER, 
+      NATION, EDU_LEVEL, DEGREE, 
+      NATIVE_PLACE, MOBILE_PHONE, TELEPHONE, 
+      EMAIL, COMPANY, BIRTH_DATE, 
+      ADDRESS, BIRTH_ADDRESS, HOME_ADDRESS, 
+      NEW_SOCIAL_PERSONNEL, DUTY, BEGIN_WORK_DATE, 
+      JOB, JOB_START_DATE, PRO_TECHNICAL_DUTY, 
+      ORG_ID, IS_DELETE, CREATE_USERID, 
+      CREATE_TIME, UPDATE_USERID, UPDATE_TIME, 
+      USER_ID, TRANSFER_STATUS, IS_HR, 
+      OWN_ADDRESS_COM, OWN_TWO_COM, OWN_THREE_COM
+      )
+    values (#{id,jdbcType=DECIMAL}, #{headImg,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{identityCard,jdbcType=VARCHAR}, #{sapNo,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{nation,jdbcType=VARCHAR}, #{eduLevel,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, 
+      #{nativePlace,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, #{birthDate,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{birthAddress,jdbcType=VARCHAR}, #{homeAddress,jdbcType=VARCHAR}, 
+      #{newSocialPersonnel,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, #{beginWorkDate,jdbcType=VARCHAR}, 
+      #{job,jdbcType=VARCHAR}, #{jobStartDate,jdbcType=VARCHAR}, #{proTechnicalDuty,jdbcType=VARCHAR}, 
+      #{orgId,jdbcType=DECIMAL}, #{isDelete,jdbcType=VARCHAR}, #{createUserid,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUserid,jdbcType=DECIMAL}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=DECIMAL}, #{transferStatus,jdbcType=DECIMAL}, #{isHr,jdbcType=DECIMAL}, 
+      #{ownAddressCom,jdbcType=VARCHAR}, #{ownTwoCom,jdbcType=VARCHAR}, #{ownThreeCom,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cnpc.dj.party.entity.Member">
+    insert into DJ_MEMBER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="headImg != null">
+        HEAD_IMG,
+      </if>
+      <if test="realName != null">
+        REAL_NAME,
+      </if>
+      <if test="identityCard != null">
+        IDENTITY_CARD,
+      </if>
+      <if test="sapNo != null">
+        SAP_NO,
+      </if>
+      <if test="gender != null">
+        GENDER,
+      </if>
+      <if test="nation != null">
+        NATION,
+      </if>
+      <if test="eduLevel != null">
+        EDU_LEVEL,
+      </if>
+      <if test="degree != null">
+        DEGREE,
+      </if>
+      <if test="nativePlace != null">
+        NATIVE_PLACE,
+      </if>
+      <if test="mobilePhone != null">
+        MOBILE_PHONE,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="company != null">
+        COMPANY,
+      </if>
+      <if test="birthDate != null">
+        BIRTH_DATE,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="birthAddress != null">
+        BIRTH_ADDRESS,
+      </if>
+      <if test="homeAddress != null">
+        HOME_ADDRESS,
+      </if>
+      <if test="newSocialPersonnel != null">
+        NEW_SOCIAL_PERSONNEL,
+      </if>
+      <if test="duty != null">
+        DUTY,
+      </if>
+      <if test="beginWorkDate != null">
+        BEGIN_WORK_DATE,
+      </if>
+      <if test="job != null">
+        JOB,
+      </if>
+      <if test="jobStartDate != null">
+        JOB_START_DATE,
+      </if>
+      <if test="proTechnicalDuty != null">
+        PRO_TECHNICAL_DUTY,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createUserid != null">
+        CREATE_USERID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateUserid != null">
+        UPDATE_USERID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="transferStatus != null">
+        TRANSFER_STATUS,
+      </if>
+      <if test="isHr != null">
+        IS_HR,
+      </if>
+      <if test="ownAddressCom != null">
+        OWN_ADDRESS_COM,
+      </if>
+      <if test="ownTwoCom != null">
+        OWN_TWO_COM,
+      </if>
+      <if test="ownThreeCom != null">
+        OWN_THREE_COM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="headImg != null">
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="sapNo != null">
+        #{sapNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="eduLevel != null">
+        #{eduLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="degree != null">
+        #{degree,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null">
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthAddress != null">
+        #{birthAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null">
+        #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="newSocialPersonnel != null">
+        #{newSocialPersonnel,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null">
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="beginWorkDate != null">
+        #{beginWorkDate,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStartDate != null">
+        #{jobStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proTechnicalDuty != null">
+        #{proTechnicalDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserid != null">
+        #{createUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserid != null">
+        #{updateUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="transferStatus != null">
+        #{transferStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="isHr != null">
+        #{isHr,jdbcType=DECIMAL},
+      </if>
+      <if test="ownAddressCom != null">
+        #{ownAddressCom,jdbcType=VARCHAR},
+      </if>
+      <if test="ownTwoCom != null">
+        #{ownTwoCom,jdbcType=VARCHAR},
+      </if>
+      <if test="ownThreeCom != null">
+        #{ownThreeCom,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cnpc.dj.party.entity.Member">
+    update DJ_MEMBER
+    <set>
+      <if test="headImg != null">
+        HEAD_IMG = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        REAL_NAME = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        IDENTITY_CARD = #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="sapNo != null">
+        SAP_NO = #{sapNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        GENDER = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        NATION = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="eduLevel != null">
+        EDU_LEVEL = #{eduLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="degree != null">
+        DEGREE = #{degree,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null">
+        NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        COMPANY = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        BIRTH_DATE = #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthAddress != null">
+        BIRTH_ADDRESS = #{birthAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null">
+        HOME_ADDRESS = #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="newSocialPersonnel != null">
+        NEW_SOCIAL_PERSONNEL = #{newSocialPersonnel,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null">
+        DUTY = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="beginWorkDate != null">
+        BEGIN_WORK_DATE = #{beginWorkDate,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        JOB = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStartDate != null">
+        JOB_START_DATE = #{jobStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proTechnicalDuty != null">
+        PRO_TECHNICAL_DUTY = #{proTechnicalDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserid != null">
+        CREATE_USERID = #{createUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserid != null">
+        UPDATE_USERID = #{updateUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="transferStatus != null">
+        TRANSFER_STATUS = #{transferStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="isHr != null">
+        IS_HR = #{isHr,jdbcType=DECIMAL},
+      </if>
+      <if test="ownAddressCom != null">
+        OWN_ADDRESS_COM = #{ownAddressCom,jdbcType=VARCHAR},
+      </if>
+      <if test="ownTwoCom != null">
+        OWN_TWO_COM = #{ownTwoCom,jdbcType=VARCHAR},
+      </if>
+      <if test="ownThreeCom != null">
+        OWN_THREE_COM = #{ownThreeCom,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cnpc.dj.party.entity.Member">
+    update DJ_MEMBER
+    set HEAD_IMG = #{headImg,jdbcType=VARCHAR},
+      REAL_NAME = #{realName,jdbcType=VARCHAR},
+      IDENTITY_CARD = #{identityCard,jdbcType=VARCHAR},
+      SAP_NO = #{sapNo,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      NATION = #{nation,jdbcType=VARCHAR},
+      EDU_LEVEL = #{eduLevel,jdbcType=VARCHAR},
+      DEGREE = #{degree,jdbcType=VARCHAR},
+      NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      COMPANY = #{company,jdbcType=VARCHAR},
+      BIRTH_DATE = #{birthDate,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      BIRTH_ADDRESS = #{birthAddress,jdbcType=VARCHAR},
+      HOME_ADDRESS = #{homeAddress,jdbcType=VARCHAR},
+      NEW_SOCIAL_PERSONNEL = #{newSocialPersonnel,jdbcType=VARCHAR},
+      DUTY = #{duty,jdbcType=VARCHAR},
+      BEGIN_WORK_DATE = #{beginWorkDate,jdbcType=VARCHAR},
+      JOB = #{job,jdbcType=VARCHAR},
+      JOB_START_DATE = #{jobStartDate,jdbcType=VARCHAR},
+      PRO_TECHNICAL_DUTY = #{proTechnicalDuty,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=DECIMAL},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_USERID = #{createUserid,jdbcType=DECIMAL},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USERID = #{updateUserid,jdbcType=DECIMAL},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      USER_ID = #{userId,jdbcType=DECIMAL},
+      TRANSFER_STATUS = #{transferStatus,jdbcType=DECIMAL},
+      IS_HR = #{isHr,jdbcType=DECIMAL},
+      OWN_ADDRESS_COM = #{ownAddressCom,jdbcType=VARCHAR},
+      OWN_TWO_COM = #{ownTwoCom,jdbcType=VARCHAR},
+      OWN_THREE_COM = #{ownThreeCom,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
