@@ -16,7 +16,6 @@ import java.util.List;
  */
 public class AreaDaoImpl implements AreaDao {
     private static String sql = "select * from area where parentid=? limit ?,?";
-    @Override
     public List<Area> queryAreaList(String parentid, int start, int pageSize) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -27,7 +26,7 @@ public class AreaDaoImpl implements AreaDao {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.94.150:3306/area","root","xuhaixing");
+            connection = DriverManager.getConnection("jdbc:mysql://192.168.94.150:3306/webservice","root","xuhaixing");
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,parentid);
             preparedStatement.setInt(2,start);

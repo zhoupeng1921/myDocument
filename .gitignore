@@ -16,6 +16,7 @@ target/
 *.ipr
 target/
 *.class
+.gitignore
 
 ### NetBeans ###
 nbproject/private/
