@@ -9,7 +9,6 @@ import xhx.demo.webservice.po.Area;
 import xhx.demo.webservice.service.AreaService;
 
 import javax.jws.WebService;
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.List;
 
 /**

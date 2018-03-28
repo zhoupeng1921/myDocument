@@ -25,8 +25,8 @@ public class AreaDaoImpl implements AreaDao {
 
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.94.150:3306/webservice","root","xuhaixing");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://192.168.94.151:3306/webservice","root","xuhaixing");
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,parentid);
             preparedStatement.setInt(2,start);
