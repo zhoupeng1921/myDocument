@@ -53,11 +53,13 @@
         </javaClientGenerator>
 
         <!-- 配置表信息 schema="CASE_RECORD"-->
-        <table tableName="DJ_MEMBER" schema="SIT_BASIC_INFO"
-                domainObjectName="Member" enableCountByExample="false"
+        <table tableName="DJ_MEMBERSHIP" schema="SIT_BASIC_INFO"
+                domainObjectName="MemberShip" enableCountByExample="false"
                 enableDeleteByExample="false" enableSelectByExample="false"
                 enableUpdateByExample="false">
             <property name="constructorBased" value="false"/>
+            <ignoreColumn column="org_id" delimitedColumnName="false"/>
+            <ignoreColumn column="org_name" delimitedColumnName="false"/>
         </table>
 
     </context>

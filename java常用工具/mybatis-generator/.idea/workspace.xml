@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d476f29c-6560-438e-91ee-6fbafac5b46b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/ConnectionTransferMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/ConnectionTransferMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrUser.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/HrUserMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/oracle.properties" afterPath="$PROJECT_DIR$/src/main/resources/oracle.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +27,8 @@
       <file leaf-file-name="oracle.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="319">
+              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -32,72 +37,36 @@
       <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="56" column="40" lean-forward="false" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+            <state relative-caret-position="290">
+              <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10830">
-              <caret line="47" column="8" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="459" selection-end-column="9" />
-              <folding>
-                <marker date="1517902523960" expanded="true" signature="3581:3686" ph="select from DJ_MEMBER" />
-                <marker date="1517902523960" expanded="true" signature="3775:3834" ph="delete from DJ_MEMBER... " />
-                <marker date="1517902523960" expanded="true" signature="3922:5669" ph="insert into DJ_MEMBER... " />
-                <marker date="1517902523960" expanded="true" signature="11606:15198" ph="update DJ_MEMBER... " />
-                <marker date="1517902523960" expanded="true" signature="15298:17115" ph="update DJ_MEMBER... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberEdu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java">
+      <file leaf-file-name="MemberShipMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Member.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HrUserMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-319">
-              <caret line="34" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="364" selection-end-column="9" />
+              <caret line="45" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="554" selection-end-column="9" />
               <folding>
-                <marker date="1517898980015" expanded="true" signature="2952:3058" ph="select from DJ_HR_USER" />
-                <marker date="1517898980015" expanded="true" signature="3147:3207" ph="delete from DJ_HR_USER... " />
-                <marker date="1517898980015" expanded="true" signature="3295:4704" ph="insert into DJ_HR_USER... " />
-                <marker date="1517898980015" expanded="true" signature="9493:12355" ph="update DJ_HR_USER... " />
-                <marker date="1517898980015" expanded="true" signature="12455:13920" ph="update DJ_HR_USER... " />
-                <marker date="1517898980015" expanded="true" signature="12462:13920" ph="update SIT_BASIC_INFO.DJ_HR_USER... " />
+                <marker date="1522376171381" expanded="true" signature="4636:4745" ph="select from DJ_MEMBERSHIP" />
+                <marker date="1522376171381" expanded="true" signature="4834:4897" ph="delete from DJ_MEMBERSHIP... " />
+                <marker date="1522376171381" expanded="true" signature="4989:7330" ph="insert into DJ_MEMBERSHIP... " />
+                <marker date="1522376171381" expanded="true" signature="14941:19657" ph="update DJ_MEMBERSHIP... " />
+                <marker date="1522376171381" expanded="true" signature="19761:22200" ph="update DJ_MEMBERSHIP... " />
+                <marker date="1522376171381" expanded="true" signature="19768:22200" ph="update SIT_BASIC_INFO.DJ_MEMBERSHIP... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberShip.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberShip.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,8 +98,10 @@
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml" />
       </list>
     </option>
   </component>
@@ -224,8 +195,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,15 +244,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="party" type="462c0819:PsiDirectoryNode" />
-              <item name="sit_basic_info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sit_basic_info" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,7 +257,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,29 +394,30 @@
       <workItem from="1517202340441" duration="1390000" />
       <workItem from="1517724773588" duration="827000" />
       <workItem from="1517898873630" duration="1453000" />
+      <workItem from="1522374536259" duration="2774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22123000" />
+    <option name="totallyTimeSpent" value="24897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1045" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20332618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257143" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31085715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28916308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29345495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -481,14 +444,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -505,14 +460,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="211" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="957">
@@ -521,14 +469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5655">
-          <caret line="195" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="211" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -553,14 +494,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6003">
-          <caret line="207" column="53" lean-forward="true" selection-start-line="207" selection-start-column="53" selection-end-line="207" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -696,7 +630,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/ConnectionTransferMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Unit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/UnitMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberShip.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="957">
@@ -705,78 +638,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
+        <state relative-caret-position="986">
           <caret line="34" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="364" selection-end-column="9" />
-          <folding>
-            <marker date="1517898980015" expanded="true" signature="2952:3058" ph="select from DJ_HR_USER" />
-            <marker date="1517898980015" expanded="true" signature="3147:3207" ph="delete from DJ_HR_USER... " />
-            <marker date="1517898980015" expanded="true" signature="3295:4704" ph="insert into DJ_HR_USER... " />
-            <marker date="1517898980015" expanded="true" signature="9493:12355" ph="update DJ_HR_USER... " />
-            <marker date="1517898980015" expanded="true" signature="12455:13920" ph="update DJ_HR_USER... " />
-            <marker date="1517898980015" expanded="true" signature="12462:13920" ph="update SIT_BASIC_INFO.DJ_HR_USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="56" column="40" lean-forward="false" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10830">
-          <caret line="47" column="8" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="459" selection-end-column="9" />
-          <folding>
-            <marker date="1517902523960" expanded="true" signature="3581:3686" ph="select from DJ_MEMBER" />
-            <marker date="1517902523960" expanded="true" signature="3775:3834" ph="delete from DJ_MEMBER... " />
-            <marker date="1517902523960" expanded="true" signature="3922:5669" ph="insert into DJ_MEMBER... " />
-            <marker date="1517902523960" expanded="true" signature="11606:15198" ph="update DJ_MEMBER... " />
-            <marker date="1517902523960" expanded="true" signature="15298:17115" ph="update DJ_MEMBER... " />
-          </folding>
+        <state relative-caret-position="29">
+          <caret line="47" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="459" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
+        <state relative-caret-position="957">
           <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="29" />
           <folding />
         </state>
@@ -785,7 +675,46 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
-          <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+          <caret line="76" column="29" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="45" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="554" selection-end-column="9" />
+          <folding>
+            <marker date="1522376171381" expanded="true" signature="4636:4745" ph="select from DJ_MEMBERSHIP" />
+            <marker date="1522376171381" expanded="true" signature="4834:4897" ph="delete from DJ_MEMBERSHIP... " />
+            <marker date="1522376171381" expanded="true" signature="4989:7330" ph="insert into DJ_MEMBERSHIP... " />
+            <marker date="1522376171381" expanded="true" signature="14941:19657" ph="update DJ_MEMBERSHIP... " />
+            <marker date="1522376171381" expanded="true" signature="19761:22200" ph="update DJ_MEMBERSHIP... " />
+            <marker date="1522376171381" expanded="true" signature="19768:22200" ph="update SIT_BASIC_INFO.DJ_MEMBERSHIP... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
           <folding />
         </state>
       </provider>

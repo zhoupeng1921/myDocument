@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnpc.dj.party.repository.MemberShipMapper">
+  <resultMap id="BaseResultMap" type="com.cnpc.dj.party.entity.MemberShip">
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="MEMBER_ID" jdbcType="DECIMAL" property="memberId" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="APPLY_PARTY_DATE" jdbcType="VARCHAR" property="applyPartyDate" />
+    <result column="ACTIVIST_BEGIN_DATE" jdbcType="VARCHAR" property="activistBeginDate" />
+    <result column="DEVELOPER_BEGIN_DATE" jdbcType="VARCHAR" property="developerBeginDate" />
+    <result column="JOIN_PARTY_DATE" jdbcType="VARCHAR" property="joinPartyDate" />
+    <result column="BECOME_DATE" jdbcType="VARCHAR" property="becomeDate" />
+    <result column="INTRODUCE1" jdbcType="VARCHAR" property="introduce1" />
+    <result column="INTRODUCE2" jdbcType="VARCHAR" property="introduce2" />
+    <result column="PARTY_DUTY" jdbcType="VARCHAR" property="partyDuty" />
+    <result column="LAST_PARTY_FEE_DATE" jdbcType="VARCHAR" property="lastPartyFeeDate" />
+    <result column="BECOME_STATUS" jdbcType="VARCHAR" property="becomeStatus" />
+    <result column="IS_FLOW" jdbcType="VARCHAR" property="isFlow" />
+    <result column="INFLUX_ADDRESS" jdbcType="VARCHAR" property="influxAddress" />
+    <result column="STOP_REASON" jdbcType="VARCHAR" property="stopReason" />
+    <result column="IS_LOST" jdbcType="VARCHAR" property="isLost" />
+    <result column="LOST_DATE" jdbcType="VARCHAR" property="lostDate" />
+    <result column="MEMBER_TYPE" jdbcType="DECIMAL" property="memberType" />
+    <result column="REMOVE_TYPE" jdbcType="DECIMAL" property="removeType" />
+    <result column="LOST_REASON" jdbcType="VARCHAR" property="lostReason" />
+    <result column="LOST_ADD_DATE" jdbcType="TIMESTAMP" property="lostAddDate" />
+    <result column="LOST_HANDLE_USERID" jdbcType="DECIMAL" property="lostHandleUserid" />
+    <result column="LOST_HANDLE_USERNAME" jdbcType="VARCHAR" property="lostHandleUsername" />
+    <result column="DUTY_LEVEL" jdbcType="VARCHAR" property="dutyLevel" />
+    <result column="IS_SELF" jdbcType="VARCHAR" property="isSelf" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="PREPARE_START_DATE" jdbcType="VARCHAR" property="prepareStartDate" />
+    <result column="PREPARE_END_DATE" jdbcType="VARCHAR" property="prepareEndDate" />
+    <result column="LEAVE_BRANCH_TIME" jdbcType="VARCHAR" property="leaveBranchTime" />
+    <result column="LEAVE_AGE" jdbcType="DECIMAL" property="leaveAge" />
+    <result column="CONNECT_ADDRESS" jdbcType="VARCHAR" property="connectAddress" />
+    <result column="FLOW_TYPE" jdbcType="VARCHAR" property="flowType" />
+    <result column="FLOW_AREA" jdbcType="VARCHAR" property="flowArea" />
+    <result column="EMPLOYMENT_STATUS" jdbcType="VARCHAR" property="employmentStatus" />
+    <result column="FLOW_REASON" jdbcType="VARCHAR" property="flowReason" />
+    <result column="ACTIVITY_NO" jdbcType="VARCHAR" property="activityNo" />
+    <result column="FLOW_OUT_ADDR" jdbcType="VARCHAR" property="flowOutAddr" />
+    <result column="FLOW_IN_DATE" jdbcType="VARCHAR" property="flowInDate" />
+    <result column="FLOW_OUT_DATE" jdbcType="VARCHAR" property="flowOutDate" />
+    <result column="ORG_CONTACTOR" jdbcType="VARCHAR" property="orgContactor" />
+    <result column="ORG_CONTACTOR_PHONE" jdbcType="VARCHAR" property="orgContactorPhone" />
+    <result column="CONTACT_WITH_ORG_STATUS" jdbcType="VARCHAR" property="contactWithOrgStatus" />
+    <result column="FLOW_CATEGORY" jdbcType="VARCHAR" property="flowCategory" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, MEMBER_ID, STATUS, APPLY_PARTY_DATE, ACTIVIST_BEGIN_DATE, DEVELOPER_BEGIN_DATE, 
+    JOIN_PARTY_DATE, BECOME_DATE, INTRODUCE1, INTRODUCE2, PARTY_DUTY, LAST_PARTY_FEE_DATE, 
+    BECOME_STATUS, IS_FLOW, INFLUX_ADDRESS, STOP_REASON, IS_LOST, LOST_DATE, MEMBER_TYPE, 
+    REMOVE_TYPE, LOST_REASON, LOST_ADD_DATE, LOST_HANDLE_USERID, LOST_HANDLE_USERNAME, 
+    DUTY_LEVEL, IS_SELF, REMARK, PREPARE_START_DATE, PREPARE_END_DATE, LEAVE_BRANCH_TIME, 
+    LEAVE_AGE, CONNECT_ADDRESS, FLOW_TYPE, FLOW_AREA, EMPLOYMENT_STATUS, FLOW_REASON, 
+    ACTIVITY_NO, FLOW_OUT_ADDR, FLOW_IN_DATE, FLOW_OUT_DATE, ORG_CONTACTOR, ORG_CONTACTOR_PHONE, 
+    CONTACT_WITH_ORG_STATUS, FLOW_CATEGORY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from DJ_MEMBERSHIP
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+    delete from DJ_MEMBERSHIP
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.cnpc.dj.party.entity.MemberShip">
+    insert into DJ_MEMBERSHIP (ID, MEMBER_ID, STATUS, 
+      APPLY_PARTY_DATE, ACTIVIST_BEGIN_DATE, DEVELOPER_BEGIN_DATE, 
+      JOIN_PARTY_DATE, BECOME_DATE, INTRODUCE1, 
+      INTRODUCE2, PARTY_DUTY, LAST_PARTY_FEE_DATE, 
+      BECOME_STATUS, IS_FLOW, INFLUX_ADDRESS, 
+      STOP_REASON, IS_LOST, LOST_DATE, 
+      MEMBER_TYPE, REMOVE_TYPE, LOST_REASON, 
+      LOST_ADD_DATE, LOST_HANDLE_USERID, LOST_HANDLE_USERNAME, 
+      DUTY_LEVEL, IS_SELF, REMARK, 
+      PREPARE_START_DATE, PREPARE_END_DATE, LEAVE_BRANCH_TIME, 
+      LEAVE_AGE, CONNECT_ADDRESS, FLOW_TYPE, 
+      FLOW_AREA, EMPLOYMENT_STATUS, FLOW_REASON, 
+      ACTIVITY_NO, FLOW_OUT_ADDR, FLOW_IN_DATE, 
+      FLOW_OUT_DATE, ORG_CONTACTOR, ORG_CONTACTOR_PHONE, 
+      CONTACT_WITH_ORG_STATUS, FLOW_CATEGORY)
+    values (#{id,jdbcType=DECIMAL}, #{memberId,jdbcType=DECIMAL}, #{status,jdbcType=VARCHAR}, 
+      #{applyPartyDate,jdbcType=VARCHAR}, #{activistBeginDate,jdbcType=VARCHAR}, #{developerBeginDate,jdbcType=VARCHAR}, 
+      #{joinPartyDate,jdbcType=VARCHAR}, #{becomeDate,jdbcType=VARCHAR}, #{introduce1,jdbcType=VARCHAR}, 
+      #{introduce2,jdbcType=VARCHAR}, #{partyDuty,jdbcType=VARCHAR}, #{lastPartyFeeDate,jdbcType=VARCHAR}, 
+      #{becomeStatus,jdbcType=VARCHAR}, #{isFlow,jdbcType=VARCHAR}, #{influxAddress,jdbcType=VARCHAR}, 
+      #{stopReason,jdbcType=VARCHAR}, #{isLost,jdbcType=VARCHAR}, #{lostDate,jdbcType=VARCHAR}, 
+      #{memberType,jdbcType=DECIMAL}, #{removeType,jdbcType=DECIMAL}, #{lostReason,jdbcType=VARCHAR}, 
+      #{lostAddDate,jdbcType=TIMESTAMP}, #{lostHandleUserid,jdbcType=DECIMAL}, #{lostHandleUsername,jdbcType=VARCHAR}, 
+      #{dutyLevel,jdbcType=VARCHAR}, #{isSelf,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{prepareStartDate,jdbcType=VARCHAR}, #{prepareEndDate,jdbcType=VARCHAR}, #{leaveBranchTime,jdbcType=VARCHAR}, 
+      #{leaveAge,jdbcType=DECIMAL}, #{connectAddress,jdbcType=VARCHAR}, #{flowType,jdbcType=VARCHAR}, 
+      #{flowArea,jdbcType=VARCHAR}, #{employmentStatus,jdbcType=VARCHAR}, #{flowReason,jdbcType=VARCHAR}, 
+      #{activityNo,jdbcType=VARCHAR}, #{flowOutAddr,jdbcType=VARCHAR}, #{flowInDate,jdbcType=VARCHAR}, 
+      #{flowOutDate,jdbcType=VARCHAR}, #{orgContactor,jdbcType=VARCHAR}, #{orgContactorPhone,jdbcType=VARCHAR}, 
+      #{contactWithOrgStatus,jdbcType=VARCHAR}, #{flowCategory,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cnpc.dj.party.entity.MemberShip">
+    insert into DJ_MEMBERSHIP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="memberId != null">
+        MEMBER_ID,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="applyPartyDate != null">
+        APPLY_PARTY_DATE,
+      </if>
+      <if test="activistBeginDate != null">
+        ACTIVIST_BEGIN_DATE,
+      </if>
+      <if test="developerBeginDate != null">
+        DEVELOPER_BEGIN_DATE,
+      </if>
+      <if test="joinPartyDate != null">
+        JOIN_PARTY_DATE,
+      </if>
+      <if test="becomeDate != null">
+        BECOME_DATE,
+      </if>
+      <if test="introduce1 != null">
+        INTRODUCE1,
+      </if>
+      <if test="introduce2 != null">
+        INTRODUCE2,
+      </if>
+      <if test="partyDuty != null">
+        PARTY_DUTY,
+      </if>
+      <if test="lastPartyFeeDate != null">
+        LAST_PARTY_FEE_DATE,
+      </if>
+      <if test="becomeStatus != null">
+        BECOME_STATUS,
+      </if>
+      <if test="isFlow != null">
+        IS_FLOW,
+      </if>
+      <if test="influxAddress != null">
+        INFLUX_ADDRESS,
+      </if>
+      <if test="stopReason != null">
+        STOP_REASON,
+      </if>
+      <if test="isLost != null">
+        IS_LOST,
+      </if>
+      <if test="lostDate != null">
+        LOST_DATE,
+      </if>
+      <if test="memberType != null">
+        MEMBER_TYPE,
+      </if>
+      <if test="removeType != null">
+        REMOVE_TYPE,
+      </if>
+      <if test="lostReason != null">
+        LOST_REASON,
+      </if>
+      <if test="lostAddDate != null">
+        LOST_ADD_DATE,
+      </if>
+      <if test="lostHandleUserid != null">
+        LOST_HANDLE_USERID,
+      </if>
+      <if test="lostHandleUsername != null">
+        LOST_HANDLE_USERNAME,
+      </if>
+      <if test="dutyLevel != null">
+        DUTY_LEVEL,
+      </if>
+      <if test="isSelf != null">
+        IS_SELF,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="prepareStartDate != null">
+        PREPARE_START_DATE,
+      </if>
+      <if test="prepareEndDate != null">
+        PREPARE_END_DATE,
+      </if>
+      <if test="leaveBranchTime != null">
+        LEAVE_BRANCH_TIME,
+      </if>
+      <if test="leaveAge != null">
+        LEAVE_AGE,
+      </if>
+      <if test="connectAddress != null">
+        CONNECT_ADDRESS,
+      </if>
+      <if test="flowType != null">
+        FLOW_TYPE,
+      </if>
+      <if test="flowArea != null">
+        FLOW_AREA,
+      </if>
+      <if test="employmentStatus != null">
+        EMPLOYMENT_STATUS,
+      </if>
+      <if test="flowReason != null">
+        FLOW_REASON,
+      </if>
+      <if test="activityNo != null">
+        ACTIVITY_NO,
+      </if>
+      <if test="flowOutAddr != null">
+        FLOW_OUT_ADDR,
+      </if>
+      <if test="flowInDate != null">
+        FLOW_IN_DATE,
+      </if>
+      <if test="flowOutDate != null">
+        FLOW_OUT_DATE,
+      </if>
+      <if test="orgContactor != null">
+        ORG_CONTACTOR,
+      </if>
+      <if test="orgContactorPhone != null">
+        ORG_CONTACTOR_PHONE,
+      </if>
+      <if test="contactWithOrgStatus != null">
+        CONTACT_WITH_ORG_STATUS,
+      </if>
+      <if test="flowCategory != null">
+        FLOW_CATEGORY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="applyPartyDate != null">
+        #{applyPartyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="activistBeginDate != null">
+        #{activistBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="developerBeginDate != null">
+        #{developerBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinPartyDate != null">
+        #{joinPartyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="becomeDate != null">
+        #{becomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce1 != null">
+        #{introduce1,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce2 != null">
+        #{introduce2,jdbcType=VARCHAR},
+      </if>
+      <if test="partyDuty != null">
+        #{partyDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="lastPartyFeeDate != null">
+        #{lastPartyFeeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="becomeStatus != null">
+        #{becomeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlow != null">
+        #{isFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="influxAddress != null">
+        #{influxAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null">
+        #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="isLost != null">
+        #{isLost,jdbcType=VARCHAR},
+      </if>
+      <if test="lostDate != null">
+        #{lostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="memberType != null">
+        #{memberType,jdbcType=DECIMAL},
+      </if>
+      <if test="removeType != null">
+        #{removeType,jdbcType=DECIMAL},
+      </if>
+      <if test="lostReason != null">
+        #{lostReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lostAddDate != null">
+        #{lostAddDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lostHandleUserid != null">
+        #{lostHandleUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="lostHandleUsername != null">
+        #{lostHandleUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyLevel != null">
+        #{dutyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="isSelf != null">
+        #{isSelf,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareStartDate != null">
+        #{prepareStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareEndDate != null">
+        #{prepareEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveBranchTime != null">
+        #{leaveBranchTime,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveAge != null">
+        #{leaveAge,jdbcType=DECIMAL},
+      </if>
+      <if test="connectAddress != null">
+        #{connectAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null">
+        #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="flowArea != null">
+        #{flowArea,jdbcType=VARCHAR},
+      </if>
+      <if test="employmentStatus != null">
+        #{employmentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="flowReason != null">
+        #{flowReason,jdbcType=VARCHAR},
+      </if>
+      <if test="activityNo != null">
+        #{activityNo,jdbcType=VARCHAR},
+      </if>
+      <if test="flowOutAddr != null">
+        #{flowOutAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="flowInDate != null">
+        #{flowInDate,jdbcType=VARCHAR},
+      </if>
+      <if test="flowOutDate != null">
+        #{flowOutDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContactor != null">
+        #{orgContactor,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContactorPhone != null">
+        #{orgContactorPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWithOrgStatus != null">
+        #{contactWithOrgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="flowCategory != null">
+        #{flowCategory,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cnpc.dj.party.entity.MemberShip">
+    update DJ_MEMBERSHIP
+    <set>
+      <if test="memberId != null">
+        MEMBER_ID = #{memberId,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="applyPartyDate != null">
+        APPLY_PARTY_DATE = #{applyPartyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="activistBeginDate != null">
+        ACTIVIST_BEGIN_DATE = #{activistBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="developerBeginDate != null">
+        DEVELOPER_BEGIN_DATE = #{developerBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinPartyDate != null">
+        JOIN_PARTY_DATE = #{joinPartyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="becomeDate != null">
+        BECOME_DATE = #{becomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce1 != null">
+        INTRODUCE1 = #{introduce1,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce2 != null">
+        INTRODUCE2 = #{introduce2,jdbcType=VARCHAR},
+      </if>
+      <if test="partyDuty != null">
+        PARTY_DUTY = #{partyDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="lastPartyFeeDate != null">
+        LAST_PARTY_FEE_DATE = #{lastPartyFeeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="becomeStatus != null">
+        BECOME_STATUS = #{becomeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlow != null">
+        IS_FLOW = #{isFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="influxAddress != null">
+        INFLUX_ADDRESS = #{influxAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null">
+        STOP_REASON = #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="isLost != null">
+        IS_LOST = #{isLost,jdbcType=VARCHAR},
+      </if>
+      <if test="lostDate != null">
+        LOST_DATE = #{lostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="memberType != null">
+        MEMBER_TYPE = #{memberType,jdbcType=DECIMAL},
+      </if>
+      <if test="removeType != null">
+        REMOVE_TYPE = #{removeType,jdbcType=DECIMAL},
+      </if>
+      <if test="lostReason != null">
+        LOST_REASON = #{lostReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lostAddDate != null">
+        LOST_ADD_DATE = #{lostAddDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lostHandleUserid != null">
+        LOST_HANDLE_USERID = #{lostHandleUserid,jdbcType=DECIMAL},
+      </if>
+      <if test="lostHandleUsername != null">
+        LOST_HANDLE_USERNAME = #{lostHandleUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyLevel != null">
+        DUTY_LEVEL = #{dutyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="isSelf != null">
+        IS_SELF = #{isSelf,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareStartDate != null">
+        PREPARE_START_DATE = #{prepareStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareEndDate != null">
+        PREPARE_END_DATE = #{prepareEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveBranchTime != null">
+        LEAVE_BRANCH_TIME = #{leaveBranchTime,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveAge != null">
+        LEAVE_AGE = #{leaveAge,jdbcType=DECIMAL},
+      </if>
+      <if test="connectAddress != null">
+        CONNECT_ADDRESS = #{connectAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null">
+        FLOW_TYPE = #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="flowArea != null">
+        FLOW_AREA = #{flowArea,jdbcType=VARCHAR},
+      </if>
+      <if test="employmentStatus != null">
+        EMPLOYMENT_STATUS = #{employmentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="flowReason != null">
+        FLOW_REASON = #{flowReason,jdbcType=VARCHAR},
+      </if>
+      <if test="activityNo != null">
+        ACTIVITY_NO = #{activityNo,jdbcType=VARCHAR},
+      </if>
+      <if test="flowOutAddr != null">
+        FLOW_OUT_ADDR = #{flowOutAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="flowInDate != null">
+        FLOW_IN_DATE = #{flowInDate,jdbcType=VARCHAR},
+      </if>
+      <if test="flowOutDate != null">
+        FLOW_OUT_DATE = #{flowOutDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContactor != null">
+        ORG_CONTACTOR = #{orgContactor,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContactorPhone != null">
+        ORG_CONTACTOR_PHONE = #{orgContactorPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWithOrgStatus != null">
+        CONTACT_WITH_ORG_STATUS = #{contactWithOrgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="flowCategory != null">
+        FLOW_CATEGORY = #{flowCategory,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cnpc.dj.party.entity.MemberShip">
+    update DJ_MEMBERSHIP
+    set MEMBER_ID = #{memberId,jdbcType=DECIMAL},
+      STATUS = #{status,jdbcType=VARCHAR},
+      APPLY_PARTY_DATE = #{applyPartyDate,jdbcType=VARCHAR},
+      ACTIVIST_BEGIN_DATE = #{activistBeginDate,jdbcType=VARCHAR},
+      DEVELOPER_BEGIN_DATE = #{developerBeginDate,jdbcType=VARCHAR},
+      JOIN_PARTY_DATE = #{joinPartyDate,jdbcType=VARCHAR},
+      BECOME_DATE = #{becomeDate,jdbcType=VARCHAR},
+      INTRODUCE1 = #{introduce1,jdbcType=VARCHAR},
+      INTRODUCE2 = #{introduce2,jdbcType=VARCHAR},
+      PARTY_DUTY = #{partyDuty,jdbcType=VARCHAR},
+      LAST_PARTY_FEE_DATE = #{lastPartyFeeDate,jdbcType=VARCHAR},
+      BECOME_STATUS = #{becomeStatus,jdbcType=VARCHAR},
+      IS_FLOW = #{isFlow,jdbcType=VARCHAR},
+      INFLUX_ADDRESS = #{influxAddress,jdbcType=VARCHAR},
+      STOP_REASON = #{stopReason,jdbcType=VARCHAR},
+      IS_LOST = #{isLost,jdbcType=VARCHAR},
+      LOST_DATE = #{lostDate,jdbcType=VARCHAR},
+      MEMBER_TYPE = #{memberType,jdbcType=DECIMAL},
+      REMOVE_TYPE = #{removeType,jdbcType=DECIMAL},
+      LOST_REASON = #{lostReason,jdbcType=VARCHAR},
+      LOST_ADD_DATE = #{lostAddDate,jdbcType=TIMESTAMP},
+      LOST_HANDLE_USERID = #{lostHandleUserid,jdbcType=DECIMAL},
+      LOST_HANDLE_USERNAME = #{lostHandleUsername,jdbcType=VARCHAR},
+      DUTY_LEVEL = #{dutyLevel,jdbcType=VARCHAR},
+      IS_SELF = #{isSelf,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      PREPARE_START_DATE = #{prepareStartDate,jdbcType=VARCHAR},
+      PREPARE_END_DATE = #{prepareEndDate,jdbcType=VARCHAR},
+      LEAVE_BRANCH_TIME = #{leaveBranchTime,jdbcType=VARCHAR},
+      LEAVE_AGE = #{leaveAge,jdbcType=DECIMAL},
+      CONNECT_ADDRESS = #{connectAddress,jdbcType=VARCHAR},
+      FLOW_TYPE = #{flowType,jdbcType=VARCHAR},
+      FLOW_AREA = #{flowArea,jdbcType=VARCHAR},
+      EMPLOYMENT_STATUS = #{employmentStatus,jdbcType=VARCHAR},
+      FLOW_REASON = #{flowReason,jdbcType=VARCHAR},
+      ACTIVITY_NO = #{activityNo,jdbcType=VARCHAR},
+      FLOW_OUT_ADDR = #{flowOutAddr,jdbcType=VARCHAR},
+      FLOW_IN_DATE = #{flowInDate,jdbcType=VARCHAR},
+      FLOW_OUT_DATE = #{flowOutDate,jdbcType=VARCHAR},
+      ORG_CONTACTOR = #{orgContactor,jdbcType=VARCHAR},
+      ORG_CONTACTOR_PHONE = #{orgContactorPhone,jdbcType=VARCHAR},
+      CONTACT_WITH_ORG_STATUS = #{contactWithOrgStatus,jdbcType=VARCHAR},
+      FLOW_CATEGORY = #{flowCategory,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
