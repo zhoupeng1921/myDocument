@@ -19,7 +19,9 @@
         <module>http-client</module>
         <module>area-server</module>
 		<module>area-client</module>
-	</modules>
+        <module>weather-server</module>
+        <module>weather-client</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
