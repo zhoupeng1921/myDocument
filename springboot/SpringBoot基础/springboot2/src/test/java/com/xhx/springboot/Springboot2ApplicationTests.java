@@ -14,7 +14,7 @@ public class Springboot2ApplicationTests {
 
 
 	@Autowired
-	private TestRestTemplate restTemplate;
+	private TestRestTemplate restTemplate;//必须加webEnvironment才能注入
 
 	@Test
 	public void testGetUser(){
