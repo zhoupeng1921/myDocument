@@ -1,0 +1,5 @@
+spring:
+  profiles:
+#  可以写多个
+ #   active: dev,prod
+    include: prod,dev
