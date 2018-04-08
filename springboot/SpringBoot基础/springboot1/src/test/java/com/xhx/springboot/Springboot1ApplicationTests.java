@@ -29,13 +29,20 @@ public class Springboot1ApplicationTests {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/hello");
+        this.base = new URL("http://localhost:" + port);
     }
 
     @Test
     public void getHello() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(),
+        ResponseEntity<String> response = template.getForEntity(base.toString() + "/hello",
                 String.class);
         Assert.assertThat(response.getBody(), equalTo("spring boot my first SpringBoot"));
+    }
+
+    @Test
+    public void getMyInfo() throws Exception{
+        ResponseEntity<String> response = template.getForEntity(base.toString() + "/getMyInfo", String.class);
+        System.out.println(response.getBody());
+
     }
 }
