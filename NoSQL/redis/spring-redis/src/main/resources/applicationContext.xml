@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 						http://www.springframework.org/schema/context
@@ -40,10 +40,29 @@
         <property name="blockWhenExhausted" value="false"/>
     </bean>
 
+    <!--spring-data-redis 2.0中已经过时，不能使用此方法-->
+    <bean id="jedisConnectionFactory"  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="192.168.94.151" p:password="xuhaixing" p:poolConfig-ref="jedisPoolConfig" p:port="6379"/>
+
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <property name="keySerializer" >
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+        <property name="enableTransactionSupport" value="true"/>
+    </bean>
+
+
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="close">
         <constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
-        <constructor-arg name="host" value="192.168.94.150"/>
+        <constructor-arg name="host" value="192.168.94.151"/>
         <constructor-arg name="port" value="6379"/>
+        <constructor-arg name="timeout" value="10000"/>
+        <constructor-arg name="password" value="xuhaixing"/>
     </bean>
 
 </beans>
