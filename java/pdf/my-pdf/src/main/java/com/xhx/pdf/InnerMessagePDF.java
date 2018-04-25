@@ -1,12 +1,12 @@
 package com.xhx.pdf;
 
-import com.itextpdf.awt.PdfGraphics2D;
 import com.itextpdf.text.*;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.junit.Test;
 
-import java.awt.*;
 import java.io.FileOutputStream;
 
 public class InnerMessagePDF {
@@ -59,7 +59,7 @@ public class InnerMessagePDF {
         String originOrg = "中共中油国投\n（澳大利亚）公司\n第一支部委员会";
 
 
-        Chunk chunk2 = new Chunk(,f10);
+        Chunk chunk2 = new Chunk(originOrg,f10);
 
         chunk2.setUnderline(0.5f,-3f);
         pa.add(chunk2);
