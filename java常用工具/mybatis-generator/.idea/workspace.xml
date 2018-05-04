@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d476f29c-6560-438e-91ee-6fbafac5b46b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../java/pdf/my-jasper/pom.xml" afterPath="$PROJECT_DIR$/../../java/pdf/my-jasper/pom.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrUser.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/HrUserMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberShip.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberShipMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/SpringBoot基础/readme.txt" afterPath="$PROJECT_DIR$/../../springboot/SpringBoot基础/readme.txt" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/SpringBoot基础/springboot5/src/main/java/com/xhx/springboot/entity/Account.java" afterPath="$PROJECT_DIR$/../../springboot/SpringBoot基础/springboot5/src/main/java/com/xhx/springboot/entity/Account.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="oracle.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="241">
+              <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -37,35 +35,38 @@
       <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+            <state relative-caret-position="174">
+              <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberShipMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml">
+      <file leaf-file-name="AccountMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/xhx/springboot/dao/AccountMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="45" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="554" selection-end-column="9" />
-              <folding>
-                <marker date="1522376171381" expanded="true" signature="4636:4745" ph="select from DJ_MEMBERSHIP" />
-                <marker date="1522376171381" expanded="true" signature="4834:4897" ph="delete from DJ_MEMBERSHIP... " />
-                <marker date="1522376171381" expanded="true" signature="4989:7330" ph="insert into DJ_MEMBERSHIP... " />
-                <marker date="1522376171381" expanded="true" signature="14941:19657" ph="update DJ_MEMBERSHIP... " />
-                <marker date="1522376171381" expanded="true" signature="19761:22200" ph="update DJ_MEMBERSHIP... " />
-                <marker date="1522376171381" expanded="true" signature="19768:22200" ph="update SIT_BASIC_INFO.DJ_MEMBERSHIP... " />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberShip.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberShip.java">
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/xhx/springboot/entity/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+            <state relative-caret-position="-116">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysql.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mysql.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,8 +101,9 @@
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mysql.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
       </list>
     </option>
   </component>
@@ -157,10 +159,10 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="555" />
-    <option name="y" value="91" />
+    <option name="x" value="360" />
+    <option name="y" value="127" />
     <option name="width" value="1368" />
-    <option name="height" value="780" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -178,7 +180,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -194,8 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,7 +229,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="party" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mybatis-generator" type="b2602c69:ProjectViewProjectNode" />
@@ -235,7 +237,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="party" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -244,7 +255,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sit_basic_info" type="462c0819:PsiDirectoryNode" />
+              <item name="mapping" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mybatis-generator" type="b2602c69:ProjectViewProjectNode" />
@@ -258,13 +269,15 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -272,6 +285,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myDocuments\java常用工具\mybatis-generator\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
@@ -328,6 +342,30 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration name="generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -395,11 +433,12 @@
       <workItem from="1517724773588" duration="827000" />
       <workItem from="1517898873630" duration="1453000" />
       <workItem from="1522374536259" duration="2774000" />
+      <workItem from="1525342604981" duration="5667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24897000" />
+    <option name="totallyTimeSpent" value="30564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1045" extended-state="6" />
@@ -409,15 +448,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20332618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1416309" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31085715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24571429" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29345495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29774678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -444,31 +483,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1624">
-          <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -486,14 +501,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -610,14 +618,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/LogRecord.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/unitMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/basic_info/unitMapper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/unitMapper.java" />
@@ -630,84 +630,19 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/ConnectionTransferMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Unit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/UnitMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/HrMemberEdu.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrMemberEduMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberEduMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="34" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="364" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="47" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="459" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="76" column="29" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/HrUserMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/repository/sit_basic_info/MemberMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/MemberEdu.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cnpc/dj/party/entity/Member.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mybatis/mapper/sit_basic_info/MemberShipMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="45" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="554" selection-end-column="9" />
-          <folding>
-            <marker date="1522376171381" expanded="true" signature="4636:4745" ph="select from DJ_MEMBERSHIP" />
-            <marker date="1522376171381" expanded="true" signature="4834:4897" ph="delete from DJ_MEMBERSHIP... " />
-            <marker date="1522376171381" expanded="true" signature="4989:7330" ph="insert into DJ_MEMBERSHIP... " />
-            <marker date="1522376171381" expanded="true" signature="14941:19657" ph="update DJ_MEMBERSHIP... " />
-            <marker date="1522376171381" expanded="true" signature="19761:22200" ph="update DJ_MEMBERSHIP... " />
-            <marker date="1522376171381" expanded="true" signature="19768:22200" ph="update SIT_BASIC_INFO.DJ_MEMBERSHIP... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -715,6 +650,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/oracle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xhx/springboot/dao/AccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xhx/springboot/entity/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mysql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -733,8 +716,32 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="Copyright.UI">
         <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -762,6 +769,19 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>mybatis-generator</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

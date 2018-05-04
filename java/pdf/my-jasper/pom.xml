@@ -26,12 +26,12 @@
 
 	<dependencies>
 
-		<!-- jasperreports-->
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>6.5.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports-fonts</artifactId>
@@ -47,36 +47,30 @@
 			<artifactId>itext-pdfa</artifactId>
 			<version>5.5.0</version>
 		</dependency>
+
 		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itext-asian</artifactId>
-			<version>5.2.0</version>
+			<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+			<artifactId>com.lowagie.text</artifactId>
+			<version>2.1.7</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>2.4.15</version>
 		</dependency>
+
+
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.1</version>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.28</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.itextpdf</groupId>
-			<artifactId>itext-asian</artifactId>
-			<version>5.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itextpdf</artifactId>
-			<version>5.5.13</version>
-		</dependency>
-		<dependency>
-			<groupId>com.lowagie</groupId>
-			<artifactId>itext</artifactId>
-			<version>4.2.2</version>
+			<artifactId>font-asian</artifactId>
+			<version>7.1.1</version>
 		</dependency>
 
 		<dependency>
@@ -84,7 +78,6 @@
 			<artifactId>jasper-fonts</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
 
 
 		<dependency>
