@@ -6,10 +6,14 @@
     <groupId>com.xhx.springboot</groupId>
     <artifactId>springboot10</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>publisher-springboot</module>
+        <module>subscriber1-springboot</module>
+        <module>subscriber2-springboot</module>
+    </modules>
 
-    <name>springboot10</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,9 +31,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.springframework.restdocs</groupId>
-            <artifactId>spring-restdocs-mockmvc</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
         <dependency>

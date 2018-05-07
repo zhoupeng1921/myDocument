@@ -7,4 +7,4 @@ springboot6: mybatis
 springboot7: mongodb
 springboot8: redis
 springboot9: swagger2
-springboot10:restdoc生成api
+springboot10:redis消息队列
