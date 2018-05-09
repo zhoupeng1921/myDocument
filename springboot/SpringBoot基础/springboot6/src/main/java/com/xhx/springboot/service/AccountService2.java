@@ -16,27 +16,27 @@ public class AccountService2 {
     private AccountMapper2 accountMapper;
 
 
-    public int deleteByPrimaryKey(Integer id){
+    public int deleteByPrimaryKey(Integer id) {
         return accountMapper.deleteByPrimaryKey(id);
     }
 
-    public int insert(Account record){
+    public int insert(Account record) {
         return accountMapper.insert(record);
     }
 
-    public int insertSelective(Account record){
-        return  accountMapper.insertSelective(record);
+    public int insertSelective(Account record) {
+        return accountMapper.insertSelective(record);
     }
 
-    public Account selectByPrimaryKey(Integer id){
+    public Account selectByPrimaryKey(Integer id) {
         return accountMapper.selectByPrimaryKey(id);
     }
 
-    public int updateByPrimaryKeySelective(Account record){
+    public int updateByPrimaryKeySelective(Account record) {
         return accountMapper.updateByPrimaryKeySelective(record);
     }
 
-    public int updateByPrimaryKey(Account record){
+    public int updateByPrimaryKey(Account record) {
         return accountMapper.updateByPrimaryKey(record);
     }
 }

@@ -13,7 +13,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 public class PublisherConfig {
 
     @Bean
-    public StringRedisTemplate getRedisTemplate(RedisConnectionFactory redisConnectionFactory){
-       return new StringRedisTemplate(redisConnectionFactory);
+    public StringRedisTemplate getRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        return new StringRedisTemplate(redisConnectionFactory);
     }
 }

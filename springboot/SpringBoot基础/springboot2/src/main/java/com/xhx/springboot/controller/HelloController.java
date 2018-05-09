@@ -16,7 +16,7 @@ public class HelloController {
     private User user;
 
     @RequestMapping(value = "/getUser")
-    public String getUser(){
-        return  user.getName()+" "+user.getSex()+" "+user.getAge();
+    public String getUser() {
+        return user.getName() + " " + user.getSex() + " " + user.getAge();
     }
 }

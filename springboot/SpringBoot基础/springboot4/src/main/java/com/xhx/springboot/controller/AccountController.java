@@ -25,18 +25,22 @@ public class AccountController {
     public int add(@RequestBody Account account) {
         return accountService.add(account);
     }
+
     @RequestMapping(value = "update", method = RequestMethod.POST)
     public int update0(@RequestBody Account account) {
         return accountService.update(account);
     }
+
     @RequestMapping(value = "delete", method = RequestMethod.POST)
     public int delete(@RequestBody int id) {
-        return  accountService.delete(id);
+        return accountService.delete(id);
     }
+
     @RequestMapping(value = "findById", method = RequestMethod.POST)
     public Account findById(@RequestBody int id) {
-        return  accountService.findById(id);
+        return accountService.findById(id);
     }
+
     @RequestMapping(value = "findList", method = RequestMethod.POST)
     public List<Account> findList() {
         return accountService.findList();

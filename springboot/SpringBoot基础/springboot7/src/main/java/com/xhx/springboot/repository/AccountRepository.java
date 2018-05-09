@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends MongoRepository<Account, String> {
 
-        List<Account> findByName(String name);
+    List<Account> findByName(String name);
 
 }

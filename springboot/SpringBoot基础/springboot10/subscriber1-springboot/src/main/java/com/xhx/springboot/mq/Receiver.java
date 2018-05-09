@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Receiver {
     private static Logger logger = LoggerFactory.getLogger(Receiver.class);
 
-    public void receiveMessage(String message){
-        logger.info("收到的mq消息"+message);
+    public void receiveMessage(String message) {
+        logger.info("收到的mq消息" + message);
     }
 }

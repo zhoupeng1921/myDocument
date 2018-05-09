@@ -13,18 +13,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class Springboot2ApplicationTests {
 
 
-	@Autowired
-	private TestRestTemplate restTemplate;//必须加webEnvironment才能注入
+    @Autowired
+    private TestRestTemplate restTemplate;//必须加webEnvironment才能注入
 
-	@Test
-	public void testGetUser(){
-		ResponseEntity<String> responseStriing = restTemplate.getForEntity("http://localhost:8080" + "/getUser", String.class);
-		System.out.println(responseStriing.getBody());
-	}
+    @Test
+    public void testGetUser() {
+        ResponseEntity<String> responseStriing = restTemplate.getForEntity("http://localhost:8080" + "/getUser", String.class);
+        System.out.println(responseStriing.getBody());
+    }
 
-	@Test
-	public void testGetUserPrefix(){
-		ResponseEntity<String> responseStriing = restTemplate.getForEntity("http://localhost:8080" + "/getUserPrefix", String.class);
-		System.out.println(responseStriing.getBody());
-	}
+    @Test
+    public void testGetUserPrefix() {
+        ResponseEntity<String> responseStriing = restTemplate.getForEntity("http://localhost:8080" + "/getUserPrefix", String.class);
+        System.out.println(responseStriing.getBody());
+    }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @date 2018/5/2 11:19
  */
 @Repository
-public interface AccountDao extends JpaRepository<Account,Integer> {
+public interface AccountDao extends JpaRepository<Account, Integer> {
 
 
 }

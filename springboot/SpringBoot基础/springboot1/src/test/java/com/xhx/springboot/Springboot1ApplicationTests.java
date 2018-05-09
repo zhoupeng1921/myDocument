@@ -40,7 +40,7 @@ public class Springboot1ApplicationTests {
     }
 
     @Test
-    public void getMyInfo() throws Exception{
+    public void getMyInfo() throws Exception {
         ResponseEntity<String> response = template.getForEntity(base.toString() + "/getMyInfo", String.class);
         System.out.println(response.getBody());
 

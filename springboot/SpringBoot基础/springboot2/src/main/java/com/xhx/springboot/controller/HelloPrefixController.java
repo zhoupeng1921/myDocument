@@ -18,8 +18,8 @@ public class HelloPrefixController {
     private UserPrefix userPrefix;
 
     @RequestMapping(value = "/getUserPrefix")
-    public String getUserPrefix(){
-        return  userPrefix.getName()+" "+userPrefix.getSex()+" "+userPrefix.getAge();
+    public String getUserPrefix() {
+        return userPrefix.getName() + " " + userPrefix.getSex() + " " + userPrefix.getAge();
     }
 
 }

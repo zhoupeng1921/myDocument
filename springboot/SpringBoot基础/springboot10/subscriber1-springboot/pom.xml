@@ -10,11 +10,10 @@
 
 
     <parent>
-      <groupId>com.xhx.springboot</groupId>
+        <groupId>com.xhx.springboot</groupId>
         <artifactId>springboot10</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
 
 
 </project>

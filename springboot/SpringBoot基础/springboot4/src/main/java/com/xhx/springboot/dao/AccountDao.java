@@ -10,8 +10,12 @@ import java.util.List;
  */
 public interface AccountDao {
     int add(Account account);
+
     int update(Account account);
+
     int delete(int id);
+
     Account findById(int id);
+
     List<Account> findList();
 }

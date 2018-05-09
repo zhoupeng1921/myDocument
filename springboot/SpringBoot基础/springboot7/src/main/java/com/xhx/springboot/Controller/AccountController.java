@@ -27,27 +27,28 @@ public class AccountController {
 
 
     @RequestMapping(value = "save")
-    public int save(@RequestBody Account account){
+    public int save(@RequestBody Account account) {
         accountRepository.save(account);
         return 1;
     }
 
     @RequestMapping(value = "findAll")
-    public List<Account> findAll(){
+    public List<Account> findAll() {
         return accountRepository.findAll();
     }
 
     @RequestMapping(value = "findById")
-    public Account findById(String id){
+    public Account findById(String id) {
         return accountRepository.findById(id).get();
     }
+
     @RequestMapping(value = "findByName")
-    public List<Account> findByName(String name){
+    public List<Account> findByName(String name) {
         return accountRepository.findByName(name);
     }
 
     @RequestMapping(value = "findAll2")
-    public List<Account> findAll2(){
+    public List<Account> findAll2() {
         return mongoTemplate.findAll(Account.class);
     }
 

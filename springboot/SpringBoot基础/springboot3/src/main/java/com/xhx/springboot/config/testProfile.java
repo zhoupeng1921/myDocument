@@ -19,8 +19,8 @@ public class testProfile {
 
     @Profile("!dev") //可以用取反操作符,也可以用多个参数
     @Bean
-    public CommandLine testPort(){
-        System.out.println("--------------"+port);
+    public CommandLine testPort() {
+        System.out.println("--------------" + port);
         return new CommandLine();
     }
 }

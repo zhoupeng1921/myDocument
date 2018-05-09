@@ -16,12 +16,12 @@ public class PublisherService {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    public String sendMessage(String name){
+    public String sendMessage(String name) {
         try {
-            redisTemplate.convertAndSend("TOPIC_USERNAME",name);
+            redisTemplate.convertAndSend("TOPIC_USERNAME", name);
             return "消息发送成功了";
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return "消息发送失败了";
         }

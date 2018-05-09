@@ -18,7 +18,7 @@ public class PublisherController {
     private PublisherService publisherService;
 
     @RequestMapping("{name}")
-    public String sendMessage(@PathVariable("name") String name){
+    public String sendMessage(@PathVariable("name") String name) {
         return publisherService.sendMessage(name);
     }
 }
