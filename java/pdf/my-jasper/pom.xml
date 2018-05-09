@@ -27,37 +27,47 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>6.5.1</version>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
 		</dependency>
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itext-asian</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-fonts</artifactId>
-			<version>6.0.0</version>
+			<artifactId>jasperreports</artifactId>
+			<version>4.7.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.lowagie</groupId>
+					<artifactId>itext</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itext-pdfa</artifactId>
-			<version>5.5.0</version>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports-fonts</artifactId>
+			<version>4.0.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
-			<artifactId>com.lowagie.text</artifactId>
-			<version>2.1.7</version>
-		</dependency>
+
+
 
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>2.4.15</version>
+			<version>1.7.5</version>
 		</dependency>
 
 
@@ -67,11 +77,6 @@
 			<version>2.3.28</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>font-asian</artifactId>
-			<version>7.1.1</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.cnpc.dj.jasper</groupId>
@@ -90,6 +95,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
