@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Profile;
 @SpringBootApplication
 public class Springboot3Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Springboot3Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Springboot3Application.class, args);
+    }
 
 
 }

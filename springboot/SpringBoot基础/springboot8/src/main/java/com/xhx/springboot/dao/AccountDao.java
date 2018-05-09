@@ -18,12 +18,12 @@ public class AccountDao {
     private StringRedisTemplate redisTemplate;
 
 
-    public  void setKey(String key,String value){
+    public void setKey(String key, String value) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        ops.set(key,value,1, TimeUnit.MINUTES);
+        ops.set(key, value, 1, TimeUnit.MINUTES);
     }
 
-    public String getValue(String key){
+    public String getValue(String key) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         return ops.get(key);
     }

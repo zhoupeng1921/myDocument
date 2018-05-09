@@ -8,7 +8,7 @@ import javax.jms.*;
 public class JMSProducer {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
-    private static final String BROKERURL="tcp://192.168.94.150:61616";
+    private static final String BROKERURL="tcp://192.168.94.151:61616";
    // private static final String BROKERURL=ActiveMQConnection.DEFAULT_BROKER_URL;
     private static final int SENTNUM=10;
 

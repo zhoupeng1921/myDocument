@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Receiver implements MessageListener{
+public class Receiver implements MessageListener {
     private static Logger logger = LoggerFactory.getLogger(Receiver.class);
 
     @Autowired
@@ -26,6 +26,6 @@ public class Receiver implements MessageListener{
     public void onMessage(Message message, byte[] pattern) {
         RedisSerializer<String> valueSerializer = redisTemplate.getStringSerializer();
         String deserialize = valueSerializer.deserialize(message.getBody());
-        logger.info("收到的mq消息"+deserialize);
+        logger.info("收到的mq消息" + deserialize);
     }
 }

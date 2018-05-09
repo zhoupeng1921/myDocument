@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 
 
 @Configuration  //证明这是一个配置类
-@PropertySource(value = {"classpath:test.properties"},ignoreResourceNotFound = true)//可以放多个,{}里面用,分开
+@PropertySource(value = {"classpath:test.properties"}, ignoreResourceNotFound = true)//可以放多个,{}里面用,分开
 public class User {
 
     //可以不用set方法,直接就能注入,属于注入

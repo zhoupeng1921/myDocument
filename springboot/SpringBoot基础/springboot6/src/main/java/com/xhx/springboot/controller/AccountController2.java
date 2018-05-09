@@ -23,17 +23,20 @@ public class AccountController2 {
     public int add(@RequestBody Account account) {
         return accountService2.insert(account);
     }
+
     @RequestMapping(value = "update", method = RequestMethod.POST)
     public int update0(@RequestBody Account account) {
         return accountService2.updateByPrimaryKey(account);
     }
+
     @RequestMapping(value = "delete", method = RequestMethod.POST)
     public int delete(@RequestBody int id) {
-        return  accountService2.deleteByPrimaryKey(id);
+        return accountService2.deleteByPrimaryKey(id);
     }
+
     @RequestMapping(value = "findById", method = RequestMethod.POST)
     public Account findById(@RequestBody int id) {
-        return  accountService2.selectByPrimaryKey(id);
+        return accountService2.selectByPrimaryKey(id);
     }
 
 }

@@ -15,14 +15,14 @@ public class HelloController {
     @Value("${my.age}")
     private String age;
 
-    @RequestMapping(value = "/hello",method = {RequestMethod.GET,RequestMethod.POST})
-    public String index(){
+    @RequestMapping(value = "/hello", method = {RequestMethod.GET, RequestMethod.POST})
+    public String index() {
         return "spring boot my first SpringBoot";
     }
 
     @RequestMapping(value = "/getMyInfo")
-    public String getMyInfo(){
-        return name+"  "+age;
+    public String getMyInfo() {
+        return name + "  " + age;
     }
 
 }

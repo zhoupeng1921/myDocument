@@ -21,25 +21,27 @@ public class SubscriberConfig {
 
     /**
      * 消息监听适配器，注入接受消息方法，输入方法名字 反射方法
+     *
      * @param receiver
      * @return
      */
     @Bean
-    public MessageListenerAdapter getMessageListenerAdapter(Receiver receiver){
+    public MessageListenerAdapter getMessageListenerAdapter(Receiver receiver) {
         return new MessageListenerAdapter(receiver);
     }
 
     /**
      * 创建消息监听容器
+     *
      * @param redisConnectionFactory
      * @param messageListenerAdapter
      * @return
      */
     @Bean
-    public RedisMessageListenerContainer getRedisMessageListenerContainer(RedisConnectionFactory redisConnectionFactory,MessageListenerAdapter messageListenerAdapter){
+    public RedisMessageListenerContainer getRedisMessageListenerContainer(RedisConnectionFactory redisConnectionFactory, MessageListenerAdapter messageListenerAdapter) {
         RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
         redisMessageListenerContainer.setConnectionFactory(redisConnectionFactory);
-        redisMessageListenerContainer.addMessageListener(messageListenerAdapter,new PatternTopic("TOPIC_USERNAME"));
+        redisMessageListenerContainer.addMessageListener(messageListenerAdapter, new PatternTopic("TOPIC_USERNAME"));
         return redisMessageListenerContainer;
     }
 }

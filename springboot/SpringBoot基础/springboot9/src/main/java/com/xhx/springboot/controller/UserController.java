@@ -18,6 +18,7 @@ import java.util.Optional;
 @RequestMapping(value = "user")
 public class UserController {
     public static List<User> users = new ArrayList<>();
+
     static {
         User user1 = new User();
         user1.setName("小红");
@@ -32,33 +33,34 @@ public class UserController {
         users.add(user2);
     }
 
-    @ApiOperation(value = "获取用户列表",notes = "用户列表接口")
+    @ApiOperation(value = "获取用户列表", notes = "用户列表接口")
     @RequestMapping(value = "getList", method = RequestMethod.POST)
-    public List<User> getUserList(){
+    public List<User> getUserList() {
         return users;
     }
 
-    @ApiOperation(value = "创建用户",notes = "创建用户")
-    @ApiImplicitParam(name = "User",value = "用户实体",required = true,dataType = "User")
+    @ApiOperation(value = "创建用户", notes = "创建用户")
+    @ApiImplicitParam(name = "User", value = "用户实体", required = true, dataType = "User")
     @RequestMapping(value = "createUser", method = RequestMethod.POST)
-    public List<User> createUser(@RequestBody User user){
+    public List<User> createUser(@RequestBody User user) {
         users.add(user);
         return users;
     }
 
     /**
      * path 代表在url中
+     *
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id获取用户",notes = "获取单个用户")
+    @ApiOperation(value = "根据id获取用户", notes = "获取单个用户")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id",value = "用户ID",required = true,dataType = "String",paramType = "path")
+            @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "String", paramType = "path")
     })
-    @RequestMapping(value = "{id}",method = RequestMethod.POST)
-    public User getUser(@PathVariable(value = "id") String id){
-        for(int i=0;i< users.size();i++){
-            if(users.get(i).getId().equals(id)){
+    @RequestMapping(value = "{id}", method = RequestMethod.POST)
+    public User getUser(@PathVariable(value = "id") String id) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(id)) {
                 return users.get(i);
             }
         }
@@ -67,7 +69,7 @@ public class UserController {
 
     @ApiIgnore//使用该注解忽略这个API
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String  helloWord() {
+    public String helloWord() {
         return "忽略";
     }
 }
