@@ -8,3 +8,4 @@ springboot7: mongodb
 springboot8: redis
 springboot9: swagger2
 springboot10:redis消息队列
+springboot11: activemq
