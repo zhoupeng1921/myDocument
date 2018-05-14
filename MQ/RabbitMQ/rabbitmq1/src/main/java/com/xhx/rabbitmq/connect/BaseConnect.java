@@ -25,10 +25,8 @@ public class BaseConnect {
         connectionFactory.setPassword("admin");
         connection = connectionFactory.newConnection(); //创建连接
         channel = connection.createChannel(); //创建频道
-        channel.exchangeDeclare(EXCHANGE_NAME,BuiltinExchangeType.FANOUT);
-        channel.queueDeclare(queueName,false,false,false,null);
-
-    }
+        channel.exchangeDeclare(EXCHANGE_NAME,BuiltinExchangeType.FANOUT);//在频道里声明一个交换机，类型定位fanout
+}
 
     protected void close() throws Exception{
         channel.close();

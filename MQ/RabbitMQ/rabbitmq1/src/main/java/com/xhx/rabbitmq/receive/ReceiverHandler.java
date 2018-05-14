@@ -1,9 +1,6 @@
 package com.xhx.rabbitmq.receive;
 
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Consumer;
-import com.rabbitmq.client.Envelope;
-import com.rabbitmq.client.ShutdownSignalException;
+import com.rabbitmq.client.*;
 import com.xhx.rabbitmq.connect.BaseConnect;
 import com.xhx.rabbitmq.entity.MessageInfo;
 
@@ -17,26 +14,48 @@ import java.io.ObjectInputStream;
  */
 public class ReceiverHandler extends BaseConnect implements Runnable, Consumer {
 
-    private int hashCode=0;
+    private int hashCode = 0;
 
     public ReceiverHandler(String queueName) throws Exception {
         super(queueName);
     }
 
 
-    public void receiveMessage(){
+    public void receiveMessage() {
         hashCode = Thread.currentThread().hashCode(); //区分不同工作进程的输出
-
         try {
-            System.out.println(hashCode+"，等待消息中...");
-            String result = channel.basicConsume(queueName, true, this);
-            System.out.println("--------result:"+result);
+            String queue = channel.queueDeclare(queueName+1, false, false, false, null).getQueue();
+            String queue2 = channel.queueDeclare(queueName+2, false, false, false, null).getQueue();
+            channel.queueBind(queue,BaseConnect.EXCHANGE_NAME,"");
+            channel.queueBind(queue2,BaseConnect.EXCHANGE_NAME,"");
+            System.out.println(hashCode + "，等待消息中...");
 
-        } catch (IOException e) {
+
+            // defaultConsumer实现了Consumer，我们将使用它来缓存生产者发送过来储存在队列中的消息。当我们可以接收消息的时候，从中获取，可理解为被一个一直运行着的线程调用。
+            Consumer consumer = new DefaultConsumer(channel) {
+                @Override
+                public void handleDelivery(String consumerTag, Envelope envelope,
+                                           AMQP.BasicProperties properties, byte[] body)
+                        throws IOException {
+                    Object obj = toObject(body);
+                    System.out.println("channel:"+channel+",queue:"+queue+",consumer:"+this.getConsumerTag()+"  Received '" + obj + "'");
+//                channel.basicAck(envelope.getDeliveryTag(),false);
+                    try {
+                        Thread.sleep(300);
+                    } catch (Exception e) {
+                    }
+                }
+            };
+            String result = channel.basicConsume(queue, true, consumer);
+            String result2 = channel.basicConsume(queue2, true, consumer);
+          //  String result = channel.basicConsume(queueName, true, this);
+            System.out.println("--------result:" + result);
+            System.out.println("--------result:" + result2);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
     @Override
@@ -68,7 +87,7 @@ public class ReceiverHandler extends BaseConnect implements Runnable, Consumer {
     public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
         MessageInfo messageInfo = (MessageInfo) toObject(body);
         messageInfo.setHashCode(hashCode);
-        System.out.println("messageInfo======:"+messageInfo.toString());
+        System.out.println("messageInfo======:" + messageInfo.toString());
     }
 
     @Override
@@ -77,7 +96,7 @@ public class ReceiverHandler extends BaseConnect implements Runnable, Consumer {
     }
 
 
-    public Object toObject (byte[] bytes) {
+    public Object toObject(byte[] bytes) {
         Object obj = null;
         try {
             ByteArrayInputStream bis = new ByteArrayInputStream(bytes);

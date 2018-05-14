@@ -20,7 +20,8 @@ public class PublisherHandler extends BaseConnect {
 
     public void sendMessage(MessageInfo messageInfo){
         try {
-            channel.basicPublish(BaseConnect.EXCHANGE_NAME,queueName,null,toByteArray(messageInfo));
+            //发布消息，发布到EXCHANGE_NAME,此时它会到哪个queue里面是不确定的
+            channel.basicPublish(BaseConnect.EXCHANGE_NAME,"",null,toByteArray(messageInfo));
         } catch (IOException e) {
             e.printStackTrace();
         }
