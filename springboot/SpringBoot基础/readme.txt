@@ -16,3 +16,4 @@ springboot15: 定时任务
 springboot16: 验证表单信息
 springboot17: jms邮件
 springboot18: @Async异步线程池
+springboot19: springboot用maven插件整合到docker容器
