@@ -17,7 +17,7 @@ public class RabbitPublish {
 
     @RequestMapping("sendMQ")
     public String sendMQ(){
-        //发送到队列中
+        //发送到默认exchage
         rabbitmqTemplate.convertAndSend("Q_QUEUE","xuhaixing");
         return "success";
     }

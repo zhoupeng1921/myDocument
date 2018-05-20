@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xhx.springboot</groupId>
-    <artifactId>springboot13</artifactId>
+    <artifactId>springboot16</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>springboot13</name>
+    <name>springboot16</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -27,7 +27,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

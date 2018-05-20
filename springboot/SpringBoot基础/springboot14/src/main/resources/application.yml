@@ -1,0 +1,6 @@
+spring:
+  servlet: #spring boot2.0 \u4EE5\u524D\u662Fhttp
+    multipart:
+      max-request-size: 1MB
+      enabled: true
+      max-file-size: 1MB

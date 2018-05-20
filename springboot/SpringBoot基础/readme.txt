@@ -8,4 +8,11 @@ springboot7: mongodb
 springboot8: redis
 springboot9: swagger2
 springboot10:redis消息队列
-springboot11: activemq
+springboot11: springboot整合activemq
+springboot12: springboot整合rabbitmq简单示例
+springboot13: springboot整合rabbitmq绑定exchage、queue示例
+springboot14: 传文件
+springboot15: 定时任务
+springboot16: 验证表单信息
+springboot17: jms邮件
+springboot18: @Async异步线程池
