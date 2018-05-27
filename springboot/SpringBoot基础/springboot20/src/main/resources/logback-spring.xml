@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+    <!--日志上下文名称 %contextName引用-->
+    <contextName>springboot20</contextName>
+
+    <!--自己定义的变量  ${logPath}引用-->
+    <property name="logPath" value="E:\\logs\\logback.log"/>
+
+    <!--class用来指定哪种输出策略，控制台输出策略和文件输出策略-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>  <!--过滤日志-->
+        </filter>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{48} - %msg %n</pattern>
+        </encoder>
+        <!--   • %d{HH: mm:ss.SSS}——日志输出时间
+           • %thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+           • %-5level——日志级别，并且使用5个字符靠左对齐
+           • %logger{36}——日志输出者的名字
+           • %msg——日志消息
+           %n——平台的换行符-->
+    </appender>
+
+    <!--输出到文件，RollingFileAppender用于切分文件日志-->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>loback.%d{yyyy-MM-dd}.log</fileNamePattern> <!--把每一天的日志归档到一个文件中-->
+            <maxHistory>30</maxHistory> <!--保留最新30日志-->
+            <totalSizeCap>1GB</totalSizeCap> <!-- 用来指定日志文件上线大小，到这个值就会删除旧的日志-->
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{48} - %msg %n</pattern>
+        </encoder>
+    </appender>
+    <!--root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性。-->
+<!--    <root level="debug">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>-->
+
+    <!--没有设置additivity，默认为true，将此loger的打印信息向上级传递；-->
+    <!--没有设置appender，此loger本身不打印任何信息。-->
+    <!--首先执行<logger name="com.xhx.springboot.controller"/>，将继承上级debug级别,为“debug”及大于“debug”的日志信息传递给root-->
+    <!--<logger name="com.xhx.springboot.controller"/>-->
+
+    <!--不向上传递，warn及warn以上级别的日志,,若向上传递日志会打印两次-->
+    <!--输出到控制台-->
+    <logger name="com.xhx.springboot.controller" level="warn" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+
+    <springProfile name="test,dev">
+        <root level="debug">
+            <appender-ref ref="console"/>
+            <appender-ref ref="file"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="warn">
+            <appender-ref ref="console"/>
+            <appender-ref ref="file"/>
+        </root>
+    </springProfile>
+
+</configuration>

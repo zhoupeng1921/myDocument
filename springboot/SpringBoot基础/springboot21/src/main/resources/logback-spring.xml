@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+    <!--日志上下文名称 %contextName引用-->
+    <contextName>springboot21</contextName>
+
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>192.168.94.151:4567</destination>
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--<level>info</level> &lt;!&ndash;写入logstash的日志级别&ndash;&gt;-->
+        <!--</filter>-->
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>info</level>
+        </filter>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{48} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="test,dev">
+        <root level="info">
+            <appender-ref ref="LOGSTASH"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="info">
+            <appender-ref ref="LOGSTASH"/>
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+</configuration>
