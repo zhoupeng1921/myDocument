@@ -17,20 +17,20 @@ public class JasperService {
 
     public void testPDF() throws Exception {
         HashMap<String, Object> parameters = new HashMap<String, Object>();
-        parameters.put("name", "徐海兴");
-        parameters.put("ORIORGNAME", "原组织名称原组织名称原组织名称原组织名称原组织名称");
-        parameters.put("TOORGNAME", "目的组织名称目的组织名称目的组织名称目的组织名称");
+        parameters.put("applicantName", "徐海兴");
+        parameters.put("age", "12");
+        parameters.put("NATION", "汉");
+        parameters.put("sex","√");
+
+       // File fileName = new File("E:\\ireport\\report1.jasper");
 
 
-        File fileName = new File("E:\\ireport\\report1.jasper");
-
-
-        FileOutputStream outputStream = new FileOutputStream(new File("d:/pdf.pdf"));
+  /*      FileOutputStream outputStream = new FileOutputStream(new File("d:/pdf.pdf"));*/
 
     //   byte[] bytes = JasperRunManager.runReportToPdf(fileName.getPath(), parameters);
 
-       JasperPrint jasperPrint = JasperFillManager.fillReport(fileName.getPath(), parameters);
-        JasperExportManager.exportReportToPdfStream(jasperPrint,outputStream);
+ /*      JasperPrint jasperPrint = JasperFillManager.fillReport(fileName.getPath(), parameters);
+        JasperExportManager.exportReportToPdfStream(jasperPrint,outputStream);*/
 
       //  outputStream.write(bytes);
       //  outputStream.flush();
