@@ -8,7 +8,11 @@
         <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
             <!--<level>info</level> &lt;!&ndash;写入logstash的日志级别&ndash;&gt;-->
         <!--</filter>-->
-        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
+            <!-- "appname":"springboot21-log-elk" 的作用是指定创建索引的名字时用，并且在生成的文档中会多了这个字段
+             在logstash index中引入     index => "%{[appname]}-%{+YYYY.MM.dd}"-->
+            <customFields>{"appname":"springboot21-log-elk"}</customFields>
+        </encoder>
     </appender>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
