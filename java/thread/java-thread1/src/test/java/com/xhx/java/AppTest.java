@@ -43,27 +43,27 @@ public class AppTest {
 
         //每个任务都是是直接启动一个核心线程来执行任务，一共创建了6个线程，不会放入队列中
 
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(6, 10, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
         executorTest(executor);
         /**
-         * ---先开三个---
-         * 核心线程数6
-         * 线程池数3
-         * 队列任务数0
-         * ---再开三个---
-         * 核心线程数6
-         * 线程池数6
-         * 队列任务数0
-         * pool-1-thread-2 run
-         * pool-1-thread-4 run
-         * pool-1-thread-1 run
-         * pool-1-thread-5 run
-         * pool-1-thread-3 run
-         * pool-1-thread-6 run
-         * ----8秒之后----
-         * 核心线程数6
-         * 线程池数6
-         * 队列任务数0
+         ---先开三个---
+         核心线程数5
+         线程池数3
+         队列任务数0
+         ---再开三个---
+         核心线程数5
+         线程池数6
+         队列任务数0
+         pool-1-thread-1 run
+         pool-1-thread-6 run
+         pool-1-thread-5 run
+         pool-1-thread-4 run
+         pool-1-thread-3 run
+         pool-1-thread-2 run
+         ----8秒之后----
+         核心线程数5
+         线程池数5
+         队列任务数0
          */
     }
 
