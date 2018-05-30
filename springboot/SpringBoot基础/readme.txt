@@ -19,3 +19,4 @@ springboot18: @Async异步线程池
 springboot19: springboot用maven插件整合到docker容器
 springboot20: springboot logback日志整合
 springboot21: springboot logback日志整合 elk
+springboot22: springboot interceptor拦截器 整合
