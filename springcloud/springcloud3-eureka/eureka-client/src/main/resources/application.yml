@@ -1,0 +1,9 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultUrl: http://localhost1:8761/eureka,http://localhost2:8762/eureka,http://localhost3:8763/eureka
+spring:
+  application:
+    name: eureka-client1
