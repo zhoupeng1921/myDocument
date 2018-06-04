@@ -1,9 +1,13 @@
 package com.xhx.designpattern;
 
+
+/**
+ *    没有入参，通过方法名字，区分创建的实体类。
+ *
+ *     缺点，每次增加新的实体类，都需要加一个方法
+ * */
 public class FruitFactory {
-    /*
-    获得实例
-     */
+
 
     public static Fruit getApple(){
         return new Apple();

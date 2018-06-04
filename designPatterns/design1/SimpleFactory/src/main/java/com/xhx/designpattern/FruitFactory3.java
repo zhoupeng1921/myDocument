@@ -1,6 +1,10 @@
 package com.xhx.designpattern;
 
-import java.util.concurrent.Future;
+/**
+ * 通过反射
+ *
+ * 通过反射获取，新增实体类无影响
+ */
 
 public class FruitFactory3 {
 
