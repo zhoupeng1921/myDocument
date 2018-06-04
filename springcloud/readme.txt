@@ -1,2 +1,3 @@
-springcloud1-eureka   服务注册与发现，eureka-server与eureka-client
-springcloud2-eureka   eureka安全认证
+springcloud1-eureka   鏈嶅姟娉ㄥ唽涓庡彂鐜帮紝eureka-server涓巈ureka-client
+springcloud2-eureka   eureka瀹夊叏璁よ瘉
+springcloud3-eureka   eureka闆嗙兢
