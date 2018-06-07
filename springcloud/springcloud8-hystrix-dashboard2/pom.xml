@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xhx.springcloud</groupId>
-    <artifactId>springcloud8-hystrix-turbine</artifactId>
+    <artifactId>springcloud8-hystrix-dashboard2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>eureka-server</module>
@@ -14,7 +14,7 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>springcloud8-hystrix-turbine</name>
+    <name>springcloud8-hystrix-dashboard2</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
