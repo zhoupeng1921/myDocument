@@ -1,2 +1,0 @@
-# mydocument
-my all code 
