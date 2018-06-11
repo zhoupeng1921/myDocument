@@ -1,0 +1,20 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: turbine-application
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    non-secure-port: 8091
+    prefer-ip-address: true
+turbine:
+  aggregator:
+  #需要监控的服务集群名  默认为default  APPLICATION-CLIENT
+    cluster-config: default
+  #需要监控的单体服务名
+  #app-config: APPLICATION-SERVICE
+  combine-host-port: true
+  cluster-name-expression: new String("default")
