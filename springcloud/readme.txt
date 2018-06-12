@@ -7,3 +7,4 @@ springcloud7-hystrix-dashboard   hystrix dashboard 监控
 springcloud8-hystrix-dashboard2 hystrix dashboard 单独微服务
 springcloud10-zuul     zuul路由与负载均衡
 springcloud11-zuul     zuul service-id与url的配置
+springcloud12-zuul    zuul回退fallback
