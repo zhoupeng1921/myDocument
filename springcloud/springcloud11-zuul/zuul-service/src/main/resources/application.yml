@@ -7,9 +7,18 @@ eureka:
 spring:
   application:
     name: zuul-service
-
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+zuul:
+  routes:
+    api-a:
+      path: /feign/**
+      service-id: eureka-feign
+      retryable: true
 #zuul:
-    #å¿½ç•¥æŸä¸ªå¾®æœåŠ¡
+    #ºöÂÔÄ³¸öÎ¢·şÎñ
 #  ignored-services: eureka-feign
 
 #zuul:

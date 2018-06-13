@@ -65,7 +65,7 @@ public class JMSProducer {
 
         //{"id":181351016514479027, "modifyType":"LAST_PARTY_FEE_DATE", "lastFeeDate":"2018-04-01"}
         for (int i = 0; i < 10; i++) {
-            TextMessage textMessage = session.createTextMessage("{\"id\":4717316812998671, \"modifyType\":\"LAST_PARTY_FEE_DATE\", \"lastFeeDate\":\"2018-05-01\"}");
+            TextMessage textMessage = session.createTextMessage("{\"id\":4717316812998671, \"modifyType\":\"LAST_PARTY_FEE_DATE\", \"lastFeeDate\":\"2018-02-01\"}");
             System.out.println(textMessage.getText());
             messageProducer.send(textMessage);
         }
