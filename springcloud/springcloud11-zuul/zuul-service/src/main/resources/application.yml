@@ -7,11 +7,19 @@ eureka:
 spring:
   application:
     name: zuul-service
-zuul:
-  routes:
-    api-a:
-      path: /feign/**
-      service-id: eureka-feign
+
+#zuul:
+    #忽略某个微服务
+#  ignored-services: eureka-feign
+
+#zuul:
+#  routes:
+#    eureka-feign: /feign/**
+#zuul:
+#  routes:
+#    api-a:
+#      path: /feign/**
+#      service-id: eureka-feign
 #zuul:
 #  routes:
 #    feign:
