@@ -9,8 +9,6 @@
     <modules>
         <module>eureka-server</module>
         <module>eureka-service</module>
-        <module>eureka-feign</module>
-        <module>zuul-service</module>
         <module>config-service</module>
     </modules>
 
