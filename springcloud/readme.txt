@@ -9,3 +9,4 @@ springcloud10-zuul     zuul路由与负载均衡
 springcloud11-zuul     zuul service-id与url的配置
 springcloud12-zuul    zuul回退fallback
 springcloud13-zuul    zuul filter过滤器
+springcloud14-config  springcloud 配置中心
