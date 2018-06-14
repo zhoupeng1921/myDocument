@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          #git地址
+         uri: https://github.com/xuhaixing/springCloudConfig
+        #配置文件所在的目录
+         search-paths: /**
+         #default-label: master
+          #username:
+          #password:
+      label: master
+     # username:
+      #password:
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
