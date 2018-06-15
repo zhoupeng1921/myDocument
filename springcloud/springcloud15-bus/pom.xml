@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>eureka-server</module>
-        <module>eureka-service</module>
+        <module>user-service</module>
         <module>config-service</module>
     </modules>
 
