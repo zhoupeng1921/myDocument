@@ -2,20 +2,20 @@ spring:
   cloud:
     config:
       discovery:
-      #开启配置服务发现
         enabled: true
-      #配置服务实例名称
         service-id: config-service
-      #配置文件所在分支
       label: master
       profile: prd
-      #可以写多个远程文件名
       name: eureka-service,rabbit-mq
-      #远程配置中心的访问地址
-      #uri: http://localhost:8888/
     bus:
-      trace:
+      refresh:
         enabled: true
   application:
     name: eureka-service
+management:
+  endpoints:
+    web:
+      exposure:
+        #暴露bus-refresh节点，通过此节点刷新配置
+        include: '*'
 

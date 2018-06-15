@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xhx.springcloud</groupId>
-    <artifactId>springcloud14-config</artifactId>
+    <artifactId>springcloud15-bus</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>eureka-server</module>
@@ -14,7 +14,7 @@
 
     <packaging>pom</packaging>
 
-    <name>springcloud14-config</name>
+    <name>springcloud15-bus</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

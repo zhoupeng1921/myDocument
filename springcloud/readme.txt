@@ -10,4 +10,4 @@ springcloud11-zuul     zuul service-id与url的配置
 springcloud12-zuul    zuul回退fallback
 springcloud13-zuul    zuul filter过滤器
 springcloud14-config  springcloud 配置中心
-springcloud15-bus    消息总线bus
+springcloud15-bus    消息总线bus，动态刷新注入的配置

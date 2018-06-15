@@ -7,7 +7,7 @@
 
     <parent>
         <groupId>com.xhx.springcloud</groupId>
-        <artifactId>springcloud14-config</artifactId>
+        <artifactId>springcloud15-bus</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
