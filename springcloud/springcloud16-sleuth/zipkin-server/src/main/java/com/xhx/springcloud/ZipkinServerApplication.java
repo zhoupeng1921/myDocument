@@ -12,7 +12,7 @@ import zipkin.server.EnableZipkinServer;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableZipkinServer
+@EnableZipkinServer //已经没这个包了，不能用了，看博客
 public class ZipkinServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZipkinServerApplication.class,args);

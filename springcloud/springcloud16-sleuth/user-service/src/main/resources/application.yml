@@ -2,10 +2,10 @@ spring:
   application:
     name: user-service
   zipkin:
-    #base-url: http://localost:9411
-    discovery-client-enabled: true
-    service:
-      name: zipkin-service
+    base-url: http://192.168.94.151:9411
+    #discovery-client-enabled: true
+   # service:
+      #name: zipkin-service
     enabled: true
 server:
   port: 8080

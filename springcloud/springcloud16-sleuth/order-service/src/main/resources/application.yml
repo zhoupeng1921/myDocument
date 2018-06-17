@@ -2,10 +2,11 @@ spring:
   application:
     name: order-service
   zipkin:
-      discovery-client-enabled: true
-      service:
-        name: zipkin-service
+      #discovery-client-enabled: true
+      #service:
+        #name: zipkin-service
       enabled: true
+      base-url: http://192.168.94.151:9411
   sleuth:
     sampler:
       probability: 1
