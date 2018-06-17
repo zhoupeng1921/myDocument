@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: order-service
+  zipkin:
+      discovery-client-enabled: true
+      service:
+        name: zipkin-service
+      enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+server:
+  port: 8086
+eureka:
+  client:
+    service-url:
+      default-zone: http://locahost:8761/eureka
+feign:
+  hystrix:
+    enabled: true
