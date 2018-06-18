@@ -7,3 +7,4 @@ design5 原型设计模式
 design6 建造者设计模式
 design7 装饰者设计模式
 design8 策略模式
+design9 观察者设计模式
