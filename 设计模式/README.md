@@ -6,3 +6,4 @@ design4 单例设计模式
 design5 原型设计模式
 design6 建造者设计模式
 design7 装饰者设计模式
+design8 策略模式
