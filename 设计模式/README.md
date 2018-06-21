@@ -8,3 +8,4 @@ design6 建造者设计模式
 design7 装饰者设计模式
 design8 策略模式
 design9 观察者设计模式
+design10 享元设计模式
