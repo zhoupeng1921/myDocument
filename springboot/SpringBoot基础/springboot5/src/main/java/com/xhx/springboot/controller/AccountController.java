@@ -3,10 +3,7 @@ package com.xhx.springboot.controller;
 import com.xhx.springboot.entity.Account;
 import com.xhx.springboot.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,12 +29,12 @@ public class AccountController {
     }
 
     @RequestMapping(value = "delete", method = RequestMethod.POST)
-    public int delete(@RequestBody int id) {
+    public int delete(@RequestParam int id) {
         return accountService.delete(id);
     }
 
     @RequestMapping(value = "findById", method = RequestMethod.POST)
-    public Account findById(@RequestBody int id) {
+    public Account findById(@RequestParam int id) {
         return accountService.findById(id);
     }
 
