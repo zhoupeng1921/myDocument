@@ -21,4 +21,5 @@ springboot20: springboot logback日志整合
 springboot21: springboot logback日志整合 elk
 springboot22: springboot interceptor拦截器 整合
 springboot23: actuator监控器
-springboot23: @ControllerAdvice全局异常处理
+springboot24: @ControllerAdvice全局异常处理
+springboot25: redisson 分布式锁
