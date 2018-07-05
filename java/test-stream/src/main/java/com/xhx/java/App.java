@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Hello world!
+ * parallelStream多核并发处理安全问题
  *
  */
 public class App 
