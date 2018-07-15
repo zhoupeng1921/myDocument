@@ -1,0 +1,19 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    # 主机名
+    hostname: localhost
+  client:
+    # 单节点时没必要注册
+    # 注册到eureka
+    register-with-eureka: false
+    # 获取注册信息
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 清理时间间隔
+    eviction-interval-timer-in-ms: 60000

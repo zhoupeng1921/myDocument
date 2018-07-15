@@ -1,0 +1,24 @@
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+     # 注册地址
+      default-url: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    #多久拉取服务注册信息 s
+    registry-fetch-interval-seconds: 20
+  instance:
+    # 10s未收到心跳，剔除instance 要比心跳时间大
+    lease-expiration-duration-in-seconds: 10
+    # 心跳时间
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: false
+    ip-address: 127.0.0.1
+    hostname: xuhaixing-pc
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}${random.int}:${server.port}
+spring:
+  application:
+    # 以后的服务与服务之间相互调用一般都是根据这个name
+    name: eureka-client1
