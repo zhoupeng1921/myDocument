@@ -3,6 +3,7 @@ package com.xhx.java;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,8 +45,19 @@ public class testStream {
     @Test
     public void testSorted(){
 //        List<String> filterList = list.stream().sorted((a,b)->a.compareTo(b)).collect(Collectors.toList());
-        List<String> filterList = list.stream().sorted(Comparator.comparing(String::toString)).collect(Collectors.toList());
+        List<String> filterList = list.stream().sorted(Comparator.comparing(String::toString).reversed())
+                .collect(Collectors.toList());
         filterList.stream().forEach(System.out::print);
     }
 
+    /**
+     * forEach forEachOrdered
+     */
+    @Test
+    public void testForEach(){
+        List<String> strings = Arrays.asList("1", "2", "3", "4", "5", "6");
+        strings.parallelStream().forEach(System.out::print);
+        System.out.println();
+        strings.parallelStream().forEachOrdered(System.out::print);
+    }
 }
