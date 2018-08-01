@@ -2,6 +2,7 @@ package com.xhx.springboot.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 /**
  * @author xuhaixing
@@ -13,6 +14,17 @@ public class Account {
     private int id;
     private String name;
     private Double money;
+    @Version
+    private int version;
+
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
 
     public int getId() {
         return id;
