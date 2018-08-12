@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  tomcat:
+    max-connections: 2000
+    max-threads: 2000
+    accept-count: 2000
+spring:
+  application:
+    name: zuul-server
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+zuul:
+  routes:
+    api-a:
+      path: /user/**
+      service-id: ms-user

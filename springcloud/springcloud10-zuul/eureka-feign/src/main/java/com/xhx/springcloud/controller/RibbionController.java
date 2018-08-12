@@ -14,8 +14,6 @@ import org.springframework.web.client.RestTemplate;
  * 2018/6/3 16:27
  */
 @RestController
-@EnableEurekaClient
-@EnableHystrix
 public class RibbionController {
 
     @Autowired

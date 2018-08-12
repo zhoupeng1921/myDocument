@@ -3,17 +3,15 @@ package com.xhx.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * xuhaixing
- * 2018/6/11 16:39
- */
-@EnableEurekaClient
-@EnableZuulProxy
+ * 2018/8/12 22:08
+ **/
 @SpringBootApplication
-public class ZuulServiceApplication {
+@EnableEurekaClient
+public class MsUserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ZuulServiceApplication.class,args);
+        SpringApplication.run(MsUserApplication.class,args);
     }
 }

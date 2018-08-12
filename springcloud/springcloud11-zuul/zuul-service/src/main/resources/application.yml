@@ -18,7 +18,7 @@ zuul:
       service-id: eureka-feign
       retryable: true
 #zuul:
-    #ºöÂÔÄ³¸öÎ¢·şÎñ
+    #å¿½ç•¥æŸä¸ªå¾®æœåŠ¡
 #  ignored-services: eureka-feign
 
 #zuul:
