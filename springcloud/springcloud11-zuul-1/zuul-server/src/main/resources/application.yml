@@ -1,9 +1,9 @@
 server:
   port: 8080
   tomcat:
-    max-connections: 2000
-    max-threads: 2000
-    accept-count: 2000
+    accept-count: 100
+    max-threads: 100
+    max-connections: 100
 spring:
   application:
     name: zuul-server

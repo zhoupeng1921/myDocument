@@ -17,11 +17,7 @@ import java.util.Map;
 public class UserController {
 
     @RequestMapping(value = "getUserInfo",method = RequestMethod.POST)
-    public Map getUserInfo(@RequestParam("id") String id){
-        Map<String,String> user = new HashMap<>();
-        user.put("id",id);
-        user.put("name","xxxxx");
-        user.put("age","16");
-        return user;
+    public String getUserInfo(@RequestParam("id") String id){
+        return id;
     }
 }
