@@ -24,3 +24,4 @@ springboot22: springboot interceptor拦截器 整合
 springboot23: actuator监控器
 springboot24: @ControllerAdvice全局异常处理
 springboot25: redisson 分布式锁
+springboot26: springboot thymeleaf
