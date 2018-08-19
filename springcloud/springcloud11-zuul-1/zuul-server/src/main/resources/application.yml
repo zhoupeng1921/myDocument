@@ -16,3 +16,9 @@ zuul:
     api-a:
       path: /user/**
       service-id: ms-user
+  host:
+    max-per-route-connections: 100
+    max-total-connections: 500
+  ribbon-isolation-strategy: semaphore
+  semaphore:
+    max-semaphores: 500
