@@ -27,3 +27,4 @@ springboot25: redisson 分布式锁
 springboot26: springboot thymeleaf
 springboot27: springboot freemarker
 springboot28: springboot jsp
+springboot29: PageHelper
