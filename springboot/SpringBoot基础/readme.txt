@@ -3,7 +3,7 @@ springboot1: springboot基本架构,测试test,读取配置文件值
 springboot2: springboot自定义配置文件属性值注入 @Value("${}")
 springboot3: 多环境配置 profile
 springboot4: jdbc配置mysql
-springboot5: jpa
+springboot5: jpa/spring.datasource详细配置 启动时初始化数据库
 springboot6: mybatis
 springboot7: mongodb
 springboot8: redis
