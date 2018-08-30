@@ -159,4 +159,44 @@ public class TestCollectors {
         System.out.println(collect);
 
     }
+
+
+    /**
+     * 生成统计信息
+     */
+    @Test
+    public void testSummarizing() {
+        List<Student> students = Arrays.asList(
+                new Student("apple", "男", 10.0),
+                new Student("banana", "男", 10.0),
+                new Student("orange", "男", 20.0),
+                new Student("pipe", "女", 40.0),
+                new Student("pinck", "女", 80.0)
+        );
+
+        DoubleSummaryStatistics statistics = students.stream().map(Student::getMoney).collect(Collectors.summarizingDouble(t -> t));
+        System.out.println(statistics.getAverage());//32.0
+        System.out.println(statistics.getCount());//5
+        System.out.println(statistics.getMax());//80.0
+        System.out.println(statistics.getMin());//10.0
+        System.out.println(statistics.getCount());//5
+    }
+
+    /**
+     * 连接
+     */
+    @Test
+    public void testJoining() {
+        List<Student> students = Arrays.asList(
+                new Student("apple", "男", 10.0),
+                new Student("banana", "男", 10.0),
+                new Student("orange", "男", 20.0),
+                new Student("pipe", "女", 40.0),
+                new Student("pinck", "女", 80.0)
+        );
+
+        String collect = students.stream().map(Student::getName).collect(Collectors.joining(","));
+        System.out.println(collect);
+        //apple,banana,orange,pipe,pinck
+    }
 }

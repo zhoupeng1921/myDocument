@@ -40,7 +40,7 @@ public class testStream {
     }
 
     /**
-     * Function<T, R> 过滤
+     * Function<T, R> 排序
      */
     @Test
     public void testSorted(){
@@ -59,5 +59,15 @@ public class testStream {
         strings.parallelStream().forEach(System.out::print);
         System.out.println();
         strings.parallelStream().forEachOrdered(System.out::print);
+    }
+
+    /**
+     * reduce,可以设置初始值，然后把循环里面的值当参数，进行处理，返回一个结果
+     */
+    @Test
+    public void testReduce(){
+        List<String> strings = Arrays.asList("1", "2", "3", "4", "5", "6");
+        String str = strings.stream().reduce("0",(first,second)->first+second);
+        System.out.println(str);
     }
 }
