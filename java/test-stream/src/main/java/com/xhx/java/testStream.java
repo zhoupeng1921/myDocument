@@ -2,11 +2,11 @@ package com.xhx.java;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * xuhaixing
@@ -69,5 +69,13 @@ public class testStream {
         List<String> strings = Arrays.asList("1", "2", "3", "4", "5", "6");
         String str = strings.stream().reduce("0",(first,second)->first+second);
         System.out.println(str);
+    }
+
+    @Test
+    public void testReduce2(){
+        List<String> string1 = Arrays.asList("1", "2", "3");
+        List<String> string2 = Arrays.asList("4", "5", "6");
+        IntSummaryStatistics intSummaryStatistics = Stream.of(string1, string2).flatMap(str -> str.stream()).mapToInt(str -> Integer.parseInt(str)).summaryStatistics().;
+        System.out.println(intSummaryStatistics.getMax());
     }
 }
