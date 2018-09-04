@@ -18,7 +18,12 @@ public class RibbionController {
 
     @RequestMapping(value = "getName")
     public String getName(String name){
-        return restTemplate.getForObject("http://EUREKA-SERVICE/hello/getName?name="+name,String.class);
+        return restTemplate.getForObject("http://eureka-service/hello/getName?name="+name,String.class);
+    }
+
+    @RequestMapping(value = "getName2")
+    public String getName2(String name){
+        return restTemplate.getForObject("http://eureka-service2/hello/getName?name="+name,String.class);
     }
 }
 

@@ -1,5 +1,6 @@
 package com.xhx.springcloud.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "hello")
 public class HelloController {
+    @Value(value = "${server.port}")
+    private String port;
 
     @RequestMapping(value = "getName")
     public String getName(String name){
-        return name+2;
+        return name+port;
     }
 }
