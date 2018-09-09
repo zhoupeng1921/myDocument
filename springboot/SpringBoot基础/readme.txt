@@ -4,6 +4,7 @@ springboot2: springboot自定义配置文件属性值注入 @Value("${}")
 springboot3: 多环境配置 profile
 springboot4: jdbc配置mysql
 springboot5: jpa/spring.datasource详细配置 启动时初始化数据库
+springboot5-2: @Table与@Entity注解
 springboot6: mybatis
 springboot7: mongodb
 springboot8: redis
