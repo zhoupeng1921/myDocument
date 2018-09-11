@@ -2,7 +2,7 @@ package com.xhx.springboot.enums;
 
 import com.xhx.springboot.converters.AbstractAttributeConverter;
 
-public enum GenderEnum implements BaseEnum{
+public enum GenderEnum implements BaseEnum<GenderEnum,String>{
     MAN("1","男"),WOMAN("2","女");
     GenderEnum(String code,String value){
         this.code = code;

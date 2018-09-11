@@ -1,7 +1,8 @@
 package com.xhx.springboot;
 
-import com.xhx.springboot.controller.AccountController;
-import com.xhx.springboot.entity.Account;
+import com.xhx.springboot.controller.UserController;
+import com.xhx.springboot.entity.User;
+import com.xhx.springboot.enums.GenderEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +14,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class Springboot5ApplicationTests {
 
     @Autowired
-    private AccountController accountController;
+    private UserController userController;
 
     @Test
-    public void testVersion() {
-        Account account = new Account();
-        account.setId(10);
-        account.setName("eeee");
-        account.setMoney(7999.0);
-        account.setVersion(2);
+    public void testConvertToDB() {
+        User user = new User();
+        user.setName("小徐");
+        user.setAge(25);
+        user.setGender(GenderEnum.MAN);
+        userController.add(user); //GenderEnum类型已经转换
+    }
 
-        //accountController.update(account);
-        //accountController.updateAccount(account);
-        //int i = accountController.updateAccountByVersion(account);
-        //System.out.println(i);
+    @Test
+    public void testDBToEntity() {
+        User user = userController.findById(2);//GenderEnum类型已经转换
+        System.out.println(user);
+        //User{id=2, name='小徐', age=25, gender=MAN, version=0}
     }
 
 }
