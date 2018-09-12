@@ -5,6 +5,7 @@ springboot3: 多环境配置 profile
 springboot4: jdbc配置mysql
 springboot5: jpa/spring.datasource详细配置 启动时初始化数据库
 springboot5-2: jpa @Table与@Entity注解
+springboot5-3: jpa @Convert注解 转换数据库字段与实体类数据类型
 springboot6: mybatis
 springboot7: mongodb
 springboot8: redis

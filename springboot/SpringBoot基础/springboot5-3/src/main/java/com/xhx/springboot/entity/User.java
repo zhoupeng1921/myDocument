@@ -1,5 +1,6 @@
 package com.xhx.springboot.entity;
 
+import com.xhx.springboot.converters.GenderEnumConverter;
 import com.xhx.springboot.enums.GenderEnum;
 
 import javax.persistence.*;
@@ -16,7 +17,10 @@ public class User {
     private int id;
     private String name;
     private int age;
-    @Convert(converter = GenderEnum.convert.class)
+    @Convert(
+            converter = GenderEnumConverter.class
+            //converter = GenderEnum.convert.class
+    )
     private GenderEnum gender;
     @Version
     private int version;
