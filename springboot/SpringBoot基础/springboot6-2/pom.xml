@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xhx.springboot</groupId>
-    <artifactId>springboot6</artifactId>
+    <artifactId>springboot6-2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>springboot6</name>
+    <name>springboot6-2</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
