@@ -1,6 +1,6 @@
 package com.xhx.springcloud.api;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,5 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloFeign {
 
     @RequestMapping(value = "getName")
-    public String getName(@RequestParam("name") String name);//@RequestParam 必须加上，否则可能会接不到参数
+    public String getName(@RequestParam(value = "name") String name);//@RequestParam与value 必须加上，否则会接不到参数
+
+
 }
