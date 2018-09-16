@@ -1,0 +1,17 @@
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8762/eureka/
+spring:
+  application:
+    name: eureka-client
+ribbon:
+  eureka:
+#ribbon中禁用eureka
+    enabled: false
+eureka-service:
+  ribbon:
+  #自己定义服务列表
+    listOfServers: localhost:8080,localhost:8081
