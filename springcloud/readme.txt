@@ -4,6 +4,7 @@ springcloud3-eureka   eureka集群
 springcloud4-ribbon   ribbon负载均衡及自定义ribbon
 springcloud4-ribbion-1 <eureka-client>.ribbon.listOfServers 自定义服务列表
 springcloud5-feign feign http请求
+springcloud5-feign-1 自定义feign配置
 springcloud6-hystrix   feign hystrix熔断
 springcloud7-hystrix-dashboard   hystrix dashboard 监控
 springcloud8-hystrix-dashboard2 hystrix dashboard 单独微服务
