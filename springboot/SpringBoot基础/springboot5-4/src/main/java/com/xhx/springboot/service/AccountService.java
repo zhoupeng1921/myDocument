@@ -47,9 +47,9 @@ public class AccountService {
 
     public List<Account> findByCondition(Account account){
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Account> query = criteriaBuilder.createQuery(Account.class); //返回类型
-        Root<Account> root = query.from(Account.class);
-        Predicate predicate1 = criteriaBuilder.like(root.get("name"), "%" + account.getName() + "%");
+        CriteriaQuery<Account> query = criteriaBuilder.createQuery(Account.class); //返回类型 select * 中的 *
+        Root<Account> root = query.from(Account.class);  //form
+        Predicate predicate1 = criteriaBuilder.like(root.get("name"), "%" + account.getName() + "%"); //where条件
         query.where(predicate1);
         TypedQuery<Account> typedQuery = entityManager.createQuery(query);
         return typedQuery.getResultList();
