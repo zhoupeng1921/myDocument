@@ -1,3 +1,7 @@
+//console.log(b) //ReferenceError: b is not defined
+var a;
+console.log(a); //undefined
+
 if(true){
     var a = 1; //在块内声明的变量也是全局的
 }
