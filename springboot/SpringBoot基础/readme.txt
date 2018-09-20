@@ -6,6 +6,7 @@ springboot4: jdbc配置mysql
 springboot5: jpa/spring.datasource详细配置 启动时初始化数据库
 springboot5-2: jpa @Table与@Entity注解
 springboot5-3: jpa @Convert注解 转换数据库字段类型与实体类数据类型
+springboot5-4: jpa自动生成JPQL语句
 springboot6: mybatis
 springboot6-2: mybatis BaseTypeHandler 转换数据库字段类型与实体类数据类型
 springboot7: mongodb
