@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">{{content}}</div>
+
+
+        <script>
+            // var dom = document.getElementById("app");
+            // dom.innerHTML = 'hello world';
+            // setTimeout(() => {
+            //     dom.innerHTML = 'hello';
+            // }, 2000);
+
+
+            var app = new Vue({
+                el:'#app', //vue实例处理哪个dom
+                data:{   //定义数据
+                    content:'hello world'
+                }
+            })
+            setTimeout(() => {
+                app.$data.content = 'hello vue'; //关注数据绑定，而不关注dom问题
+            }, 2000);
+        </script>
+    </body>
+</html>
