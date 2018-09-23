@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- 也可以写数组 -->
+            <div :style="styleObj" @click="handleDivClick">
+                Hello world
+            </div>
+        </div>
+
+
+        <script>
+            var vm = new Vue({
+               el:"#root",
+               data: {
+                styleObj:{
+                    color:"black",
+                    fontSize:"30px"
+                }
+               },
+               methods:{
+                handleDivClick: function(){
+                    this.styleObj.color=this.styleObj.color==="black"?"red":"black";
+                }
+               }
+            })
+
+        </script>
+    </body>
+</html>
