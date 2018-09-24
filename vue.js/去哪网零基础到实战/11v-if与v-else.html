@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- if与else要在一起，不能分开 -->
+            <!-- <div v-if="show" title="v-if">{{message}}</div>
+            <div v-else>good bye</div> -->
+
+            <div v-if="str==='a'" title="v-if">{{message+' a'}}</div>
+            <div v-else-if="str==='b'" title="v-if">{{message+' b'}}</div>
+            <div v-else>good bye</div>
+        </div>
+
+
+        <script>
+            var vm = new Vue({
+               el:"#root",
+               data:{
+                   show:false,
+                   message:'hello world',
+                   str:'a'
+               }
+            })
+
+        </script>
+    </body>
+</html>

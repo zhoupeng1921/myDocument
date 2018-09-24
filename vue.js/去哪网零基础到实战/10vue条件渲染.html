@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- 标签是否在页面上显示，不会在dom上 -->
+            <div v-if="show" title="v-if">{{message}}</div>
+
+            <!-- 会在dom上，但是用display: none;这个属性控制 -->
+            <div v-show="show" title="v-show">{{message}}</div>
+        </div>
+
+
+        <script>
+            var vm = new Vue({
+               el:"#root",
+               data:{
+                   show:false,
+                   message:'hello world'
+               }
+            })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- 切换时vue会尝试复用页面上已经存在的dom，加上一个key 表示是页面上唯一的元素，就不会复用-->
+            <div v-if="show">
+               用户名： <input key="username"/>
+            </div>
+            <div v-else>
+                邮箱：<input  key="mail"/>
+            </div>
+        </div>
+
+
+        <script>
+            var vm = new Vue({
+               el:"#root",
+               data:{
+                   show:true,
+               }
+            })
+
+        </script>
+    </body>
+</html>
