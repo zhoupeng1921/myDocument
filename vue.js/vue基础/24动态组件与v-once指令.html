@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <child-one v-if="type==='child-one'"></child-one>
+            <child-two v-if="type==='child-two'"></child-two>
+            
+            <!-- vue中的动态组件标签 根据is的值自动加载不同的组件
+            <component :is="type"></component> -->
+
+            <button @click="handleBtnClick">change</button>
+        </div>
+
+
+        <script>
+            //v-once 会放在内存中，不会在组件切换是销毁再重新创建
+            Vue.component('child-one',{
+                template:'<div v-once>child-one</div>'
+            })
+            Vue.component('child-two',{
+                template:'<div v-once>child-two</div>'
+            })
+            var vm = new Vue({
+               el:"#root",
+               data:{
+                   type: 'child-one'
+               },
+               methods: {
+                handleBtnClick: function(){
+                    this.type = this.type==='child-one'?'child-two':'child-one'
+                }
+               }
+            })
+
+        </script>
+    </body>
+</html>

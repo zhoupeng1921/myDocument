@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!--给组件绑定事件 这里的事件指的是监听自定义的事件 不会真正触发click-->
+            <child @click="handleClick"></child>
+        </div>
+
+
+        <script>
+            Vue.component('child',{
+                // html标签上事件，这里的事件是原生事件
+                template:'<div @click="handleChildClick">Child</div>',
+                methods:{
+                    handleChildClick: function(){
+                        alert('child click');
+                        // 只能这样才能触发自定义事件
+                        this.$emit('click');
+                    }
+                }
+            })
+
+            var vm = new Vue({
+               el:"#root",
+               methods:{
+                handleClick: function(){
+                    alert('click');
+                }
+               }
+            })
+
+        </script>
+    </body>
+</html>

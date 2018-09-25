@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <child>
+                <template slot-scope="props">
+                    <li>{{props.item}}</li>
+                </template>
+            </child>
+            <child>
+                    <template slot-scope="props">
+                        <h2>{{props.item}}</h2>
+                    </template>
+                </child>
+        </div>
+
+
+        <script>
+
+            //由父组件决定样式 template标签是固定写法
+            Vue.component('child',{
+                data: function(){
+                    return{
+                        list:[1,2,3,4]
+                    }
+                },
+                template:`
+                        <div>
+                            <ul>
+                                <slot v-for='item of list'
+                                :item=item>
+                                
+                                </slot>
+                            </ul>
+                        </div>
+                `
+            })
+
+            var vm = new Vue({
+               el:"#root"
+            })
+
+        </script>
+    </body>
+</html>

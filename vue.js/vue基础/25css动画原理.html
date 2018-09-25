@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <script src="vue.js"></script>
+    <style>
+        .fade-enter{
+            opacity: 0;
+        }
+        .fade-enter-active{
+            transition: opacity 2s;
+        }
+        .fade-leave-to{
+            opacity: 0;
+        }
+        .fade-leave-active{
+            transition: opacity 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <!-- name 是fade, 样式也是fade开头,默认是v-enter,v-.... -->
+        <!-- 动画效果用transition标签，组件切换，内容显示隐藏都可以实现动画 -->
+        <transition name="fade">
+            <div v-if="show">hello world</div>
+        </transition>
+        <button @click="handleClick">切换</button>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

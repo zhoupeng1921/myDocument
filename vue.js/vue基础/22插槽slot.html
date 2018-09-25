@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <child>
+            <p slot='header'>xu</p>
+            <p slot='footer'>haixing</p>
+        </child>
+    </div>
+
+
+    <script>
+        //<slot> 父组件里面写的内容都会被传递过来
+        //若不用name指定外部slot,会全部引用过来
+        Vue.component('child', {
+            template: `<div>
+                            <slot name='header'></slot>
+                            <p>hello</p>
+                            <slot name='middle'>默认内容</slot>
+                            <slot name='footer'></slot>
+                        </div>`
+        })
+
+        var vm = new Vue({
+            el: "#root"
+        })
+
+    </script>
+</body>
+
+</html>

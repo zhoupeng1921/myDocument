@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- 组件监听原生事件，加上.native 监听元素事件 -->
+            <child @click.native="handleClick"></child>
+        </div>
+
+
+        <script>
+            Vue.component('child',{
+                template:'<div>Child</div>',
+            })
+
+            var vm = new Vue({
+               el:"#root",
+               methods:{
+                handleClick: function(){
+                    alert('click');
+                }
+               }
+            })
+
+        </script>
+    </body>
+</html>

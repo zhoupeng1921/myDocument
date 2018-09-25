@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 如果用:content会去找vue中的定义的属性，而不会把里面的值当字符串 -->
+        <child content="hello world"></child>
+    </div>
+
+
+    <script>
+        //非props属性，1.不能直接在组件中引用，2.会显示在父组件的属性中
+        //props属性不会在标签属性中显示出来
+        Vue.component('child', {
+            // props:['content'],
+            props: {
+                // content: String //验证为String类型,接收多种类型可以用数组表示[String,Number]
+                content: {
+                    type: String,
+                    required: false,  //这个属性必传
+                    default:"default value",
+                    validator: function(value){ //做校验
+                        return value.lenth > 5;
+                    }
+                }
+            },
+            template: '<div>{{content}}</div>'
+        })
+
+        var vm = new Vue({
+            el: "#root"
+        })
+
+    </script>
+</body>
+
+</html>

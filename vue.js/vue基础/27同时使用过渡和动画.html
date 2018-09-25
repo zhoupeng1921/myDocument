@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="animate.css"/>
+    <style>
+        .fade-enter,.fade-leave-to{
+            opacity: 0;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <!-- appear 解决第一次显示没有效果问题    同时加入animate与显示隐藏效果 -->
+        <!-- type="transition" 动画时长以 transition 为准 也可以:duration="10000" -->
+        <transition 
+        :duration="{enter:5000,leave:10000}"
+        name="fade" 
+        appear
+        enter-active-class="animated swing fade-enter-active" 
+        leave-active-class="animated shake fade-leave-active"
+        appear-active-class="animated swing fade-enter-active">
+            <div v-if="show">hello world</div>
+        </transition>
+        <button @click="handleClick">切换</button>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

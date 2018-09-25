@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>三种模板语法</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>{{name}}</div>
+            <!-- 也是数据绑定的语法和{{}}一样 -->
+            <div v-text="name"></div> 
+
+            <div v-html="name"></div>
+
+            <div>{{name + ' hot'}}</div>
+            <div v-text="name+' hot'"></div> 
+            <div v-html="name+ ' hot'"></div>
+        </div>
+
+
+        <script>
+            //每个v-开头的，后面都可以去写js表达式，不仅仅是变量
+            
+
+            var app = new Vue({
+                el:'#app', //vue实例处理哪个dom
+                data:{   //定义数据
+                    name:'<h1>hello world</h1>'
+                }
+            })
+        </script>
+    </body>
+</html>

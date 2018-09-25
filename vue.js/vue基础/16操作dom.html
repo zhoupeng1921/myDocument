@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Hello world</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <div ref="divEle" @click="handleClick">hello world</div>
+        </div>
+
+
+        <script>
+            var vm = new Vue({
+               el:"#root",
+               methods:{
+                handleClick: function(){
+                    //VUE中操作dom的方法，获取标签对应的dom元素
+                    //若在组件上用ref,获取的是组件的引用
+                    console.log(this.$refs.divEle.innerHTML);
+                }
+               }
+            })
+
+        </script>
+    </body>
+</html>
