@@ -4,7 +4,7 @@ var users = [
     { name: "ccc", age: 25 },
     { name: "ddd", age: 22 }
 ];
-//过滤对象
+//过滤对象 返回的是数组
 var user = users.filter(p => p.age == 22);
 console.log(user)
 
