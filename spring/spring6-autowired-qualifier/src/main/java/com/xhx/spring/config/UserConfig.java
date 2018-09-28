@@ -16,7 +16,7 @@ public class UserConfig {
     }
 
     @Primary
-    @Bean(name = "getUser2")
+    @Bean(name = "user2")
     public User user2(){
         return new User("brr-dfa-874","haixing",25);
     }

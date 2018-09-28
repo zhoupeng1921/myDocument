@@ -19,10 +19,14 @@ public class Spring5AutowiredQualifierApplicationTests {
     @Qualifier(value = "user1")
     private User user2;
 
+    @Autowired
+    private User user3;
+
     @Test
     public void testAuto() {
         System.out.println(user2.getName());
         System.out.println(user1.getName());
+        System.out.println(user3.getName());
     }
 
 }
