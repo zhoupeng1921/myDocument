@@ -7,6 +7,7 @@ import fastClick from 'fastclick'
 // 重置样式
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
+import './assets/styles/iconfont.css'
 
 Vue.config.productionTip = false
 // 移动端300ms点击延迟
