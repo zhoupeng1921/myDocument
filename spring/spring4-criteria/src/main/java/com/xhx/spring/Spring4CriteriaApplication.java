@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Spring3CriteriaApplication {
+public class Spring4CriteriaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Spring3CriteriaApplication.class, args);
+        SpringApplication.run(Spring4CriteriaApplication.class, args);
     }
 }
