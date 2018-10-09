@@ -23,7 +23,7 @@ public class AppTest {
     }
 
     /**
-     * ParameterizedType参数化类型，即泛型，List<T>、Map<K,V>等带有参数的对象
+     * ParameterizedType参数化类型，即泛型，List<T>、Map<K,V>等带有参数的对象类型
      */
     @Test
     public void testParameterizedType() throws Exception{
@@ -38,24 +38,20 @@ public class AppTest {
         Field cloth = TypeTest.class.getDeclaredField("cloth");
         Type genericType1 = cloth.getGenericType();
         System.out.println(genericType1.getClass().getName());
+        //sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl
         Type[] actualTypeArguments = ((ParameterizedType) genericType1).getActualTypeArguments();
         System.out.println(actualTypeArguments[0]);
-
+        //class java.lang.String
 
         //getRawType  泛型中<>前面的类型
         Type rawType = ((ParameterizedType) genericType1).getRawType();
         System.out.println(rawType);
+        //interface java.util.List
 
         //getOwnerType 获取内部类的拥有者
         Type ownerType = ((ParameterizedType) genericType1).getOwnerType();
         System.out.println(ownerType);
-        /**
-         * sun.reflect.generics.reflectiveObjects.TypeVariableImpl
-         * sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl
-         * class java.lang.String
-         * interface java.util.List
-         * null
-         */
+        //null
 
     }
 
