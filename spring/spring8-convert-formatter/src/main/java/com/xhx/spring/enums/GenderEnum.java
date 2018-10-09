@@ -3,8 +3,12 @@ package com.xhx.spring.enums;/*
  * 2018/10/8 21:59
  */
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Arrays;
 
+//把enum类型转换为json输出到前端，否则会输出name
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum GenderEnum {
 
     MAN(0,"MAN","男"),WOMAN(1,"WOMAN","女");
@@ -17,6 +21,7 @@ public enum GenderEnum {
     private int code;
     private String value;
     private String desc;
+
 
     public int getCode() {
         return code;
