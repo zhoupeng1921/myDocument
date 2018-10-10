@@ -11,13 +11,11 @@ import com.xhx.json.entity2.Animal;
 import com.xhx.json.entity2.Lion;
 import com.xhx.json.entity2.Tiger;
 import com.xhx.json.entity2.Zoo;
+import com.xhx.json.entity3.Phone;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Unit test for simple App.
@@ -144,5 +142,18 @@ public class AppTest {
         Zoo zoo1 = mapper.readValue(s, Zoo.class);
         System.out.println(zoo1);
         //com.xhx.json.entity2.Zoo@69a3d1d
+    }
+
+    @Test
+    public void testJson6() throws Exception{
+        Map<String,Object> map = new HashMap<>();
+        map.put("id","abdae");
+        map.put("name","我的");
+        map.put("model","nokia");
+        map.put("size","6.0");
+        String s = mapper.writeValueAsString(map);
+        Phone phone = mapper.readValue(s, Phone.class);
+        System.out.println(phone);
+        //Phone{id='abdae', model='nokia', other={size=6.0, name=我的}}
     }
 }
