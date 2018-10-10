@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.xhx.json.entity.Hourse;
+import com.xhx.json.entity.Person;
 import com.xhx.json.entity.User;
 import org.junit.Test;
 
@@ -11,6 +13,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Unit test for simple App.
@@ -68,5 +71,39 @@ public class AppTest {
         });
         System.out.println(userList);
         //[User{id='111', name='xuhaixing', age=25, birthday=null, money=100000.0, date=Tue Oct 09 08:00:00 CST 2018}]
+    }
+
+    /**
+     * 自定义序列化
+     * @throws Exception
+     */
+    @Test
+    public void testJson3() throws Exception{
+        Hourse hourse = new Hourse();
+        hourse.setBuildDate(new Date());
+        hourse.setLocation("河北省");
+
+        String s = mapper.writeValueAsString(hourse);
+        System.out.println(s);
+        //{"id":"自定义","location":"河北省"}
+    }
+
+    /**
+     * @JsonCreator
+     * @throws Exception
+     */
+    @Test
+    public void testJson4() throws Exception{
+        Person person = new Person("abcd");
+        person.setAddress("河北省");
+        person.setBirthday(new Date());
+        person.setName("xuhaixing");
+
+        String s = mapper.writeValueAsString(person);
+        System.out.println(s);
+
+
+        Person person1 = mapper.readValue(s, Person.class);
+        System.out.println(person1);
     }
 }
