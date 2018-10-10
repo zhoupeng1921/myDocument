@@ -13,7 +13,9 @@ import java.util.Date;
 /**
  * @JsonInclude  value某些属性是否序列化的规则
  * @JsonRootName  需要设置mapper.enable(SerializationFeature.WRAP_ROOT_VALUE); 否则rootName无效
+ * @JsonIgnoreProperties 设置不被序列化的属性
  */
+@JsonIgnoreProperties(value = {"money"})
 @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 @JsonRootName(value = "root")
 public class User {
@@ -27,6 +29,10 @@ public class User {
 //    @JsonProperty(value = "fullName",access = JsonProperty.Access.READ_ONLY)
     @JsonProperty(value = "fullName")
     private String name;
+
+    /**
+     * @JsonValue 若加上这个字段则序列化只输出这个值
+     */
     private Integer age;
     /**
      *  @JsonIgnore 忽略这个属性不转换
@@ -52,6 +58,13 @@ public class User {
     public String getId() {
         return id;
     }
+    /**
+     *
+     * Jackson作用于json，没有getId,不会序列化id
+     */
+//    public String getId() {
+//        return id;
+//    }
 
     public void setId(String id) {
         this.id = id;
