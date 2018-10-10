@@ -40,8 +40,14 @@ public class User {
     /**
      * @JsonFormat pattern做格式转换
      */
-    @JsonFormat(pattern = "yyyy年MM月dd日 HH:mm:ss",timezone ="GMT+8")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy年MM月dd日 HH:mm:ss",timezone ="GMT+8")
     private Date date;
+
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
+    private Date date2;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,locale = "zh_CN")
+    private Date date3;
 
     public String getId() {
         return id;
@@ -97,6 +103,14 @@ public class User {
 
     public void setCompute(String compute) {
         this.compute = compute;
+    }
+
+    public Date getDate2() {
+        return date2;
+    }
+
+    public void setDate2(Date date2) {
+        this.date2 = date2;
     }
 
     @Override
