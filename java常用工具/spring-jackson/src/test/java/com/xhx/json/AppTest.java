@@ -7,6 +7,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.xhx.json.entity.Hourse;
 import com.xhx.json.entity.Person;
 import com.xhx.json.entity.User;
+import com.xhx.json.entity2.Animal;
+import com.xhx.json.entity2.Lion;
+import com.xhx.json.entity2.Tiger;
+import com.xhx.json.entity2.Zoo;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -105,5 +109,40 @@ public class AppTest {
 
         Person person1 = mapper.readValue(s, Person.class);
         System.out.println(person1);
+        /**
+         * {"id":"abcd","name":"xuhaixing","birthday":1539167688526,"address":"河北省"}
+         * com.xhx.json.entity.Person@2bbf4b8b
+         */
+    }
+
+
+    /**
+     * @JsonTypeInfo
+     * @throws Exception
+     */
+    @Test
+    public void testJson5() throws Exception{
+        Zoo zoo = new Zoo();
+        Lion lion = new Lion();
+        lion.setName("狮子");
+        lion.setAge(2);
+
+        Tiger tiger = new Tiger();
+        tiger.setName("老虎");
+        tiger.setAge(3);
+        List<Animal> animals = new ArrayList<>();
+        animals.add(lion);
+        animals.add(tiger);
+        zoo.setAnimals(animals);
+        zoo.setCity("北京");
+        zoo.setName("北京天上地下动物园");
+
+        String s = mapper.writeValueAsString(zoo);
+        System.out.println(s);
+        //{"name":"北京天上地下动物园","city":"北京","animals":[{"@Clazz":"com.xhx.json.entity2.Lion","name":"狮子","age":2},{"@Clazz":"com.xhx.json.entity2.Tiger","name":"老虎","age":3}]}
+
+        Zoo zoo1 = mapper.readValue(s, Zoo.class);
+        System.out.println(zoo1);
+        //com.xhx.json.entity2.Zoo@69a3d1d
     }
 }
