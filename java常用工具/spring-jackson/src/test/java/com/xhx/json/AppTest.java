@@ -3,7 +3,6 @@ package com.xhx.json;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.xhx.json.entity.Hourse;
 import com.xhx.json.entity.Person;
 import com.xhx.json.entity.User;
@@ -157,5 +156,25 @@ public class AppTest {
         Phone phone = mapper.readValue(s, Phone.class);
         System.out.println(phone);
         //Phone{id='abdae', model='nokia', other={size=6.0, name=我的}}
+    }
+
+    /**
+     * @JsonIgnore 测试 不管是作用于get,set还是field上，那个字段都不会序列化或者反序列化
+     */
+    @Test
+    public void testJson7() throws Exception{
+        Person person = new Person("ABD");
+        person.setAddress("河北省");
+        person.setName("xuhaixing");
+        person.setBirthday(new Date());
+        String s = mapper.writeValueAsString(person);
+        System.out.println(s);
+        String str = "{\"id\":\"ABD\",\"name\":\"xuhaixing\",\"birthday\":1539183966844,\"address\":\"河北省\"}";
+        Person person1 = mapper.readValue(str, Person.class);
+        System.out.println(person1);
+        /**
+         * {"id":"ABD","name":"xuhaixing"}
+         * Person{id='ABD', name='xuhaixing', birthday=null, address='null'}
+         */
     }
 }
