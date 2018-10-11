@@ -24,6 +24,7 @@ public class HourseSerializer extends StdSerializer<Hourse> {
         generator.writeString("自定义");
         generator.writeFieldName("location");
         generator.writeString(hourse.getLocation());
+        generator.writeObjectField("buildDate",hourse.getBuildDate());
         generator.writeEndObject();
     }
 }

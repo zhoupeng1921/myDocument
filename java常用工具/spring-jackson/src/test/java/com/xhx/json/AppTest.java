@@ -3,6 +3,7 @@ package com.xhx.json;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.xhx.json.entity.Hourse;
 import com.xhx.json.entity.Person;
 import com.xhx.json.entity.User;
@@ -45,13 +46,13 @@ public class AppTest {
     @Test
     public void testJson1() throws Exception{
 
-        //mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+        mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String str = mapper.writeValueAsString(user);
 
         //还可以输出到文件、流、字节等
         System.out.println(str);
         //有根时的输出：{"root":{"age":25,"date":"2018年10月10日 22:27:41","date2":1539181661291,"date3":"2018-10-10T14:27:41.291+0000","fullName":"xuhaixing"}}
-
+        mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
         User user = mapper.readValue(str, User.class);
         System.out.println(user);
         //User{id='null', name='xuhaixing', age=25, birthday=null, money=null, compute='null', date=Wed Oct 10 22:33:48 CST 2018, date2=Wed Oct 10 22:33:48 CST 2018, date3=Wed Oct 10 22:33:48 CST 2018}
