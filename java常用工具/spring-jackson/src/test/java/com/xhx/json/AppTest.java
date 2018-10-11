@@ -3,7 +3,6 @@ package com.xhx.json;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.xhx.json.entity.Hourse;
 import com.xhx.json.entity.Person;
 import com.xhx.json.entity.User;
@@ -30,6 +29,8 @@ public class AppTest {
         user.setAge(25);
         user.setMoney(100000.0);
         user.setDate(new Date());
+        user.setDate2(new Date());
+        user.setDate3(new Date());
     }
 
     ObjectMapper mapper = new ObjectMapper();
@@ -44,16 +45,16 @@ public class AppTest {
     @Test
     public void testJson1() throws Exception{
 
-        mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+        //mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String str = mapper.writeValueAsString(user);
 
         //还可以输出到文件、流、字节等
         System.out.println(str);
-        //{"id":"111","name":"xuhaixing","age":25,"money":100000.0,"date":1539092674111}
+        //有根时的输出：{"root":{"age":25,"date":"2018年10月10日 22:27:41","date2":1539181661291,"date3":"2018-10-10T14:27:41.291+0000","fullName":"xuhaixing"}}
 
         User user = mapper.readValue(str, User.class);
         System.out.println(user);
-        //User{id='111', name='xuhaixing', age=25, birthday=null, money=100000.0, date=Tue Oct 09 21:44:34 CST 2018}
+        //User{id='null', name='xuhaixing', age=25, birthday=null, money=null, compute='null', date=Wed Oct 10 22:33:48 CST 2018, date2=Wed Oct 10 22:33:48 CST 2018, date3=Wed Oct 10 22:33:48 CST 2018}
     }
 
     /**
@@ -109,7 +110,7 @@ public class AppTest {
         System.out.println(person1);
         /**
          * {"id":"abcd","name":"xuhaixing","birthday":1539167688526,"address":"河北省"}
-         * com.xhx.json.entity.Person@2bbf4b8b
+         * Person{id='abcd', name='xuhaixing', birthday=Wed Oct 10 22:33:26 CST 2018, address='河北省'}
          */
     }
 
@@ -155,5 +156,25 @@ public class AppTest {
         Phone phone = mapper.readValue(s, Phone.class);
         System.out.println(phone);
         //Phone{id='abdae', model='nokia', other={size=6.0, name=我的}}
+    }
+
+    /**
+     * @JsonIgnore 测试 不管是作用于get,set还是field上，那个字段都不会序列化或者反序列化
+     */
+    @Test
+    public void testJson7() throws Exception{
+        Person person = new Person("ABD");
+        person.setAddress("河北省");
+        person.setName("xuhaixing");
+        person.setBirthday(new Date());
+        String s = mapper.writeValueAsString(person);
+        System.out.println(s);
+        String str = "{\"id\":\"ABD\",\"name\":\"xuhaixing\",\"birthday\":1539183966844,\"address\":\"河北省\"}";
+        Person person1 = mapper.readValue(str, Person.class);
+        System.out.println(person1);
+        /**
+         * {"id":"ABD","name":"xuhaixing"}
+         * Person{id='ABD', name='xuhaixing', birthday=null, address='null'}
+         */
     }
 }

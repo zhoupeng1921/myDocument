@@ -11,8 +11,8 @@ import java.util.Date;
  **/
 
 /**
- * @JsonInclude  value某些属性是否序列化的规则
- * @JsonRootName  需要设置mapper.enable(SerializationFeature.WRAP_ROOT_VALUE); 否则rootName无效
+ * @JsonInclude value某些属性是否序列化的规则
+ * @JsonRootName 需要设置mapper.enable(SerializationFeature.WRAP_ROOT_VALUE); 否则rootName无效
  * @JsonIgnoreProperties 设置不被序列化的属性
  */
 @JsonIgnoreProperties(value = {"money"})
@@ -22,8 +22,7 @@ public class User {
     private String id;
 
     /**
-     * @JsonProperty
-     * value 可以改变序列化和反序列化时属性的名称
+     * @JsonProperty value 可以改变序列化和反序列化时属性的名称
      * access 控制是否可以被序列号或者反序列化
      */
 //    @JsonProperty(value = "fullName",access = JsonProperty.Access.READ_ONLY)
@@ -34,9 +33,6 @@ public class User {
      * @JsonValue 若加上这个字段则序列化只输出这个值
      */
     private Integer age;
-    /**
-     *  @JsonIgnore 忽略这个属性不转换
-     */
     @JsonIgnore
     private LocalDate birthday;
     private Double money;
@@ -44,19 +40,23 @@ public class User {
     private String compute;
 
     /**
-     * @JsonFormat pattern做格式转换
+     * @JsonFormat pattern做格式转换 默认 timezone GMT
      */
-    @JsonFormat(pattern = "yyyy年MM月dd日 HH:mm:ss",timezone ="GMT+8")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy年MM月dd日 HH:mm:ss", timezone = "GMT+8")
     private Date date;
 
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
+    private Date date2;
+
+    @JsonFormat(locale = "zh_CN")
+    private Date date3;
+
     /**
-     *
      * Jackson作用于json，没有getId,不会序列化id
      */
 //    public String getId() {
 //        return id;
 //    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -68,7 +68,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public Integer getAge() {
         return age;
@@ -110,6 +109,22 @@ public class User {
         this.compute = compute;
     }
 
+    public Date getDate2() {
+        return date2;
+    }
+
+    public void setDate2(Date date2) {
+        this.date2 = date2;
+    }
+
+    public Date getDate3() {
+        return date3;
+    }
+
+    public void setDate3(Date date3) {
+        this.date3 = date3;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -118,7 +133,10 @@ public class User {
                 ", age=" + age +
                 ", birthday=" + birthday +
                 ", money=" + money +
+                ", compute='" + compute + '\'' +
                 ", date=" + date +
+                ", date2=" + date2 +
+                ", date3=" + date3 +
                 '}';
     }
 }
