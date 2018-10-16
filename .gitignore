@@ -20,3 +20,5 @@ out
 *.log
 *.log.*
 .gitignore
+node_modules
+package-lock.json
