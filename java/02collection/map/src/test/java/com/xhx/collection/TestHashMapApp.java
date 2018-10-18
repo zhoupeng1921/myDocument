@@ -148,7 +148,8 @@ public class TestHashMapApp {
                 //  new Student("pink",null,60),
                 new Student("pink", "男", 60),
                 new Student("black", "男", 60),
-                new Student("orange", null, 150)
+                new Student("orange", null, 150),
+                new Student("yellow",null,20)
         );
         Map<String, String> map = new HashMap<String, String>();
         map.put("pink", null);//原来为空，测试现在不为空
@@ -229,7 +230,7 @@ public class TestHashMapApp {
     /**
      * default V putIfAbsent(K key, V value)
      * <p>
-     * 如果获取的value为null,则用赋予新的value（插入或者更新）
+     * 如果获取的value为null,则用赋予新的value（插入或者更新）,第二个参数是值不是方法
      */
     @Test
     public void testHashMapPutIfAbsent() {
