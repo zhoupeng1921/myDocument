@@ -14,8 +14,10 @@ app.get('/about', function(req, res) {
   res.send("I'm express!")
 })
 
-//公开指定目录
-app.use('/public/', express, static('./public/'))
+//公开指定目录，第一个参数是拦截的请求路径
+app.use('/public/', express.static('./public/'))
+//省略第一个参数，可以不用那个路径来访问
+app.use(express.static('./public/'))
 
 app.listen(4000, function() {
   console.log('app is running at http://localhost:4000')

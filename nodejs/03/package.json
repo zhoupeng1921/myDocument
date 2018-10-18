@@ -2,7 +2,7 @@
   "name": "03",
   "version": "1.0.0",
   "description": "",
-  "main": "00Express概念.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
