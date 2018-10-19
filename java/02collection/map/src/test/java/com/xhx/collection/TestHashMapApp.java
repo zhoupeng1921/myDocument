@@ -9,7 +9,7 @@ import java.util.*;
  * xuhaixing
  * 2018/7/15 19:59
  **/
-public class TestHashMapApp {
+public class  TestHashMapApp {
 
 
     /**
@@ -231,6 +231,7 @@ public class TestHashMapApp {
      * default V putIfAbsent(K key, V value)
      * <p>
      * 如果获取的value为null,则用赋予新的value（插入或者更新）,第二个参数是值不是方法
+     * 返回值值原来的值oldValue
      */
     @Test
     public void testHashMapPutIfAbsent() {
@@ -238,11 +239,13 @@ public class TestHashMapApp {
         map.put("a", "aaa");
         map.put("b", null);
 
-        map.putIfAbsent("a", "ddd");
+        String a = map.putIfAbsent("a", "ddd");
         map.putIfAbsent("b", "ddd");
-        map.putIfAbsent("c", "ddd");
+        String b = map.putIfAbsent("c", "ddd");
         System.out.println(map);
         //{a=aaa, b=ddd, c=ddd}
+        System.out.println(a);
+        System.out.println(b);
     }
 }
 
