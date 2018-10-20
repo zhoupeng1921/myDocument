@@ -7,8 +7,9 @@ var app = express()
 //当服务器接收到get请求 / 时，执行回调函数
 app.get('/', function(req, res) {
   //在express中可以直接req.query来获取查询字符串参数
+  //res.send函数会不用设置头，中文不会乱码
   console.log(req.query)
-  res.send('hello express!')
+  res.send('hello express!你好')
 })
 app.get('/about', function(req, res) {
   res.send("I'm express!")
