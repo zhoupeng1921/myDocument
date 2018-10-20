@@ -17,6 +17,12 @@ app.use(bodyParser.json())
 
 app.use(router)
 
+//Express对于没有设定的请求路径，默认会返回Cannot GET xxx
+//自己定义返回的页面
+app.use(function(req, res) {
+  res.send('my 404')
+})
+
 app.listen(4000, function() {
   console.log('server is running...')
 })
