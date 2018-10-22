@@ -1,5 +1,5 @@
 {
-  "name": "03",
+  "name": "04",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,9 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "art-template": "^4.13.1",
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-art-template": "^1.0.1",
-    "mongoose": "^5.3.4"
+    "express-session": "^1.15.6"
   }
 }

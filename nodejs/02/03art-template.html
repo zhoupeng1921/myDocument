@@ -8,11 +8,16 @@
 
 <body>
 
+  <!--   作循环
+       {{each hobbies}} {{ $value }} {{/each}} -->
+
   <!--浏览器中引入这个文件-->
   <script src="../node_modules/art-template/lib/template-web.js"></script>
+
   <script type="text/template" id="tpl">
     hello {{name}}
   </script>
+
   <script>
     var ret = template('tpl', {
       name: 'Jack'

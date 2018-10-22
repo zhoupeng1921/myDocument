@@ -16,7 +16,12 @@ app.engine('art', require('express-art-template'))
 //第一个参数不能写路径，默认会去项目中的views目录查找该文件
 //也就是说，Express有一个约定，开发人员把所有的视图文件都放到views中
 app.get('/', function(req, res) {
+  //获取参数，只能拿get请求参数
   res.render('404.art', { title: 'haha' })
+})
+app.get('/common', function(req, res) {
+  //重定向
+  res.redirect('/')
 })
 
 //如果要修改默认的views目录，则可以

@@ -3,6 +3,7 @@
 //2. 在需要的文件模块中加载art-template
 //3. 查文档，使用模板引擎api
 
+
 var template = require('art-template')
 var ret = template.render('hello {{name}}', {
   name: 'jack'

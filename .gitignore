@@ -20,6 +20,8 @@ out
 *.log
 *.log.*
 .gitignore
+
+# vscode
 node_modules
 package-lock.json
 .vscode
