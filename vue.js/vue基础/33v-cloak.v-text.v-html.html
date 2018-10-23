@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 使用v-cloak，解决差值表达式，没替换之前显示到页面的问题 -->
+    <p v-cloak>{{msg}}</p>
+
+    <!-- 没有这种闪烁问题，会把元素内原本美容清空 -->
+    <p v-text='msg'></p>
+
+    <!-- 会解析html -->
+    <div v-html='msg2'></div>
+  </div>
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: 'abcdef',
+        msg2: '<h1>哈哈</h1>'
+      }
+    })
+
+  </script>
+</body>
+
+</html>
