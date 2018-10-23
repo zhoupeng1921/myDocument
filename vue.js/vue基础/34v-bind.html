@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- v-bind：简写: 是vue中绑定属性的指令,会把后面的当js表达式解析 -->
+    <input type="button" value="按钮" v-bind:title="msg+'12345'" />
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: '这是title'
+      }
+    })
+
+  </script>
+</body>
+
+</html>
