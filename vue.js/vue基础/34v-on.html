@@ -9,8 +9,8 @@
 
 <body>
   <div id="root">
-    <!-- vue里面提供了v-on 事件绑定机制 -->
-    <input type="button" value="按钮" v-on:click='show' />
+    <!-- vue里面提供了v-on 事件绑定机制 简写@-->
+    <input type="button" value="按钮" @click='show' />
   </div>
   <script>
     var vm = new Vue({
@@ -20,7 +20,7 @@
       },
       methods: {
         show: function () {
-          alert('哈哈')
+          alert('点击了')
         }
       }
     })
