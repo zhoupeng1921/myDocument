@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 遍历数组 -->
+    <p v-for="(item, index) in list" :key="item">{{item}}--{{index}}</p>
+    <!-- 遍历对象 -->
+    <p v-for="(val,key,index) in user">{{val}}--{{key}}--{{index}}</p>
+
+    <!-- 迭代数字，从1开始 -->
+    <p v-for="count in 10">{{count}}</p>
+  </div>
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        list: [1, 2, 3, 4, 5, 6],
+        user: {
+          id: 1,
+          name: 'xuhaixing',
+          gender: 'man'
+        }
+      },
+      methods: {
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
