@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <h2>{{msg}}</h2>
+    <!-- v-bind 只能实现数据的单向绑定 从M自动到V，无法实现数据的双向绑定 -->
+    <input type="text" v-bind:value="msg" style="width:100%" />
+
+    <!-- v-model实现数据双向绑定，
+    注意：只能使用在表单元素中 -->
+    <input type="text" v-model="msg" style="width:100%" />
+  </div>
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: '大家好才是真的好'
+      },
+      methods: {
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
