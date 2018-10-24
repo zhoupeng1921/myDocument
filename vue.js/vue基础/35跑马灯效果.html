@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <input type="button" value="启动" @click='move' />
+    <input type="button" value="停止" @click='stop' />
+    <div>{{msg}}</div>
+  </div>
+
+
+  <script>
+    //注意：在vm实例中，如果想要获取data上的数据或者methods中的方法，
+    //必须通过this.属性 this.方法 来进行访问，this就是new出来的对象
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: '哈哈嘻嘻画画',
+        intervalId: null
+      },
+      methods: {
+        //es6语法，方法
+        move() {
+          var _this = this
+          //用箭头函数，内部this与外部this一样
+          if (this.intervalId != null) {
+            return;
+          }
+          this.intervalId = setInterval(() => {
+            var start = _this.msg.substring(0, 1);
+            var end = _this.msg.substring(1);
+            _this.msg = end + start;
+          }, 400)
+        },
+        stop() {
+          clearInterval(this.intervalId)
+          this.intervalId = null
+        }
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
