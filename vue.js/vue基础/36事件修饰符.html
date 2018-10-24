@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+  <style>
+    .inner{
+      height: 150px;
+      background-color: darkgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+
+    <div class="inner" @click="div1Handler">
+      <!-- 使用 .stop 阻止事件冒泡 -->
+      <input type="button" value="戳他" @click.stop="btnClick" />
+    </div>
+
+    <!-- .prevent 阻止默认行为 -->
+    <a href="http://www.baidu.com" @click.prevent="linkClick">百度一下</a>
+
+    <!-- 使用 .capture 实现捕获触发事件的机制，从外到里-->
+    <div class="inner" @click.capture="div1Handler">
+      <input type="button" value="戳他" @click="btnClick" />
+    </div>
+
+    <!-- 使用.self 实现只有事件在该元素本身的时候（不是子元素），才会触发事件处理函数  -->
+    <div class="inner" @click.self="div1Handler">
+      <input type="button" value="戳他" @click="btnClick" />
+    </div>
+
+    <!-- .once 事件只会执行一次 -->
+    <a href="http://www.baidu.com" @click.prevent.once="linkClick">百度一下</a>
+
+  </div>
+
+
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+
+      },
+      methods: {
+        div1Handler() {
+          alert('外面')
+        },
+        btnClick() {
+          alert('里面')
+        },
+        linkClick() {
+          alert('出发了点击事件')
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
