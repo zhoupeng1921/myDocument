@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <input type="button" value="切换" @click="toggle" />
+    <!-- v-if 每次都会重新删除或创建元素，较高的切换性能消耗
+      v-show 用display:none控制样式，较高的初始渲染消耗
+    -->
+    <div v-if="flag"> v-if</div>
+    <div v-show="flag"> v-show</div>
+  </div>
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        flag: true
+      },
+      methods: {
+        toggle() {
+          this.flag = !this.flag
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
