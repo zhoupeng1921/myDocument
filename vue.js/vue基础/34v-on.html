@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- vue里面提供了v-on 事件绑定机制 -->
+    <input type="button" value="按钮" v-on:click='show' />
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+
+      },
+      methods: {
+        show: function () {
+          alert('哈哈')
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
