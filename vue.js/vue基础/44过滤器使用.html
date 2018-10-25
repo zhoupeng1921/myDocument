@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 不传参 -->
+    <!-- <p>{{msg | msgFormat}}</p> -->
+
+    <!-- 可以传参，也可以传多个，回调函数中依次加形参往后排 -->
+    <!-- 也可以调用多个过滤器 -->
+    <p>{{msg | msgFormat('呀') | test}}</p>
+  </div>
+
+
+  <script>
+    //定义一个全局过滤器
+    Vue.filter('msgFormat', function (msg, arg1) {
+      //字符串的 replace方法，第一个参数可以写正则
+      return msg.replace(/哈/g, arg1)
+    })
+
+    Vue.filter('test', function (msg) {
+      return '----------' + msg + '--------'
+    })
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: '哈哈哈嘻嘻嘻哈哈哈呵呵呵咪咪咪'
+      },
+      methods: {
+
+      }
+    })
+
+    // 过滤器定义语法
+    //第一个参数  管道符传过来的数据
+/*     Vue.filter('过滤器名称', function (data) {
+      return date + '123'
+    })
+    过滤器调用时候的格式 {{ name | operator }} */
+  </script>
+</body>
+
+</html>
