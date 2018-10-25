@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <label>
+        id:<input type="text" v-model="id" />
+      </label>
+      <label>
+        name:<input type="text" v-model="name" />
+      </label>
+      <!-- 在vue中，使用事件绑定机制，为元素指定处理函数的时候，加()就能传参了 -->
+      <input type="button" value="添加" @click="add" />
+      <label>
+        搜索名称关键字:<input type="text" v-model="keywords" />
+      </label>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>time</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- v-for 从方法中获取数据 -->
+        <tr v-for="item in search(keywords)" :key="item.id">
+          <td>{{item.id}}</td>
+          <td>{{item.name | myFilter(":::")}}</td>
+          <td>{{item.ctime | dateFormat}}</td>
+          <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script>
+    //全局过滤器，进行时间格式化
+    Vue.filter('dateFormat', function (dateStr) {
+      var dt = new Date(dateStr)
+      var year = dt.getFullYear()
+      var m = dt.getMonth() + 1
+      var d = dt.getDate()
+      var hh = dt.getHours()
+      var mm = dt.getMinutes()
+      var ss = dt.getSeconds()
+
+      // return y + '-' + m + '-' + d
+      return `${year}-${m}-${d} ${hh}:${mm}:${ss}`
+
+    })
+
+
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        list: [
+          { id: 1, name: '小a', ctime: new Date() },
+          { id: 2, name: '小b', ctime: new Date() }
+        ],
+        id: '',
+        name: '',
+        keywords: ''
+      },
+      methods: {
+        add() {
+          this.list.push({ id: this.id, name: this.name, ctime: new Date() })
+          this.id = ''
+          this.name = ''
+          this.ctime = ''
+        },
+        del(id) {
+          //如何根据id删除这一项的索引
+
+          //在数组的some方法中，如果return true,就会立即终止这个数组的循环
+          // this.list.some((item, i) => {
+          //   if (item.id == id) {
+          //     this.list.splice(i, 1)
+          //     return true
+          //   }
+          // })
+
+          var index = this.list.findIndex(item => {
+            if (item.id == id) {
+              return true;
+            }
+          })
+          this.list.splice(index, 1)
+        },
+        search(words) {
+          var newList = []
+          // this.list.forEach(item => {
+          //   if (item.name.indexOf(words) != -1) {
+          //     newList.push(item)
+          //   }
+          // })
+          // return newList
+
+          // forEach some filter findIndex 都是数组新方法
+          return this.list.filter(item => {
+            if (item.name.includes(words)) {
+              return true
+            }
+          })
+        }
+      },
+      filters: { //定义私有过滤器   过滤器名称/处理函数
+        myFilter: function (msg, arg = '-++-') {
+          return msg + arg
+        }
+
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>
