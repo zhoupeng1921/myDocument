@@ -49,11 +49,11 @@
     Vue.filter('dateFormat', function (dateStr) {
       var dt = new Date(dateStr)
       var year = dt.getFullYear()
-      var m = dt.getMonth() + 1
-      var d = dt.getDate()
-      var hh = dt.getHours()
-      var mm = dt.getMinutes()
-      var ss = dt.getSeconds()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
 
       // return y + '-' + m + '-' + d
       return `${year}-${m}-${d} ${hh}:${mm}:${ss}`
