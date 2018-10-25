@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <label>
+        ID:
+        <input type="text" v-model="id" />
+      </label>
+      <label>
+        name:
+        <input type="text" v-model="name" />
+      </label>
+      <input type="button" value="添加" @click="add" />
+    </div>
+
+    <!-- key 只能使用number/string
+      用v-bind动态的指定绑定的值
+      渲染时会复用组件问题
+    -->
+    <p v-for="item in list" :key="item.id">
+      <input type="checkbox" />
+      {{item.id}}---{{item.name}}
+    </p>
+  </div>
+
+
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        list: [
+          { id: 1, name: 'aa' },
+          { id: 2, name: 'bb' },
+          { id: 3, name: 'cc' },
+          { id: 4, name: 'dd' }
+        ],
+        id: '',
+        name: ''
+      },
+      methods: {
+        add() {
+          this.list.unshift({ id: this.id, name: this.name })
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
