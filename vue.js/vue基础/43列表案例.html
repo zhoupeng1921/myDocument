@@ -25,7 +25,7 @@
       -->
       <input type="button" value="添加" @click="add" @keyup.enter="add" />
       <label>
-        搜索名称关键字:<input type="text" v-model="keywords" />
+        搜索名称关键字:<input type="text" v-model="keywords" v-focus v-color="'blue'" />
       </label>
     </div>
     <table>
@@ -41,7 +41,7 @@
         <!-- v-for 从方法中获取数据 -->
         <tr v-for="item in search(keywords)" :key="item.id">
           <td>{{item.id}}</td>
-          <td>{{item.name | myFilter(":::")}}</td>
+          <td v-fontweight="933">{{item.name | myFilter(":::")}}</td>
           <td>{{item.ctime | dateFormat}}</td>
           <td><a href="" @click.prevent="del(item.id)">删除</a></td>
         </tr>
@@ -65,7 +65,41 @@
       return `${year}-${m}-${d} ${hh}:${mm}:${ss}`
 
     })
+    Vue.config.keyCodes.f1 = 112
 
+    // 使用Vue.directive()自定义全局指令
+    // 参数1：指令名称，在定义的时候，指令前面不需要加v-前缀，
+    // 但是在调用的时候，必须在指令前加v-
+    // 参数2：是一个对象，在这个对象身上，有一些指令相关的函数
+    Vue.directive('focus', {
+      // 在每个函数中，第一个参数，就是el,表示被绑定了指令的那个元素，是原生js对象
+      bind: function (el) {
+        //每当指令绑定到元素上的时候，会立即执行这个bind函数，只执行一次
+        // 在元素刚绑定指令的时候，还没插入到DOM中去，这时候调用focus方法没有作用
+        // 一个元素只有插入DOM之后，才能获取焦点
+      },
+      inserted: function (el) {
+        // 表示元素插入到DOM中的时候，会执行，只执行一次
+        el.focus()
+      },
+      updated() {
+        // 当VNode更新的时候，会执行updated,可能会触发多次
+      }
+    })
+
+    //自定义一个
+    Vue.directive('color', {
+      //样式只要通过指令绑定给了元素，
+      //不管元素有没有被插入到页面中去，这个元素肯定有了一个内联的样式
+      //和样式相关的可以写在bind中
+      bind: function (el, binding) {
+        el.style.color = binding.value
+      },
+      //和JS行为有关的最好在inserted中操作，
+      inserted: function (el) {
+
+      }
+    })
 
     var vm = new Vue({
       el: "#root",
@@ -124,7 +158,13 @@
         myFilter: function (msg, arg = '-++-') {
           return msg + arg
         }
-
+      },
+      directives: { //自定义私有指令
+        'fontweight': {
+          bind: function (el, binding) {
+            el.style.fontWeight = binding.value
+          }
+        }
       }
     })
 
