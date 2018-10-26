@@ -42,7 +42,7 @@
         <tr v-for="item in search(keywords)" :key="item.id">
           <td>{{item.id}}</td>
           <td v-fontweight="933">{{item.name | myFilter(":::")}}</td>
-          <td>{{item.ctime | dateFormat}}</td>
+          <td v-fontsize="'30px'">{{item.ctime | dateFormat}}</td>
           <td><a href="" @click.prevent="del(item.id)">删除</a></td>
         </tr>
       </tbody>
@@ -164,6 +164,9 @@
           bind: function (el, binding) {
             el.style.fontWeight = binding.value
           }
+        },
+        'fontsize': function (el, binding) { //简写，等同于把代码写到bind和update中去
+          el.style.fontSize = parseInt(binding.value) + 'px'
         }
       }
     })
