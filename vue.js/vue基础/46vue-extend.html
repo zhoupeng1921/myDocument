@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 创建的组件，不能用驼峰 -->
+    <my-com1></my-com1>
+    <my-com2></my-com2>
+    <my-com3></my-com3>
+  </div>
+
+  <!-- 在被vm控制的外面，使用template元素，定义html模板结构 
+      这里就有代码提示了
+    -->
+  <template id="myh1">
+    <h1>这是h1组件</h1>
+  </template>
+  <script>
+    // 创建组件三种方式
+
+    // template里只能有一个根节点
+    var com1 = Vue.extend({
+      template: '<h3>这是h3组件</h3>'
+    })
+    Vue.component('myCom1', com1)
+
+
+    Vue.component('myCom2', {
+      template: '<h2>这是h2组件</h2>'
+    })
+
+    Vue.component('myCom3', {
+      template: '#myh1'
+    })
+
+
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        msg: ''
+      },
+      methods: {
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
