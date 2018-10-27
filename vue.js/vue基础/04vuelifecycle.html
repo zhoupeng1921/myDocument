@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Hello world</title>
-        <script src="vue.js"></script>
-    </head>
-    <body>
-        <div id="app">hello world</div>
-        
-        <script>
-            //生命周期函数就是vue实例在某一个时间点会自动执行的函数
-            var vm = new Vue({
-                el:"#app",
-                template:"<div>{{test}}</div>",
-                data:{
-                    test:'test hello'
-                },
-                beforeCreate: function(){
-                    console.log("before create"); //vue实例初始化后执行
-                },
-                created: function(){
-                    console.log("created"); //外部注入，双向绑定等完成后执行
-                },
-                beforeMount: function(){
-                    console.log("before mount");
-                    console.log(this.$el);  //页面还没有被渲染
-                },
-                mounted: function(){
-                    console.log("mounted");
-                    console.log(this.$el); //页面渲染完
-                },
-                beforeDestroy: function(){ //当vm.$destory()方法执行时
-                    console.log("beforeDestory");
-                },
-                destroyed: function(){
-                    console.log("destoryed");//组件被完全销毁后
-                },
-                beforeUpdate:function(){
-                    console.log("beforeUpdate");
-                },
-                updated: function(){
-                    console.log("updated");
-                }
 
-            })
-        </script>
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">hello world</div>
+
+  <script>
+    //生命周期函数就是vue实例在某一个时间点会自动执行的函数
+    var vm = new Vue({
+      el: "#app",
+      template: "<div>{{test}}</div>",
+      data: {
+        test: 'test hello'
+      },
+      beforeCreate: function () {
+        console.log("before create"); //vue实例初始化后执行，这时候data与methods还没有初始化
+      },
+      created: function () {
+        console.log("created"); //外部注入，双向绑定等完成后执行，data与methods已经初始化好了
+      },
+      beforeMount: function () {
+        console.log("before mount");
+        console.log(this.$el);
+        //模板已经在内存中，页面还没有被渲染，页面中的元素还没有被替换过来，
+        //只是以前写的哪些模板字符串
+      },
+      mounted: function () {
+        console.log("mounted");
+        console.log(this.$el); //内存中的模板已经真实的挂载到了页面中，用户已经可以看到渲染好的页面了。
+        //页面渲染完，整个vue实例初始化完毕。如果要操作页面上dom节点，最早要在mounted中执行
+      },
+      beforeDestroy: function () { //当vm.$destory()方法执行时，此时还没真正执行销毁过程
+        console.log("beforeDestory");
+      },
+      destroyed: function () {
+        console.log("destoryed");//组件被完全销毁后
+      },
+      beforeUpdate: function () { //数据改变时，触发，此时页面中的数据还是旧的，data中的数据是新的，页面与
+        //数据尚未同步
+        console.log("beforeUpdate");
+      },
+      updated: function () { //页面与data中的数据已经同步 
+        console.log("updated");
+      }
+
+    })
+  </script>
+</body>
+
 </html>
