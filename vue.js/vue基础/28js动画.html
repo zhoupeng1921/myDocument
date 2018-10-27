@@ -2,55 +2,51 @@
 <html lang=en>
 
 <head>
-    <meta charset="utf-8" />
-    <title>Hello world</title>
-    <script src="vue.js"></script>
+  <meta charset="utf-8" />
+  <title>Hello world</title>
+  <script src="vue.js"></script>
 
 </head>
 
 <body>
-    <div id="root">
-        <!-- 入场动画  出场动画就是leave -->
-        <transition 
-            name="fade"
-            @before-enter="handleBeforeEnter"
-            @enter="handleEnter"
-            @after-enter="handleAfterEnter">
-                <div v-if="show">hello world</div>
-        </transition>
-        <button @click="handleClick">toggle</button>
-    </div>
+  <div id="root">
+    <!-- 入场动画  出场动画就是leave，可以用来做半场动画 -->
+    <transition name="fade" @before-enter="handleBeforeEnter" @enter="handleEnter" @after-enter="handleAfterEnter">
+      <div v-if="show">hello world</div>
+    </transition>
+    <button @click="handleClick">toggle</button>
+  </div>
 
 
-    <script>
-        var vm = new Vue({
-            el: "#root",
-            data: {
-                show: true
-            },
-            methods: {
-                handleClick: function () {
-                    this.show = !this.show;
-                },
-                //el就是动画的标签
-                handleBeforeEnter: function(el){
-                    el.style.color='red';
-                },
-                handleEnter:function(el,done){
-                    setTimeout(()=>{
-                        el.style.color='green'
-                    },2000)
-                    setTimeout(() => {
-                        done()
-                    }, 4000);
-                },
-                handleAfterEnter: function(el){
-                    el.style.color='#000'
-                }
-            }
-        })
+  <script>
+    var vm = new Vue({
+      el: "#root",
+      data: {
+        show: true
+      },
+      methods: {
+        handleClick: function () {
+          this.show = !this.show;
+        },
+        //el就是动画的标签
+        handleBeforeEnter: function (el) {
+          el.style.color = 'red';
+        },
+        handleEnter: function (el, done) {
+          setTimeout(() => {
+            el.style.color = 'green'
+          }, 2000)
+          setTimeout(() => {
+            done()
+          }, 4000);
+        },
+        handleAfterEnter: function (el) {
+          el.style.color = '#000'
+        }
+      }
+    })
 
-    </script>
+  </script>
 </body>
 
 </html>
