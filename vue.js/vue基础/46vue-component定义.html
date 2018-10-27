@@ -36,8 +36,16 @@
       template: '<h2>这是h2组件</h2>'
     })
 
+
+    // 组件中的data必须是一个方法,返回一个对象，而实例中的data是一个对象
+    // data的使用方式完全一样
     Vue.component('myCom3', {
-      template: '#myh1'
+      template: '#myh1',
+      data: function () {
+        return {
+
+        }
+      }
     })
 
 
