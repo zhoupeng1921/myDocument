@@ -13,6 +13,7 @@
     <my-com1></my-com1>
     <my-com2></my-com2>
     <my-com3></my-com3>
+    <my-com4></my-com4>
   </div>
 
   <!-- 在被vm控制的外面，使用template元素，定义html模板结构 
@@ -45,8 +46,17 @@
       data: {
         msg: ''
       },
-      methods: {
+      methods: {},
+      filters: {
 
+      },
+      directives: {
+
+      },
+      components: { //定义私有组件，组件对象也可以定义到外面去
+        myCom4: {
+          template: '<h4>这是h4</h4>'
+        }
       }
     })
 
