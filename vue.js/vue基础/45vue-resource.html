@@ -27,7 +27,7 @@
         getInfo() {
           this.$http.get('http://www.baidu.com').then((result) => {
             console.log(result)
-            //通过result拿到服务器返回的数据
+            //通过result.body拿到服务器返回的数据
           })
         },
         postInfo() {
