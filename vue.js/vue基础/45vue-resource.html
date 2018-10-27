@@ -18,6 +18,13 @@
 
 
   <script>
+    // 如果通过全局配置了数据请求的接口，每次单独发起http请求的时候，
+    // 请求的url路径，应该以相对路径开头，前面不能带/，否则不会启用根路径做拼接
+    Vue.http.options.root = "http://192.168.94.151:8080/"
+
+    //全局设置context-type 为普通表单，默认为json
+    // Vue.http.options.emulateJSON = true
+
     var vm = new Vue({
       el: "#root",
       data: {
