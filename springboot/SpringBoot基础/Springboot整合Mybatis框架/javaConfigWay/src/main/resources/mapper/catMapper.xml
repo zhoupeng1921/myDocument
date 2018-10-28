@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.CatMapper">
+    <resultMap id="catRM" type="com.example.demo.bean.Cat">
+        <id property="id" column="id"/>
+        <result property="catName" column="cat_name"/>
+        <result property="catAge" column="cat_age"/>
+    </resultMap>
+    <sql id="column">
+        id,cat_name,cat_age
+    </sql>
+
+    <insert id="insert" parameterType="com.example.demo.bean.Cat" >
+        INSERT INTO cat(<include refid="column"></include>)
+        VALUES(#{id},#{catName},#{catAge})
+    </insert>
+
+    <update id="update" parameterType="com.example.demo.bean.Cat" >
+        UPDATE cat SET cat_name=#{catName},cat_age=#{catAge} where id=#{id}
+    </update>
+    <select id="select" parameterType="int" resultMap="catRM">
+       select * from cat where id=#{id}
+    </select>
+    <delete id="delete" parameterType="int">
+       delete from cat where id=#{id}
+    </delete>
+
+</mapper>
