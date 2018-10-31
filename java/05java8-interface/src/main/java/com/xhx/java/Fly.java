@@ -1,4 +1,4 @@
-package com.xhx.java;/*
+﻿package com.xhx.java;/*
  * Administrator
  * 2018/8/30  11:10
  *
@@ -6,7 +6,7 @@ package com.xhx.java;/*
 
 public interface Fly {
     /**
-     * java8 接口中可以写静态方法，面向接口变成
+     * java8 接口中可以写静态方法，面向接口编程
      * @return
      */
     static Fly getInstance(){
