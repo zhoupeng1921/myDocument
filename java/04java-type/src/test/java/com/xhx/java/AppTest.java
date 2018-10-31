@@ -27,12 +27,6 @@ public class AppTest {
      */
     @Test
     public void testParameterizedType() throws Exception{
-        Field id = TypeTest.class.getDeclaredField("id");
-        //获取该属性的类型
-        Type genericType = id.getGenericType();
-
-        //获取真实类型   sun.reflect.generics.reflectiveObjects.TypeVariableImpl
-        System.out.println(genericType.getClass().getName());
 
         //getActualTypeArguments 获取泛型中实际类型
         Field cloth = TypeTest.class.getDeclaredField("cloth");
@@ -72,7 +66,10 @@ public class AppTest {
         Type genericComponentType = genericType1.getGenericComponentType();
         System.out.println(genericComponentType);
         //java.util.List<java.lang.String>
-
+        System.out.println(genericComponentType.getClass().getName());
+        //sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl
+        System.out.println(((ParameterizedType) genericComponentType).getActualTypeArguments()[0]);
+        //class java.lang.String
     }
 
 
