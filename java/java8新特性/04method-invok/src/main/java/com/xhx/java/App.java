@@ -10,7 +10,7 @@ public class App {
 
     /**
      * 1.构造器引用
-     * ClassName::New 相当于 new ClassName()
+     * ClassName::New => new ClassName()
      * 如果调用时有参数，相当于调用带参的构造函数
      */
     @Test
@@ -24,7 +24,7 @@ public class App {
 
     /**
      * 2.静态方法引用
-     * CLassName::static_method =》 CLassName.static_method()
+     * ClassName::static_method =》 CLassName.static_method()
      * 如果调用时有参数，直接放到静态方法的形参中
      */
     @Test
