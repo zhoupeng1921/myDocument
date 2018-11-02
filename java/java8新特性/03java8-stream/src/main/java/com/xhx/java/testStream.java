@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class testStream {
     static List<String> list = new ArrayList<>();
     static {
-        for(int i = 0; i <20;i++){
+        for(int i = 0; i <3;i++){
             list.add("a");
             list.add("b");
         }
@@ -28,19 +28,21 @@ public class testStream {
     public void testMap(){
         List<String> upperList = list.stream().map(str -> str.toUpperCase()).collect(Collectors.toList());
         upperList.stream().forEach(System.out::print);
+        //ABABAB
     }
 
     /**
-     * Predicate<T>  过滤
+     * filter方法 Predicate<T>  过滤
      */
     @Test
     public void testFilter(){
         List<String> filterList = list.stream().filter(str->str.equals("a")).collect(Collectors.toList());
         filterList.stream().forEach(System.out::print);
+        //aaa
     }
 
     /**
-     * Function<T, R> 排序
+     * sorted 排序  Comparator<T>
      */
     @Test
     public void testSorted(){
@@ -75,7 +77,7 @@ public class testStream {
     public void testReduce2(){
         List<String> string1 = Arrays.asList("1", "2", "3");
         List<String> string2 = Arrays.asList("4", "5", "6");
-        IntSummaryStatistics intSummaryStatistics = Stream.of(string1, string2).flatMap(str -> str.stream()).mapToInt(str -> Integer.parseInt(str)).summaryStatistics().;
+        IntSummaryStatistics intSummaryStatistics = Stream.of(string1, string2).flatMap(str -> str.stream()).mapToInt(str -> Integer.parseInt(str)).summaryStatistics();
         System.out.println(intSummaryStatistics.getMax());
     }
 }
