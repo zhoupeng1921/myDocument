@@ -2,6 +2,7 @@ package com.xhx.people;
 
 import com.xhx.address.Address;
 import com.xhx.cloth.Clothes;
+//import com.xhx.other.Car;
 
 public class App {
     public static void main(String[] args) {
@@ -17,5 +18,6 @@ public class App {
         System.out.println(address.toString());
 
         //因为com.xhx.other没有 exports，所以Car类引不到
+       //new Car()
     }
 }
