@@ -1,3 +1,7 @@
+import com.xhx.dell.Dell;
+
 module java.dell.computer {
-    uses com.xhx.computer.IComputer;
+    requires java.computer;
+//    引用其它模块的服务接口,在本模块实现
+    provides com.xhx.computer.IComputer with Dell;
 }

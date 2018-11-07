@@ -5,7 +5,7 @@ module java.house {
 }
 //也可以用open来指定开发模块,所有的包都可以被反射
 /*
-java.house {
+open java.house {
     //里面不能再使用opens了,因为整个包都已经open了
 }
 
