@@ -13,7 +13,7 @@ public class SetTest {
     @Test
     public void test1() {
         Set<Object> set1 = Set.of(12, 34, 543, 765);
-        //list1.add(1);
+        //set1.add(1);
         System.out.println(set1);
     }
 }
