@@ -140,4 +140,139 @@ public class TestCollections {
 
     }
 
+    /**
+     * fill
+     * 替换所有元素
+     */
+    @Test
+    public void test11(){
+        Collections.fill(strList,"abcd");
+        System.out.println(strList);
+        //[abcd, abcd, abcd, abcd, abcd, abcd]
+    }
+
+    /**
+     * copy
+     * 将一个集合中的元素复制到另一个集合，会覆盖内容，剩余的元素不受影响
+     */
+    @Test
+    public void test12(){
+        List<String> strList2 = new ArrayList<>();
+        strList2.add("eee");
+        strList2.add("bbb");
+        //将strList2 复制到 strList中
+        Collections.copy(strList,strList2);
+        System.out.println(strList);
+        //[eee, bbb, a, b, c, d]
+    }
+
+
+
+
+    /**
+     * indexOfSubList
+     *  目标列表第一次在源列表出现的位置
+     */
+    @Test
+    public  void test13(){
+        List<String> strList2 = new ArrayList<>();
+        strList2.add("a");
+        strList2.add("b");
+        int i = Collections.indexOfSubList(strList, strList2);
+        System.out.println(strList);
+        System.out.println(strList2);
+        System.out.println(i);
+        //2
+    }
+
+    /**
+     * lastIndexOfSubList
+     * 查找目标列表最后一次在源列表中出现的位置
+     */
+    @Test
+    public  void test14(){
+        List<String> strList2 = new ArrayList<>();
+        strList2.add("a");
+        strList2.add("b");
+        strList.addAll(strList2);
+        int i = Collections.lastIndexOfSubList(strList, strList2);
+        System.out.println(strList);
+        System.out.println(strList2);
+        System.out.println(i);
+        // [z, y, a, b, c, d, a, b]
+        //[a, b]
+        // 6
+    }
+
+    /**
+     * rotate
+     * 根据指定的距离，循环移动列表中元素
+     */
+    @Test
+    public void test15(){
+        System.out.println(strList);
+        Collections.rotate(strList,-1);
+        System.out.println(strList);
+        //[z, y, a, b, c, d]
+        //[y, a, b, c, d, z]
+    }
+
+    /**
+     * frequency
+     * 查询指定元素在集合中出现的次数
+     */
+    @Test
+    public void test16(){
+        strList.add("a");
+        int count = Collections.frequency(strList, "a");
+        System.out.println(count);
+        //2
+    }
+
+    /**
+     * nCopies
+     * 把对象复制多份
+     */
+    @Test
+    public void test17(){
+        List<List<String>> lists = Collections.nCopies(3, strList);
+        System.out.println(lists);
+        //[[z, y, a, b, c, d], [z, y, a, b, c, d], [z, y, a, b, c, d]]
+    }
+
+    /**
+     * shuffle
+     * 混排 打乱顺序
+     */
+    @Test
+    public void test18(){
+        Collections.shuffle(strList);
+        System.out.println(strList);
+    }
+
+    /**
+     * singletonList
+     * 返回一个只包含指定对象的不可变列表
+     */
+    @Test
+    public void test19(){
+        List<String> siList = Collections.singletonList("哈哈");
+        System.out.println(siList);
+        //[哈哈]
+    }
+
+    /**
+     * checkedXXXX
+     * 返回检查容器，对传入的对象会进行类型检查
+     */
+    @Test
+    public void test20(){
+        List list1 = strList;
+        list1.add(123);  //这里会执行成功
+        System.out.println("success");
+        List strings = Collections.checkedList(strList, String.class);
+        strings.add(123); //这里会执行失败
+
+    }
+
 }
