@@ -2,8 +2,6 @@ package com.xhx.java;
 
 import org.junit.Test;
 
-import java.awt.image.VolatileImage;
-
 public class TestThread {
 
     /**
@@ -86,6 +84,7 @@ public class TestThread {
         Thread.sleep(2000);
         //中断线程
         thread.interrupt();
+        thread.join();
     }
 
 
