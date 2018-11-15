@@ -20,8 +20,9 @@ public class TestAtomicIntegerArray {
     @Test
     public void test01(){
         Thread[] th = new Thread[10];
+        AddThread addThread = new AddThread();
         for(int i = 0; i<th.length;i++){
-            th[i] = new Thread(new AddThread());
+            th[i] = new Thread(addThread);
         }
         Arrays.stream(th).forEach(t->t.start());
         Arrays.stream(th).forEach(t-> {
