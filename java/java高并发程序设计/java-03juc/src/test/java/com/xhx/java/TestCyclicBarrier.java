@@ -67,6 +67,7 @@ public class TestCyclicBarrier {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (BrokenBarrierException e) {
+                    //如果有线程中断，其它等待线程会发生此异常
                     e.printStackTrace();
                 }
             }).start();
