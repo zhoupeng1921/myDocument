@@ -4,7 +4,6 @@ import com.xhx.java.deadlock.DeadLockChecker;
 import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class TestReenterLock {
@@ -149,8 +148,10 @@ class TimeLock implements Runnable{
 }
 
 /**
- * 公平锁
+ * 公平锁  先来先得到锁
  *  public ReentrantLock(boolean fair)
  *  构造函数传参
+ *
+ *  需要处理一个排队问题，性能可能差点
  */
 

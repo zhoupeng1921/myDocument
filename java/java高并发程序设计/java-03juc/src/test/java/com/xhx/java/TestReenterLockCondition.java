@@ -14,11 +14,14 @@ public class TestReenterLockCondition {
         Thread t1 = new Thread(tlc);
         t1.start();
         Thread.sleep(2000);
-        //通知线程继续执行
+        //拿到锁
         ReenterLockCondition.lock.lock();
+        //通知线程继续执行
         ReenterLockCondition.condition.signal();
         Thread.sleep(3000);
+        //释放锁
         ReenterLockCondition.lock.unlock();
+        t1.join();
     }
 }
 
@@ -34,6 +37,7 @@ class ReenterLockCondition implements Runnable {
     public void run() {
         try {
             lock.lock();
+            System.out.println("Thread is awaiting");
             condition.await(); //唤醒后要重新拿到锁，才会继续执行
             System.out.println("Thread is going on");
         } catch (InterruptedException e) {
