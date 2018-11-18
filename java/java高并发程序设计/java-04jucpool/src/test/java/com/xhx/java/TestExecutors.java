@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class testExecutors {
+public class TestExecutors {
     public static class MyTask implements Runnable {
 
         @Override
