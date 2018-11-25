@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--相对的布局，都是基于左上角布局的
+layout_above 位于某个控件上方
+layout_below 位于某个控件下方
+layout_toRightOf 右边
+layout_toLeftOf 左边
+
+layout_alignParentRight 位于父窗体右侧
+
+-->
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/tv_inputnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请输入号码"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:layout_below="@id/tv_inputnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入电话号"
+        android:id="@+id/et_number"/>
+    <Button
+        android:layout_below="@id/et_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_callphone"
+        android:text="拨打电话"/>
+
+</RelativeLayout>
