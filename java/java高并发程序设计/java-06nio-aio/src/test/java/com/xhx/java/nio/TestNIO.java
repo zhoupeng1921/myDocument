@@ -8,6 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.stream.Stream;
 
 public class TestNIO {
 
@@ -50,6 +51,24 @@ public class TestNIO {
         mbb.put(0,(byte)98);//修改文件
         raf.close();
 
+    }
+
+    @Test
+    public void test03() throws Exception{
+        ByteBuffer b = ByteBuffer.allocate(15);
+        System.out.println("limit:"+b.limit()+" capacity:"+b.capacity()+" position:"+b.position());
+
+        Stream.iterate(1,i-> i+1).limit(10).forEach(i->b.put(Byte.valueOf(i.toString())));
+        System.out.println("limit:"+b.limit()+" capacity:"+b.capacity()+" position:"+b.position());
+
+        b.flip();
+        System.out.println("limit:"+b.limit()+" capacity:"+b.capacity()+" position:"+b.position());
+
+        Stream.iterate(1,i-> i+1).limit(5).forEach(i-> System.out.println(b.get()));
+        System.out.println("limit:"+b.limit()+" capacity:"+b.capacity()+" position:"+b.position());
+        b.flip();
+        System.out.println("limit:"+b.limit()+" capacity:"+b.capacity()+" position:"+b.position());
+        Stream.iterate(1,i-> i+1).limit(5).forEach(i-> System.out.println(b.get()));
     }
 
 
