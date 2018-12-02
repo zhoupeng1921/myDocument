@@ -19,9 +19,9 @@ public class Springboot5ApplicationTests {
     @Test
     public void testConvertToDB() {
         User user = new User();
-        user.setName("小徐");
-        user.setAge(25);
-        user.setGender(GenderEnum.MAN);
+        user.setName("小白");
+        user.setAge(23);
+        user.setGender(GenderEnum.WOMAN);
         userController.add(user); //GenderEnum类型已经转换
     }
 

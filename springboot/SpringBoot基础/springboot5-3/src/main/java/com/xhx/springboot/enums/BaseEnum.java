@@ -1,6 +1,7 @@
 package com.xhx.springboot.enums;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public interface BaseEnum<T extends Enum & BaseEnum,S> {
 
@@ -8,9 +9,9 @@ public interface BaseEnum<T extends Enum & BaseEnum,S> {
     String getValue();
     String getDescription();
 
-    default  T codeToEntity(Class<T> clazz, S code){
-        T[] enums = clazz.getEnumConstants();
-        return Arrays.stream(enums).filter(en -> en.getCode().equals(code)).findFirst().get();
+    default  BaseEnum codeToEntity(S code){
+        BaseEnum[] enums = this.getClass().getEnumConstants();
+        return Arrays.stream(enums).filter(en -> Objects.equals(en.getCode(),code)).findFirst().get();
     }
 
 }

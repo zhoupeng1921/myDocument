@@ -1,6 +1,5 @@
 package com.xhx.springboot.entity;
 
-import com.xhx.springboot.converters.GenderEnumConverter;
 import com.xhx.springboot.enums.GenderEnum;
 
 import javax.persistence.*;
@@ -14,22 +13,25 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Integer id;
     private String name;
-    private int age;
+    private Integer age;
     @Convert(
-            converter = GenderEnumConverter.class
-            //converter = GenderEnum.convert.class
+            //converter = GenderEnumConverter.class
+            converter = GenderEnum.convert.class
     )
     private GenderEnum gender;
     @Version
-    private int version;
+    private Integer version;
 
-    public int getId() {
+    public User() {
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,11 +43,11 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -57,11 +59,11 @@ public class User {
         this.gender = gender;
     }
 
-    public int getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 
