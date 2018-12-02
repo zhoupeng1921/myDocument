@@ -34,7 +34,7 @@ public class AccountService {
     }
 
     public Account findById(int id) {
-        return accountDao.findById(id).get();
+        return accountDao.findById(id).orElse(null);
 
     }
 
