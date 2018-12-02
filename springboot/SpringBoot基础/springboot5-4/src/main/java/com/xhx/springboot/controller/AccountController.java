@@ -33,4 +33,15 @@ public class AccountController {
         return accountService.findByCondition(account);
     }
 
+
+    @GetMapping(value = "findIdsByCondition")
+    public List<Integer> findIdsByCondition(@RequestParam String bankNum){
+        return accountService.findIdsByCondition(bankNum);
+    }
+
+    @GetMapping(value = "findByBankNum")
+    public List<Account> findByBankNum(@RequestParam String banNum){
+        return accountService.findByBankNum(banNum);
+    }
+
 }
