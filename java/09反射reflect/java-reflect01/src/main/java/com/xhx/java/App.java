@@ -1,5 +1,6 @@
 package com.xhx.java;
 
+import com.xhx.java.abs.IParent;
 import com.xhx.java.iml.Child;
 import com.xhx.java.utils.ReflectUtils;
 
@@ -9,6 +10,8 @@ import java.lang.reflect.Method;
 public class App {
 
     public static void main(String[] args) throws Exception {
+
+
         Class<Child> clazz = Child.class;
         Child child = clazz.newInstance();
 
@@ -20,9 +23,14 @@ public class App {
         System.out.println(declaredFields.length);
         //0  子类反射不到父类的属性
 
-        Method method1 = ReflectUtils.getDeclaredMethod(clazz, "method1");
+        Method method1 = ReflectUtils.getDeclaredMethod(clazz, "getString");
         Object o = ReflectUtils.invokeMethod(child, method1);
         System.out.println(o);
-        //parent1
+        //abcd
+
+        Field field = ReflectUtils.getDeclaredField(clazz, "id");
+        Object fieldValue = ReflectUtils.getFieldValue(child, field);
+        System.out.println(fieldValue);
+        //1245
     }
 }
