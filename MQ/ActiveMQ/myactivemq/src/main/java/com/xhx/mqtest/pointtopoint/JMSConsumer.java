@@ -24,7 +24,7 @@ public class JMSConsumer {
             connection = connectionFactory.createConnection();
             connection.start();
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createQueue("myFirstQuery");
+            destination = session.createQueue("Q-NUMBER");
             messageConsumer = session.createConsumer(destination);
 
             while (true){

@@ -1,4 +1,4 @@
-# ActiveMQ配置
+# ActiveMQ启动配置
 
 ## 启动
 
@@ -54,5 +54,5 @@
 
    4. 打开访问控制台的端口号8161`sudo firewall-cmd --zone=public --add-port=8161/tcp --permanent`
 
-   5. 访问地址`http://192.168.94.151:8161/admin/`
+   5. 访问地址`http://192.168.94.151:8161/admin/` 默认用户名密码admin/admin
 

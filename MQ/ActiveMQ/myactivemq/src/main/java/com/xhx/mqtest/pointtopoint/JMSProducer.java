@@ -7,8 +7,8 @@ import javax.jms.*;
 public class JMSProducer {
     private static final String USERNAME = "admin"; //ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK = "admin"; // ActiveMQConnection.DEFAULT_PASSWORD;
-    private static final String BROKERURL = "tcp://11.11.156.206:61616";
-    // private static final String BROKERURL=ActiveMQConnection.DEFAULT_BROKER_URL;
+    private static final String BROKERURL = "tcp://192.168.94.151:61616";
+    //private static final String BROKERURL= ActiveMQConnection.DEFAULT_BROKER_URL;
     private static final int SENTNUM = 10;
 
 
@@ -28,7 +28,7 @@ public class JMSProducer {
             connection = connectionFactory.createConnection();
             connection.start();
             session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createQueue("LOCAL_Q_PARTYDUES_LASTPARTYFEEDATE");
+            destination = session.createQueue("Q-NUMBER");
             messageProducer = session.createProducer(destination);
             sendMessage(session, messageProducer);
 
@@ -57,18 +57,16 @@ public class JMSProducer {
 
 
     public static void sendMessage(Session session, MessageProducer messageProducer) throws Exception {
-      /*  for(int i = 0; i< JMSProducer.SENTNUM;i++){
+        for (int i = 0; i < JMSProducer.SENTNUM; i++) {
             TextMessage textMessage = session.createTextMessage("ActiveMQ发送消息+" + i);
             System.out.println(textMessage.getText());
-            messageProducer.send(textMessage);
-        }*/
-
-        //{"id":181351016514479027, "modifyType":"LAST_PARTY_FEE_DATE", "lastFeeDate":"2018-04-01"}
-        for (int i = 0; i < 10; i++) {
-            TextMessage textMessage = session.createTextMessage("{\"id\":4717316812998671, \"modifyType\":\"LAST_PARTY_FEE_DATE\", \"lastFeeDate\":\"2018-02-01\"}");
-            System.out.println(textMessage.getText());
+            //设置过期时间，ms。默认消息永不过期
+            messageProducer.setTimeToLive(24*60*60*1000);
+            //设置是持久还是非持久消息,持久化后，若消费未被消费，mq服务器重启，消息不会丢失
+            messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
             messageProducer.send(textMessage);
         }
+
     }
 
 
