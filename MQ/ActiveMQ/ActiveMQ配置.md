@@ -2,9 +2,9 @@
 
 ## 启动
 
-1. 官网下载并解压到制定目录
+1. 官网下载并解压到指定目录
 
-2. 进不到ACTIVE_HOME/bin目录，启动 sudo sh activemq，会报一个错误
+2. 进不到ACTIVEMQ_HOME/bin目录，启动 sudo sh activemq start，会报一个错误
 
    ```
    NFO: Loading '/usr/local/apache-activemq-5.15.8//bin/env'
