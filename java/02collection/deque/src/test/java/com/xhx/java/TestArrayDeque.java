@@ -7,6 +7,7 @@ import java.util.ArrayDeque;
 
 /**
  * 方法详情看笔记
+ * ArrayDeque 为用数组实现的
  */
 public class TestArrayDeque {
 
