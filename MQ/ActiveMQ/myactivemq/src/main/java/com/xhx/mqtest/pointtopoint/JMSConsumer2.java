@@ -5,11 +5,14 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
+/**
+ * 非阻塞式接收消息=监听  连接不能关，关了就不监听了
+ * ?consumer.prefetchSize=10  预取消息数（不是指同时处理的数量）
+ */
 public class JMSConsumer2 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
     private static final String BROKERURL="tcp://192.168.94.151:61616";
-    private static final int SENTNUM=10;
 
     public static void main(String[] args) {
         ConnectionFactory connectionFactory;
@@ -24,13 +27,15 @@ public class JMSConsumer2 {
             connection = connectionFactory.createConnection();
             connection.start();
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createQueue("Q-NUMBER");
+            destination = session.createQueue("Q-NUMBER?consumer.prefetchSize=10");
             messageConsumer = session.createConsumer(destination);
             messageConsumer.setMessageListener(new JMSListener());
-            //会一直监听,连接不能关闭
 
         }catch (Exception e){
             e.printStackTrace();
+
+        }finally {
+            //连接不能关，关了就不监听了
         }
     }
 }

@@ -5,7 +5,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-public class JMSConsumer {
+/**
+ * 测试手动提交事物
+ */
+public class JMSConsumer5 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
     private static final String BROKERURL="tcp://192.168.94.151:61616";
@@ -17,36 +20,22 @@ public class JMSConsumer {
         Destination destination;
         MessageConsumer messageConsumer;
 
-        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer.USERNAME,JMSConsumer.PASSWORK,JMSConsumer.BROKERURL);
+        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer5.USERNAME, JMSConsumer5.PASSWORK, JMSConsumer5.BROKERURL);
 
         try {
             connection = connectionFactory.createConnection();
             connection.start();
-            session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
+            //打开事物
+            session = connection.createSession(Boolean.TRUE, Session.SESSION_TRANSACTED);
             destination = session.createQueue("Q-NUMBER");
             messageConsumer = session.createConsumer(destination);
+            messageConsumer.setMessageListener(new JMSListener(session));
 
-            while (true){
-                TextMessage textMessage = (TextMessage) messageConsumer.receive(100000);
-                if(textMessage!=null){
-                    System.out.println("收到消息："+textMessage.getText());
-                }else {
-                    break;
-                }
-            }
-
-
-
+            session.commit();
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            if(connection != null) {
-                try {
-                    connection.close();
-                } catch (JMSException e) {
-                    e.printStackTrace();
-                }
-            }
+            //连接不能关，关了就不监听了
         }
     }
 }

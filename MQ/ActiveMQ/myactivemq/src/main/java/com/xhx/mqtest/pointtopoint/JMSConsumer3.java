@@ -5,7 +5,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-public class JMSConsumer {
+/**
+ * 多个消费者时，设置消息独占 ?consumer.exclusive=true
+ */
+public class JMSConsumer3 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
     private static final String BROKERURL="tcp://192.168.94.151:61616";
@@ -17,36 +20,19 @@ public class JMSConsumer {
         Destination destination;
         MessageConsumer messageConsumer;
 
-        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer.USERNAME,JMSConsumer.PASSWORK,JMSConsumer.BROKERURL);
+        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer3.USERNAME, JMSConsumer3.PASSWORK, JMSConsumer3.BROKERURL);
 
         try {
             connection = connectionFactory.createConnection();
             connection.start();
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createQueue("Q-NUMBER");
+            destination = session.createQueue("Q-NUMBER?consumer.exclusive=true");
             messageConsumer = session.createConsumer(destination);
-
-            while (true){
-                TextMessage textMessage = (TextMessage) messageConsumer.receive(100000);
-                if(textMessage!=null){
-                    System.out.println("收到消息："+textMessage.getText());
-                }else {
-                    break;
-                }
-            }
-
-
+            messageConsumer.setMessageListener(new JMSListener());
+            //会一直监听,连接不能关闭
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if(connection != null) {
-                try {
-                    connection.close();
-                } catch (JMSException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }

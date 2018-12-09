@@ -25,10 +25,12 @@ public class JMSConsumer3 {
 
         try {
             connection = connectionFactory.createConnection();
+            String clientId = "8fc38c5d-a4a9-43bb-b617-03f25cce2da5";
+            connection.setClientID(clientId);
             connection.start();
             session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
             topic = session.createTopic("myFirstTopic");
-            TopicSubscriber durableSubscriber = session.createDurableSubscriber(topic, "sub-name");
+            TopicSubscriber durableSubscriber = session.createDurableSubscriber(topic, "sub-durable-"+clientId);
             durableSubscriber.setMessageListener(new JMSListener());
 
 
