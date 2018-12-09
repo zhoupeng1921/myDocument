@@ -3,6 +3,10 @@ package springboot.mq;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
+import javax.jms.JMSException;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
 @Component
 public class Consumer {
 
@@ -12,15 +16,27 @@ public class Consumer {
      * @param message
      */
     @JmsListener(destination = "Q_TOPIC_USERIDENTITY")
-    public void receiveTopic(String message){
-        System.out.println("收到的TOPIC消息:"+message);
+    public void receiveTopic(TextMessage message, Session session) throws JMSException{
+        try {
+            System.out.println("收到的TOPIC消息:"+message.getText());
+            System.out.println(session.getAcknowledgeMode());
+        } catch (JMSException e) {
+            e.printStackTrace();
+            session.recover();
+        }
     }
 
     /**
      * @param message
      */
     @JmsListener(destination = "Q_QUEUE_USERIDENTITY")
-    public void receiveQueue(String message){
-        System.out.println("收到的QUEUE消息:"+message);
+    public void receiveQueue(TextMessage message, Session session) throws JMSException{
+        try {
+            System.out.println("收到的QUEUE消息:"+message.getText());
+            System.out.println(session.getAcknowledgeMode());
+        } catch (JMSException e) {
+            e.printStackTrace();
+            session.recover();
+        }
     }
 }
