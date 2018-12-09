@@ -7,6 +7,7 @@ import javax.jms.*;
 
 /**
  * 测试手动提交事物
+ * 开启事物若不提交，消息相当于没有消费，因为连接没断，会一直占用着此消息，也不会被其它消费者消费
  */
 public class JMSConsumer5 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
