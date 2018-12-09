@@ -6,10 +6,9 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 /**
- * 测试手动提交事物
- * 开启事物若不提交，消息相当于没有消费，因为连接没断，会一直占用着此消息，也不会被其它消费者消费
+ * 客户端确认，（有一个问题，如果消费了多个消息，只对一个消息进行了确认，其它消息也会被确认）
  */
-public class JMSConsumer5 {
+public class JMSConsumer6 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
     private static final String BROKERURL="tcp://192.168.94.151:61616";
@@ -21,17 +20,24 @@ public class JMSConsumer5 {
         Destination destination;
         MessageConsumer messageConsumer;
 
-        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer5.USERNAME, JMSConsumer5.PASSWORK, JMSConsumer5.BROKERURL);
+        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer6.USERNAME, JMSConsumer6.PASSWORK, JMSConsumer6.BROKERURL);
 
         try {
             connection = connectionFactory.createConnection();
             connection.start();
             //打开事物
-            session = connection.createSession(Boolean.TRUE, Session.SESSION_TRANSACTED);
+            session = connection.createSession(Boolean.FALSE, Session.CLIENT_ACKNOWLEDGE);
             destination = session.createQueue("Q-NUMBER");
             messageConsumer = session.createConsumer(destination);
-            messageConsumer.setMessageListener(new JMSListener(session));
-
+            messageConsumer.setMessageListener(message -> {
+                try {
+                    System.out.println("收到消息"+((TextMessage)message).getText());
+                    //确认消息
+                    message.acknowledge();
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+            });
         }catch (Exception e){
             e.printStackTrace();
         }finally {

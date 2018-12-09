@@ -177,13 +177,17 @@ public interface DeliveryMode {
 
   例如：
 
-`session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);` 设置在事物中接收消息，第二个参数默认为Session.SESSION_TRANSACTED。当执行`session.commit()`时才认为消息消费成功
+`session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);` 设置在事物中接收消息，第一个参数为true时，第二个参数默认为`Session.SESSION_TRANSACTED`。当执行`session.commit()`时才认为消息消费成功
+
+
 
 
 
 对一个队列来说，如果sessionz终止时，它接受了消息，但是没有签收，那么ActiveMQ会认为消息没有被消费成功，会再次传送给消费者
 
 对主题来说，对与非持久订阅，session终止时会删除消息，对于持久订阅，已消费但未签收，会再次传送给消费者。
+
+开启事物若不提交，消息相当于没有消费，因为连接没断，会一直占用着此消息，也不会被其它消费者消费
 
 ### 3.2 持久订阅
 
@@ -286,6 +290,6 @@ map.put((ActiveMQDestination) destination, queuePolicy);
 
 ```
 
-
+若消息达到尝试次数消费失败或者超时等，会进入死信队列`ActiveMQ.DLQ`
 
 **只会在当前消费者进行重试，不会切换到其他的消费者**
