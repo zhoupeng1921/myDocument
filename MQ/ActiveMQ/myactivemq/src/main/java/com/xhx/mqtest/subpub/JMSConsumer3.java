@@ -6,7 +6,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 /**
- * 非阻塞式接收消息
+ * 创建持久订阅者，离线后，重新连接，会收到落下的消息
  */
 public class JMSConsumer3 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
