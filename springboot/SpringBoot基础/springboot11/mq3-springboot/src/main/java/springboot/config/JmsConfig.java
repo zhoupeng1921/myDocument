@@ -21,8 +21,6 @@ public class JmsConfig {
     private QueueConsumer queueConsumer;
 
     /**
-     * 有一个bug，queue和topic的消息，根据消息名字，都可以收到，设置setPubSubDomain无效
-     * 只要存在这个名字的消息，不管是queue还是topic都可以收
      * @return
      */
 

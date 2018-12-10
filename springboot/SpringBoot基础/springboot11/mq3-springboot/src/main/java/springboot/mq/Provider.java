@@ -18,7 +18,7 @@ public class Provider {
 
     @Scheduled(fixedDelay = 5000)//每5秒执行一次
     public void sendTopic(){
-        String identityCard="t132927196512021354";
+        String identityCard="t188927196512021354";
        // jmsMessagingTemplate.convertAndSend("Q_USERIDENTITY",identityCard);
 
         ActiveMQTopic destination = new ActiveMQTopic("Q_TOPIC_USERIDENTITY");
@@ -27,7 +27,7 @@ public class Provider {
 
     @Scheduled(fixedDelay = 5000)
     public void sendQueue(){
-        String identityCard="q132927196512021354";
+        String identityCard="q188927196512021354";
 
          ActiveMQQueue destination = new ActiveMQQueue("Q_QUEUE_USERIDENTITY");
          jmsMessagingTemplate.convertAndSend(destination,identityCard);
