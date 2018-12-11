@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 @EnableScheduling
 public class Provider {
 
+
+    //发送的消息默认是持久化的
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
 
@@ -35,7 +37,6 @@ public class Provider {
     @Scheduled(fixedDelay = 5000)
     public void sendQueue(){
         String identityCard="188997196512021354";
-
         ActiveMQQueue destination = new ActiveMQQueue("Q_QUEUE_USERIDENTITY");
         jmsTemplate.convertAndSend(destination,identityCard);
 
