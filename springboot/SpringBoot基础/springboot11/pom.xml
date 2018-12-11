@@ -10,6 +10,7 @@
         <module>mq1-springboot</module>
         <module>mq2-springboot</module>
         <module>mq3-springboot</module>
+        <module>mq4-springboot</module>
     </modules>
     <packaging>pom</packaging>
 
