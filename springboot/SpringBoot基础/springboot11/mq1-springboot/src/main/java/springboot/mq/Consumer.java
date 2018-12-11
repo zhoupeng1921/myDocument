@@ -13,6 +13,7 @@ public class Consumer {
     /**
      * 无法收topic，只能收queue，默认spring.jms.pub-sub-domain=false，
      * 若改成true只能接收topic，不能接收queue，所以不能改
+     * 见第二个实例
      * @param message
      */
     @JmsListener(destination = "Q_TOPIC_USERIDENTITY")

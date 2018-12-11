@@ -142,6 +142,16 @@ public interface DeliveryMode {
 
 ### 2.5 异步发送消息
 
+如果应用程序能够容忍一些消息的丢失，那么可以使用异步发送。异步发送不会在收到到 broker 的确认之前一直阻塞 Producer.send 方法。
+   但有一个例外，当发送方法在一个事务上下文中时，被阻塞的是 commit 方法而不是 send 方法。commit 方法成功返回意味着所有的持久消息都以被写到二级存储中。
+   想要使用异步，在brokerURL中增加 jms.alwaysSyncSend=false&jms.useAsyncSend=true
+  如果设置了alwaysSyncSend=true系统将会忽略useAsyncSend设置的值都采用同步
+​     1) 当alwaysSyncSend=false时，“NON_PERSISTENT”(非持久化)、事务中的消息将使用“异步发送”
+​     2) 当alwaysSyncSend=false时，如果指定了useAsyncSend=true，“PERSISTENT”类型的消息使用异步发送。如果useAsyncSend=false，“PERSISTENT”类型的消息使用同步发送。
+总结：默认情况(alwaysSyncSend=false,useAsyncSend=false)，非持久化消息、事务内的消息均采用异步发送；对于持久化消息采用同步发送。
+
+jms.sendTimeout:发送超时时间，默认等于0，如果jms.sendTimeout>0将会忽略（alwaysSyncSend、useAsyncSend、消息是否持久化）所有的消息都是用同步发送
+
 - 使用Connection URI配置异步发送:
 
   `cf = new ActiveMQConnectionFactory("tcp://locahost:61616?jms.useAsyncSend=true");`
