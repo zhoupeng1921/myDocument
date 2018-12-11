@@ -15,7 +15,8 @@ import org.springframework.stereotype.Component;
 public class Provider {
 
 
-    //发送的消息默认是持久化的
+    //发送的消息默认是设置是持久化的，但是发送消息时如果explicitQosEnabled(默认false)是false，不走持久化
+    //持久化、优先级、超时时间都一样
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
 
@@ -37,6 +38,8 @@ public class Provider {
     @Scheduled(fixedDelay = 5000)
     public void sendQueue(){
         String identityCard="188997196512021354";
+        //开启持久化等
+        jmsTemplate.setExplicitQosEnabled(true);
         ActiveMQQueue destination = new ActiveMQQueue("Q_QUEUE_USERIDENTITY");
         jmsTemplate.convertAndSend(destination,identityCard);
 
