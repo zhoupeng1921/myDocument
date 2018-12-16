@@ -108,7 +108,7 @@ int lastIndexOf(Object o);
 ### 2.7 listIterator
 
 ```java
-
+ListIterator<E> listIterator();
 ```
 
 返回一个list迭代器
