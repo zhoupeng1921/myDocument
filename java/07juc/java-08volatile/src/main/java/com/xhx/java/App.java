@@ -4,7 +4,7 @@ package com.xhx.java;
  * xuhaixing
  * 2018/8/11 22:03
  **/
-public class App {
+public class  App {
     private volatile int i = 0;
     public void testIncrease(){
         i++;
