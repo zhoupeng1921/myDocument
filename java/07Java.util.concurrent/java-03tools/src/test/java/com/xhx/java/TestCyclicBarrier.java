@@ -30,11 +30,10 @@ public class TestCyclicBarrier {
                 }
             }).start();
         }
-        Thread.sleep(6000);
+        Thread.sleep(10000);
     }
 
     private void doThing() throws InterruptedException{
-        Thread.sleep(new Random().nextInt(3)*1000);
         System.out.println("集合完毕报数："+Thread.currentThread().getName());
     }
 

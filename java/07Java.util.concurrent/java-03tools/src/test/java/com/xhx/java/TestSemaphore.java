@@ -18,13 +18,13 @@ public class TestSemaphore {
                 try {
                     //一个线程也可以获取多个许可 acquire(2)
                     // tryAcquire(）
-                    semaphore.acquire();
+                    semaphore.acquire(2);
                     System.out.println(Thread.currentThread().getName()+"：获得信号量");
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
-                    semaphore.release();
+                    semaphore.release(2);
                 }
             }).start();
         }
