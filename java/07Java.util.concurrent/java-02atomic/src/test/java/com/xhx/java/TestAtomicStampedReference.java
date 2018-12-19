@@ -57,6 +57,6 @@ public class TestAtomicStampedReference {
             }
         }.start();
 
-        Thread.sleep(3000);
+        Thread.sleep(10000);
     }
 }
