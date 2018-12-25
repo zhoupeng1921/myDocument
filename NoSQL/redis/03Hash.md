@@ -98,10 +98,10 @@ HINCRBY key field increment
 
 增加域的值，没有HDECRBY命令，需要设置负数做减法
 
-### 13.2 INCRBYFLOAT增加浮点数的值
+### 13.2 HINCRBYFLOAT增加浮点数的值
 
 ```shell
-INCRBYFLOAT key field increment
+HINCRBYFLOAT key field increment
 ```
 
 增加浮点数的值，也是传入负值做减法

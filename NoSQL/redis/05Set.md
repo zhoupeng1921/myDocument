@@ -69,3 +69,56 @@ srandmember key [count]
 count>0  返回count个元素，如果count大于集合长度返回整个集合
 
 count<0  返回的数据可能会出现重复，数量为count的绝对值
+
+## 10. SDIFF计算所有给定集合的差集，并返回结果
+
+```shell
+sdiff key1 [key2 ...]
+```
+
+计算所有给定集合的差集，并返回结果。key1有其它集合没有。复杂度O(N)
+
+## 11. SDIFFSTORE计算所有给定集合的差集，存到destkey中
+
+```shell
+SDIFFSTORE destination key1 [key2 ...]
+```
+
+返回差集元素的数量
+
+## 12. SINTER计算交集，并返回结果
+
+```shell
+sinter key [key ...]
+```
+
+复杂度O(N*M)，N为给定集合当中基数最小的集合，M为给定集合的个数
+
+## 13. SINTERSTORE计算交集并存储到destkey中
+
+```shell
+sinterstore destination key [key ...]
+```
+
+返回交集元素的数量
+
+## 14. SUNION计算并集，并返回结果
+
+```shell
+SUNION key [key ...]
+```
+
+复杂度为O(N),N为参与运算的元素的数量
+
+## 15. SUNIONSTORE计算并集并存储到destkey中
+
+```shell
+SUNIONSTORE destination key [key ...]
+```
+
+ 返回并集元素的数量
+
+## 16. 示例
+
+- 实现共同关注功能
+- 筛选功能 - 每次计算太慢，可以预先计算好，存储起来
