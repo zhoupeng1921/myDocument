@@ -44,6 +44,19 @@ public boolean isEmpty() {
 ### 2.4 contains
 
 ```java
+    public boolean contains(Object o) {
+        Iterator<E> it = iterator();
+        if (o==null) {
+            while (it.hasNext())
+                if (it.next()==null)
+                    return true;
+        } else {
+            while (it.hasNext())
+                if (o.equals(it.next()))
+                    return true;
+        }
+        return false;
+    }
 
 ```
 

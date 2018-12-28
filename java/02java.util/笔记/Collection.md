@@ -142,7 +142,7 @@ boolean retainAll(Collection<?> c);
 ### 2.13 clear
 
 ```java
-
+void clear();
 ```
 
 清空所有元素
