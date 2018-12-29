@@ -2,7 +2,7 @@
 
 ## 1. 介绍
 
-​       可分割迭代器，用来把原来的对象元素进行分割和遍历，也可能会修改元素。可以用`tryAdvance`来操作一个元素，可以用`forEachRemaining`来批量操作元素。Spliterator可以用`trySplit`来分割元素，返回另一个Spliterator，用在并发操作中。如果Spliterator不能分割或者分割后元素非常不均衡或者是效率差，将不会从并发操作中受益。
+​       可分割迭代器，用来把原来的对象元素进行分割和遍历，也可能会修改元素。可以用`tryAdvance`来操作一个元素，可以用`forEachRemaining`来批量操作元素。Spliterator可以用`trySplit`来分割元素，返回另一个Spliterator，用在并发操作中，相当于递归，分而治之。如果Spliterator不能分割或者分割后元素非常不均衡或者是效率差，将不会从并发操作中受益。
 
 ​	Spliterator有一些特征：ORDERED,DISTINCT,SORTED,SIZED,NONNULL,IMMUTABLE,CONCURRENT,SUBSIZED，这些特征会作为交集表现出来。某些特征也约束了某些方法的操作。
 
