@@ -15,6 +15,7 @@ Redis也是键值对数据库，但和Memcached不同的是，Redis的值不仅�
 ```mermaid
 graph LR
 键 --关联/映射--> 值
+值 --> 字符串
 值 --> 列表
 值 --> 散列
 值 --> 集合
