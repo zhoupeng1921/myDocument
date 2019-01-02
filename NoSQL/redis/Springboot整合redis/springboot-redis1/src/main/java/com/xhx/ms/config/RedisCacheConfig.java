@@ -13,6 +13,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
 
 
 /**
@@ -29,14 +30,14 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
      * 唯一的key，即@Cacheable中的key
      */
     @Override
-    public KeyGenerator keyGenerator(){
+    public KeyGenerator keyGenerator() {
         return new KeyGenerator() {
             @Override
             public Object generate(Object o, Method method, Object... objects) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(o.getClass().getName());
                 sb.append(method.getName());
-                for(Object obj:objects){
+                for (Object obj : objects) {
                     sb.append(obj.toString());
                 }
                 System.out.println(sb);
@@ -47,12 +48,13 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 
     /**
      * redisTemplate缓存操作类
+     *
      * @param redisConnectionFactory
      * @return
      */
     @Bean
-    public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
-        RedisTemplate<String,Object> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         StringRedisSerializer redisSerializer = new StringRedisSerializer();
         redisTemplate.setKeySerializer(redisSerializer);
@@ -62,12 +64,15 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 
     /**
      * 缓存管理器
-     *
      */
     @Bean
-    public CacheManager cacheManager(RedisTemplate<?,?> redisTemplate){
+    public CacheManager cacheManager(RedisTemplate<?, ?> redisTemplate) {
         RedisCacheManager redisCacheManager = new RedisCacheManager(redisTemplate);
-	redisCacheManager.setDefaultExpiration(3000);//s
+        //单位s
+        redisCacheManager.setDefaultExpiration(3000);
+        HashMap<String, Long> map = new HashMap<>(8);
+        map.put("test",3000L);
+        redisCacheManager.setExpires(map);
         return redisCacheManager;
     }
 
