@@ -1,0 +1,2 @@
+- springboot1 为整合单体redis
+- springboot2 为整合redis集群
