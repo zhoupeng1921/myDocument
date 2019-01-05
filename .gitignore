@@ -25,3 +25,10 @@ out
 node_modules
 package-lock.json
 .vscode
+
+# Android
+.gradle
+.DS_Store
+/build
+/captures
+.externalNativeBuild

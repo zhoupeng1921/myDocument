@@ -5,10 +5,13 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
+/**
+ * 非阻塞式接收消息
+ */
 public class JMSConsumer2 {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
-    private static final String BROKERURL="tcp://11.11.156.206:61616";
+    private static final String BROKERURL="tcp://192.168.94.151:61616";
     private static final int SENTNUM=10;
 
     public static void main(String[] args) {

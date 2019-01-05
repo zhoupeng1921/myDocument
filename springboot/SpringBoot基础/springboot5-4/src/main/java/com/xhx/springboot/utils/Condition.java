@@ -1,16 +1,14 @@
 package com.xhx.springboot.utils;
 
-import java.util.List;
-
 /**
  * xuhaixing
  * 2018/9/20 21:31
  **/
-public class Condition<T,R> {
+public class Condition<T> {
     private Class<T> clazz;
     private String field;
     private OperatorEnum operator;
-    private List<R> data;
+    private Object data;
 
     public Class<T> getClazz() {
         return clazz;
@@ -36,11 +34,11 @@ public class Condition<T,R> {
         this.operator = operator;
     }
 
-    public List<R> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(List<R> data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

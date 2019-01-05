@@ -1,5 +1,5 @@
 //在node中，每个模块自己内部有一个module
-//改module对象中有一个成员：exports,也是一个对象
+//该module对象中有一个成员：exports,也是一个对象
 //也就是如果需要对外导出成员，只需要把导出的成员挂载到 module.exports
 //为了简化，提供了一个变量exports = module.exports
 

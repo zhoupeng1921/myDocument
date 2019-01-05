@@ -19,9 +19,9 @@ public class Springboot5ApplicationTests {
     public void testVersion() {
         Account account = new Account();
         account.setId(10);
-        account.setName("eeee");
-        account.setMoney(7999.0);
-        account.setVersion(2);
+        account.setBankNumber("621756841235485");
+        account.setBalance(7999.0);
+        account.setVersion(0);
 
         //accountController.update(account);
         //accountController.updateAccount(account);

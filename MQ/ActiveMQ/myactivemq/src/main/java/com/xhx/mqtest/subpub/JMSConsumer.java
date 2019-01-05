@@ -5,6 +5,9 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
+/**
+ * 阻塞试接收消息
+ */
 public class JMSConsumer {
     private static final String USERNAME= ActiveMQConnection.DEFAULT_USER;
     private static final String PASSWORK= ActiveMQConnection.DEFAULT_PASSWORD;
