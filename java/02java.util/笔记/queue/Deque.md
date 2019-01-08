@@ -2,7 +2,7 @@
 
 ## 介绍
 
-java.util.Deque是一种双向线性集合（The name <i>deque</i> is short for "double ended queue"），可以再两端对集合进行插入或者删除操作，所以既可以当队列(FIFO)，也可以当栈(LIFO)，Deque继承java.util.Queue。
+java.util.Deque是一种双向线性集合（The name <i>deque</i> is short for "double ended queue"），可以在两端对集合进行插入或者删除操作，所以既可以当队列(FIFO)，也可以当栈(LIFO)，Deque继承java.util.Queue。
 
 java.util.Stack继承自Vector，已经过时了，不推荐使用
 

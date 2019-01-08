@@ -8,6 +8,15 @@
 2. 不是线程安全的
 3. 如果iterator已经构建，不通过iterator的remove或者add来改变链表，iterator将会跑出一个异常`ConcurrentModificationException`
 
+```mermaid
+graph BT
+	LinkedList --extends--> AbstractSequentialList
+	LinkedList --implements--> List
+	LinkedList --implements--> Deque
+```
+
+
+
 ## 源码分析
 
 - 类中有三个变量
