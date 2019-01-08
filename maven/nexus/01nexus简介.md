@@ -17,6 +17,20 @@ docker run -d -p 8081:8081 --name nexus -v /home/xuhaixing/nexus-data:/nexus-dat
 
  登录： ip:8081   admin/admin123
 
+
+
+windows安装nexus服务  管理员模式 
+
+nexus /start :启动 
+
+nexus /stop:停止 
+
+nexus /restart:重新启动 
+
+nexus /install:安装nexus服务（安装到本地服务里，像mysql安装服务一样） 
+
+nexus /uninstall:删除
+
 ## 3. 仓库类型
 
 `proxy`: 远程代理仓库，代理外部的仓库，连接到外部的仓库

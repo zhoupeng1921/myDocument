@@ -9,14 +9,25 @@
          <id>repo1</id> 
          <name>repo1</name> 
      	 <url>http://192.168.94.151:8081/repository/maven-public/</url> 
+         <snapshots> 
+        	<enabled>true</enabled> 
+         </snapshots> 
      </repository> 
  </repositories> 
 
+<!-- 加载的是maven生命周期插件的jar包 --> 
  <pluginRepositories> 
      <pluginRepository> 
          <id>plugin1</id> 
          <name>plugin1</name> 
      	 <url>http://192.168.94.151:8081/repository/maven-public/</url> 
+         <releases> 
+             <updatePolicy>never</updatePolicy> 
+             <updatePolicy>always</updatePolicy><!--jar包没有下载完会造成错误，强制更新一下--> 
+         </releases> 
+         <snapshots> 
+             <enabled>true</enabled> 
+         </snapshots> 
      </pluginRepository> 
  </pluginRepositories>
 ```
@@ -30,16 +41,19 @@
 ## 3. 本地项目提交到私服中配置
 
 ```xml
-<distributionManagement> 
-    <repository> 
-        <!-- 要在个人的setting.xml中配置上传的密码 --> 
-        <id>snapshots</id> 
-        <name>snapshots 测试版</name> 
-        <!-- nexus中相应的地址--> 
-        <url>http://192.168.94.151:8081/repository/maven-snapshots/</url> 
-    </repository> 
-</distributionManagement> 
-
+ <distributionManagement>
+        <repository>
+            <!-- 要在个人的setting.xml中配置上传的密码 --> 
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://192.168.94.151:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://192.168.94.151:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 
 <!-- 在setting.xml中 配置要上传仓库的密码 --> 
