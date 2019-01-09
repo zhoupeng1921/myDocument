@@ -32,11 +32,69 @@
  </pluginRepositories>
 ```
 
-当前项目生效
+在根目录添加，当前项目生效
 
 ## 2. setting.xml配置私服地址
 
+```xml
+<profile>
+      <id>nexusRepo</id>
+      <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://localhost:8081/repository/maven-public/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+        </repository>
+	      <repository>
+		  <id>central</id>
+		  <name>Central Repository</name>
+		  <url>https://repo.maven.apache.org/maven2</url>
+		  <layout>default</layout>
+		  <releases>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</releases>
+		  <snapshots>
+			<enabled>false</enabled>
+		  </snapshots>
+	     </repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+		  <id>central</id>
+		  <name>Central Repository</name>
+		  <url>https://repo.maven.apache.org/maven2</url>
+		  <layout>default</layout>
+		  <snapshots>
+			<enabled>false</enabled>
+		  </snapshots>
+		  <releases>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		  </releases>
+		</pluginRepository>
+	  </pluginRepositories>
+    </profile>
+
+```
+
 将上面的内容放到<profiles></profiles>标签中，所有用此配置的项目都生效
+
+```xml
+  <--激活一下--> 
+  <activeProfiles>
+	<activeProfile>nexusRepo</activeProfile>
+  </activeProfiles>
+```
 
 ## 3. 本地项目提交到私服中配置
 
@@ -70,5 +128,12 @@
         <password>admin123</password> 
     </server> 
 </servers>
+```
+
+
+## 4. maven命令上传第三方jar包
+
+```shell
+mvn deploy:deploy-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar -Dfile=ojdbc6.jar -Durl=http://localhost:8081/repository/3rdParty/  -DrepositoryId=3rdParty
 ```
 

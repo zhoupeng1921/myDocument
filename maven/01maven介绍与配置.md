@@ -77,6 +77,24 @@ mvn install -D maven.test.skip=true
 </build>
 ```
 
+在测试用例前加@Ignore
+
+```java
+@Ignore
+@Test
+public void testGetAreaChirldren() {
+        Area area = addArea();
+        List<AreaTreeVO> listAreaTreeVOs = areaService.getAreaChirldren(area.getId());
+        Assert.assertNotNull("有子节点", listAreaTreeVOs);
+}
+```
+
+在编写maven构建命令时加上 -Dtest=**，则执行指定的测试用例，*为通配符，例如： 
+
+`clean test -Dtest=*ServiceTest`
+
+
+
 ## 7. 快速构建项目
 
 ```shell
@@ -84,3 +102,11 @@ mvn archetype:create -D groupId=com.test.maven -D artifactId=test1 -D packageNam
 ```
 
 archetype可以快速构建项目框架
+
+## 8. version版本号介绍
+
+version：版本号，比如：0.0.1-SNAPSHOT
+
+版本号的定义为：x.x.x-里程碑，第一个x表示大版本（大调整，架构上的变化），第二个x表示分支（大版本下的分支），第三个x表示分支里做了多少次更新；
+
+里程碑有SNAPSHOT(正在开发中的版本)，alpha(开发完后，内部的测试版本)，beta(项目测试完没问题后定义该版本，可供使用人员下载下来用)，用了一段时间后没问题了就定义为Release(RC)版本，最后会生成一个可靠版本GA。
