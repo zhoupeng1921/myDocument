@@ -15,3 +15,15 @@ spring-cache使用CacheManager来管理缓存，需要用redis作为缓存源整
 `setDefaultExpiration`: 设置默认过期时间
 
 `setExpires`: 接收一个map，key为redis的key，value为过期时间
+
+```mermaid
+graph LR
+	RedisSerializer --> OxmSerializer
+	RedisSerializer --> GenericJackson2JsonRedisSerializer
+	RedisSerializer --> GenericToStringSerializer
+	RedisSerializer --> StringRedisSerializer
+	RedisSerializer --> JdkSerializationRedisSerializer
+	RedisSerializer --> JacksonJsonRedisSerializer
+	RedisSerializer --> Jackson2JsonRedisSerializer
+```
+
