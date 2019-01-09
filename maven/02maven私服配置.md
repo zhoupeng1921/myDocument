@@ -130,6 +130,9 @@
 </servers>
 ```
 
+setting.xml中配置<server>标签进行授权，server里的id对应<distributionManagement>里设置的id。当执行deploy命令进行发布时，首先会找到<distributionManagement>的配置，获取配置信息。
+
+然后如果setting.xml里有配置server，对比id值，如果匹配的上，就验证server里的用户是否拥有发布的权限，有权限就把项目发布到对应的仓库里。
 
 ## 4. maven命令上传第三方jar包
 
