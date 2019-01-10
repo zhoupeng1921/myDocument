@@ -8,7 +8,7 @@ maven有`三套` `相互独立`的生命周期:
 - Default Lifecycle 构建的核心部分，编译、测试、打包、部署等
 - Site Lifecycle 生成项目报告、站点、发布站点
 
-它们是相互独立的，可以仅仅调用clean来清理工作目录，可以用clean install site来运行三套生命周期
+Maven定义了三套生命周期：clean、default、site，每个生命周期都包含了一些阶段（phase）。三套生命周期相互独立，但各个生命周期中的phase却是有顺序的，且后面的phase依赖于前面的phase。执行某个phase时，其前面的phase会依顺序执行，但不会触发另外两套生命周期中的任何phase
 
 每套生命周期都是由一组阶段组成：
 

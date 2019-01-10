@@ -96,6 +96,14 @@
   </activeProfiles>
 ```
 
+releases和snapshots标签中可设置的选项：
+
+- enabled，true或者false表示该仓库是否为下载某种类型构件（发布版，快照版）开启。
+- updatePolicy，该元素指定更新包的频率。可选值有daily, always, never,      interval:X(其中的X是一个数字，表示间隔的时间，单位min)，默认为daily。Maven会比较本地POM和远程POM的时间戳。这里的选项是：always（一直），daily（默认，每日），interval：X（这里X是以分钟为单位的时间间隔），或者never（从不）。
+- checksumPolicy，校验码异常的策略，可选值有ignore, fail, warn。当Maven验证构件校验文件失败时该怎么做-ignore（忽略），fail（失败），或者warn（警告）。
+
+
+
 ## 3. 本地项目提交到私服中配置
 
 ```xml
