@@ -18,7 +18,7 @@ public class RedissonDistributedLocker implements DistributedLocker {
     private RedissonClient redissonClient;
 
     /**
-     * 没有超时时间,默认30s
+     * 没有超时时间
      * @param lockKey
      * @return
      */
