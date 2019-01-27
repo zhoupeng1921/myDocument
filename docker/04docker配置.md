@@ -32,3 +32,8 @@ https_proxy=xxxxx:port
 
 tail -f /var/log/messages |grep docker
 
+## 4. docker开启远程访问
+
+- /etc/sysconfig/docker 配置文件下增加  DOCKER_OPTS="-H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375"
+- vi /usr/lib/systemd/system/docker.service  ExecStart启动选项加入 $DOCKER_OPTS /
+- 也可以直接用OPTIONS配置《2docker配置文件》
