@@ -1,8 +1,5 @@
 package com.scan;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.JarURLConnection;
@@ -15,7 +12,8 @@ import java.util.jar.JarFile;
 public class ClassUtil {
 //    private static Logger logger = LoggerFactory.getLogger(ClassUtil.class);
     public static void main(String[] args) throws Exception {
-        getClasses("com.scan");
+        Set<Class<?>> classes = getClasses("com");
+
     }
     /**
      * 从包package中获取所有的Class
