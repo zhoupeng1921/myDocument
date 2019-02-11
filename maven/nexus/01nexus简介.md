@@ -11,7 +11,7 @@ maven中央仓库地址：http://repo1.maven.org/maven2/
 
 ```shell
 docker pull sonatype/nexus3
-docker run -d -p 8081:8081 --name nexus -v /home/xuhaixing/nexus-data:/nexus-data sonatype/nexus3
+docker run -d  --privileged=true -p 8081:8081 --name nexus -v /home/xuhaixing/nexus-data:/nexus-data sonatype/nexus3
 
 ```
 
