@@ -47,4 +47,13 @@ public class TestSpringBoot7Application {
         System.out.println(accountList);
     }
 
+    @Test
+    public void testUpdate(){
+        Account account = new Account();
+        account.setId("5c6290dace6675b740c497b");
+        account.setMoney(30000.0);
+        account.setName("小花");
+        accountService.save2(account);
+    }
+
 }

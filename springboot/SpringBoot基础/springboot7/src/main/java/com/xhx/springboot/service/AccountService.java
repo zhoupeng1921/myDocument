@@ -43,4 +43,9 @@ public class AccountService {
     public List<Account> findRangeWithMoney(Double money){
         return accountRepository.fingRangeWithMoney(money);
     }
+
+    public void save2(Account account){
+        //根据id匹配，有时更新，没有插入
+        mongoTemplate.save(account);
+    }
 }
