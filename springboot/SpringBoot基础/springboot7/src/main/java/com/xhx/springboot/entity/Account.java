@@ -2,7 +2,9 @@ package com.xhx.springboot.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
+//映射领域模型与Mongodb的文档
 @Document(collection = "account")
 public class Account {
 
@@ -11,7 +13,10 @@ public class Account {
 
     private String name;
 
+    //在文档中的名称
+    @Field(value = "money")
     private Double money;
+
 
     public String getId() {
         return id;

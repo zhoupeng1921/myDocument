@@ -1,9 +1,8 @@
-package com.xhx.springboot.Controller;
+package com.xhx.springboot.controller;
 
 import com.xhx.springboot.entity.Account;
 import com.xhx.springboot.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

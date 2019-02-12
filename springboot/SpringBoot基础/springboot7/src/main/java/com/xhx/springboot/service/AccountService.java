@@ -40,4 +40,7 @@ public class AccountService {
     public List<Account> findAll2() {
         return mongoTemplate.findAll(Account.class);
     }
+    public List<Account> findRangeWithMoney(Double money){
+        return accountRepository.fingRangeWithMoney(money);
+    }
 }
