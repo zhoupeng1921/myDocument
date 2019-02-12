@@ -1,7 +1,7 @@
 package com.xhx.springboot.Controller;
 
 import com.xhx.springboot.entity.Account;
-import com.xhx.springboot.repository.AccountRepository;
+import com.xhx.springboot.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,36 +20,33 @@ import java.util.List;
 public class AccountController {
 
     @Autowired
-    private AccountRepository accountRepository;
-
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    private AccountService accountService;
 
 
     @RequestMapping(value = "save")
     public int save(@RequestBody Account account) {
-        accountRepository.save(account);
+        accountService.save(account);
         return 1;
     }
 
     @RequestMapping(value = "findAll")
     public List<Account> findAll() {
-        return accountRepository.findAll();
+        return accountService.findAll();
     }
 
     @RequestMapping(value = "findById")
     public Account findById(String id) {
-        return accountRepository.findById(id).get();
+        return accountService.findById(id);
     }
 
     @RequestMapping(value = "findByName")
     public List<Account> findByName(String name) {
-        return accountRepository.findByName(name);
+        return accountService.findByName(name);
     }
 
     @RequestMapping(value = "findAll2")
     public List<Account> findAll2() {
-        return mongoTemplate.findAll(Account.class);
+        return accountService.findAll2();
     }
 
 }
