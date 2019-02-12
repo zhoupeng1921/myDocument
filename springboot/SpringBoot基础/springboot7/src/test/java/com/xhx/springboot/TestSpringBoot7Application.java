@@ -25,8 +25,8 @@ public class TestSpringBoot7Application {
     @Test
     public void testSave(){
         Account account = new Account();
-        account.setMoney(10000.0);
-        account.setName("小红");
+        account.setMoney(3000.0);
+        account.setName("莉莉");
         accountController.save(account);
     }
     @Test
