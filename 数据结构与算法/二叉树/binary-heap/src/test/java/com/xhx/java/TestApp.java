@@ -63,7 +63,7 @@ public class TestApp {
         while (leftChildIndex <= maxIndex) {
             int rightChildIndex = leftChildIndex + 1;
             int index = leftChildIndex;
-            //如果有右孩子，比较出两个最小值
+            //如果有右孩子，比较出两个最大值
             if (rightChildIndex <= maxIndex && array[rightChildIndex] > array[index]) {
                 index = rightChildIndex;
             }
