@@ -55,7 +55,7 @@ public class TestApp {
      *
      * @param array       数组
      * @param parentIndex 非叶子结点
-     * @param maxIndex    数组最后一个索引
+     * @param maxIndex    数组最后一个索引，为什么要单独一个参数，后面堆排序要用
      */
     public void down(int[] array, int parentIndex, int maxIndex) {
         int temp = array[parentIndex];
