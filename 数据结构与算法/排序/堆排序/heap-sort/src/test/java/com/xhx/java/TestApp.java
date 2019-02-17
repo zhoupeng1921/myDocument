@@ -35,7 +35,7 @@ public class TestApp {
 
     /**
      * 调整parentIndex元素位置
-     *
+     * 最大堆
      * @param array 数组
      * @param parentIndex  待下沉元素结点下标
      * @param length 数组长度
@@ -46,11 +46,38 @@ public class TestApp {
         while (leftChildIndex < length) {
             int rightChildIndex = leftChildIndex + 1;
             int index = leftChildIndex;
-            //如果有右孩子，比较出两个最小值
+            //如果有右孩子，比较出两个最大值
             if (rightChildIndex < length && array[rightChildIndex] > array[index]) {
                 index = rightChildIndex;
             }
             if (temp >= array[index]) {
+                break;
+            }
+            array[parentIndex] = array[index];
+            parentIndex = index;
+            leftChildIndex = 2 * parentIndex + 1;
+        }
+        array[parentIndex] = temp;
+
+    }
+
+    /**
+     * 最小堆
+     * @param array
+     * @param parentIndex
+     * @param length
+     */
+    public void down2(int[] array, int parentIndex, int length) {
+        int temp = array[parentIndex];
+        int leftChildIndex = 2 * parentIndex + 1;
+        while (leftChildIndex < length) {
+            int rightChildIndex = leftChildIndex + 1;
+            int index = leftChildIndex;
+            //如果有右孩子，比较出两个最小值
+            if (rightChildIndex < length && array[rightChildIndex] < array[index]) {
+                index = rightChildIndex;
+            }
+            if (temp <= array[index]) {
                 break;
             }
             array[parentIndex] = array[index];
