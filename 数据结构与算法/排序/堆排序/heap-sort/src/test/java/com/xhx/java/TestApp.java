@@ -24,6 +24,7 @@ public class TestApp {
         }
         System.out.println(Arrays.toString(array));
 
+        //堆顶与尾部未有序的元素依次交换
         for(int i =0;i<array.length-1;i++){
             int temp = array[array.length-i-1];
             array[array.length-i-1] = array[0];
