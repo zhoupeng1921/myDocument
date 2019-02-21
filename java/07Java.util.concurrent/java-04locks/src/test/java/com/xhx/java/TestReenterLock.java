@@ -1,6 +1,6 @@
 package com.xhx.java;
 
-import com.xhx.java.deadlock.DeadLockChecker;
+//import com.xhx.java.deadlock.DeadLockChecker;
 import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -30,7 +30,7 @@ public class TestReenterLock {
         t1.start();
         t2.start();
         Thread.sleep(2000);
-        DeadLockChecker.check();
+//        DeadLockChecker.check();
         Thread.sleep(1000);
     }
 
