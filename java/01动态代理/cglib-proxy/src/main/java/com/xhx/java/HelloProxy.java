@@ -25,7 +25,7 @@ public class HelloProxy implements MethodInterceptor {
         System.out.println(o.getClass().toString());
         Object result = methodProxy.invokeSuper(o, objects);
 
-        //这种方法相当于一直调用代理类的方法，就会一直回调，造成死循环
+        //这种方法相当于一直调用代理类的方法，在自己的方法中调用自己，就会一直回调，造成死循环
         //Object rest = methodProxy.invoke(o,objects);
         System.out.println("后");
         return result;
