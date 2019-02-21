@@ -38,6 +38,9 @@ class ReadWriteLockDemo {
         lock.readLock().lock();
         try {
             System.out.println(number);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             lock.readLock().unlock();
         }
@@ -48,6 +51,9 @@ class ReadWriteLockDemo {
         lock.writeLock().lock();
         try {
             this.number++;
+           // Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             lock.writeLock().unlock();
         }
