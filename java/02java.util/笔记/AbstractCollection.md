@@ -254,7 +254,7 @@ public boolean add(E e) {
     }
 ```
 
-情况集合所有元素
+清空集合所有元素
 
 ### 2.13 toString
 
