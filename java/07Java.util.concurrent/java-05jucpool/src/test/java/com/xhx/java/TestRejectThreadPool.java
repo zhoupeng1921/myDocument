@@ -3,6 +3,7 @@ package com.xhx.java;
 import org.junit.Test;
 
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestRejectThreadPool {
 
@@ -41,5 +42,38 @@ public class TestRejectThreadPool {
             es.submit(task);
             Thread.sleep(10);
         }
+    }
+
+
+    /**
+     * ThreadPoolExecutor 自带4种拒绝策略，这里举例一种DiscardPolicy，具体看文档
+     * @throws Exception
+     */
+    @Test
+    public void test02() throws Exception {
+        AtomicInteger atomicInteger = new AtomicInteger();
+
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 2, 0L, TimeUnit.SECONDS, new SynchronousQueue<>(),
+                new ThreadPoolExecutor.DiscardPolicy());
+
+        for (int i = 0; i < 4; i++) {
+            executor.execute(() -> {
+                System.out.println("Thread:" + atomicInteger.getAndIncrement());
+
+                try {
+                    //模拟正在处理东西
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            });
+        }
+        Thread.sleep(1000);
+        System.out.println("corePoolSize:" + executor.getCorePoolSize());
+        System.out.println("poolSize:" + executor.getPoolSize());
+        System.out.println("taskCount:" + executor.getTaskCount());
+
+        Thread.sleep(4000);
     }
 }
