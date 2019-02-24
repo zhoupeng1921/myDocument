@@ -9,7 +9,7 @@ public class Person4 {
     private Person4(){}
 
     //懒汉式  多线程中不可以保证是一个对象
-    private static Person4 person ;
+    private volatile static Person4 person ;
 
     //提供一个全局的静态方法
     // 解决方案，同步代码块，双重验证

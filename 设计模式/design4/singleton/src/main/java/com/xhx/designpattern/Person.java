@@ -1,7 +1,5 @@
 package com.xhx.designpattern;
 
-import java.util.Objects;
-
 public class Person {
     private String name;
 
