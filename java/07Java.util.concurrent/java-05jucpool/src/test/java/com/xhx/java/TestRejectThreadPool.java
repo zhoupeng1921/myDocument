@@ -24,7 +24,7 @@ public class TestRejectThreadPool {
 
     /**
      * RejectedExecutionHandler
-     * 拒绝策略
+     * 自定义拒绝策略
      */
     @Test
     public void test01() throws Exception{
