@@ -1,7 +1,7 @@
 package com.xhx.designpattern;
 
 /**
- * 缺点：增加代码复杂度，每次都要新增加具体工厂类
+ * 缺点：必须知道有多少工厂实现类
  *
  */
 public class App 
