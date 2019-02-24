@@ -1,7 +1,7 @@
 package com.xhx.designpattern;
 
 /**
- * Hello world!
+ * 缺点：增加代码复杂度，每次都要新增加具体工厂类
  *
  */
 public class App 
