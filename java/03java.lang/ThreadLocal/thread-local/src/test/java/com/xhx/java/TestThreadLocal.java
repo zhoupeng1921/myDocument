@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class TestThradLocal {
+public class TestThreadLocal {
 
     @Test
     public void test01() throws Exception{
