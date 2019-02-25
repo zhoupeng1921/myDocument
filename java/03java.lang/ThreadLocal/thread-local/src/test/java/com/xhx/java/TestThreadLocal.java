@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * 原理： 内部有一个ThreadLocal.ThreadLocalMap，用Thread.currentThread()当key，每个线程可以维护一个自己的变量对象
+ */
 public class TestThreadLocal {
 
     @Test
