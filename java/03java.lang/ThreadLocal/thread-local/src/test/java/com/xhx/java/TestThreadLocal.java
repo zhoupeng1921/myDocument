@@ -3,6 +3,8 @@ package com.xhx.java;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -76,5 +78,32 @@ public class TestThreadLocal {
 
         System.out.println(threadLocal.get());
         System.out.println(threadLocal2.get());
+    }
+
+    /**
+     * 如果操作的数据是多线程共享的引用类型，也会是非线程安全的
+     * @throws Exception
+     */
+    @Test
+    public void test04() throws Exception{
+        List<Integer> list = Collections.synchronizedList(new ArrayList<>());
+        List<ThreadLocal> threadLocalList = Collections.synchronizedList(new ArrayList<>());
+        new Thread(()->{
+            ThreadLocal<List> threadLocal = new ThreadLocal<>();
+            threadLocal.set(list);
+            list.add(100);
+            threadLocalList.add(threadLocal);
+            System.out.println(threadLocal.get());
+        }).start();
+
+        new Thread(()->{
+            ThreadLocal<List> threadLocal = new ThreadLocal<>();
+            list.add(200);
+            threadLocal.set(list);
+            threadLocalList.add(threadLocal);
+            System.out.println(threadLocal.get());
+        }).start();
+
+        Thread.sleep(1000);
     }
 }
