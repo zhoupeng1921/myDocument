@@ -1,10 +1,10 @@
 package com.xhx.designpattern.entity;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Person implements Cloneable{
+public class Person implements Cloneable, Serializable {
     private  String name;
     private int age;
     private List<String> cars;
@@ -36,7 +36,9 @@ public class Person implements Cloneable{
     @Override
     public Person clone() {
         try {
-            return (Person)super.clone(); //浅拷贝
+            //浅拷贝
+            //只克隆八种基本数据类型和String
+            return (Person)super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
@@ -55,6 +57,26 @@ public class Person implements Cloneable{
             e.printStackTrace();
         }
         return  null;
+    }
+
+    public Person clone3(){
+        try {
+            //举例，流就不关闭了
+            //深度克隆
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
+            oos.writeObject(this);
+
+            ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bis);
+            return (Person)ois.readObject();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
     @Override
