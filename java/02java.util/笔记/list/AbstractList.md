@@ -58,7 +58,9 @@ public void add(int index, E element) {
 ## 6.remove
 
 ```java
-
+public E remove(int index) {
+    throw new UnsupportedOperationException();
+}
 ```
 
 移除某个索引位置的元素
@@ -145,7 +147,7 @@ public void add(int index, E element) {
     }
 ```
 
-返回当前集合的迭代器，下面看一些迭代器的实现
+返回当前集合的迭代器，下面看一下迭代器的实现
 
 ```java
 private class Itr implements Iterator<E> {
