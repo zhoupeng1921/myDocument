@@ -400,3 +400,177 @@
         }
 ```
 
+#### 2.4.14 rehash
+
+先清除无效entry，如果满足扩容条件，重新扩容，因为数组长度变了，所以要重新计算下标
+
+```java
+		 private void rehash() {
+            expungeStaleEntries();
+
+            // Use lower threshold for doubling to avoid hysteresis
+            if (size >= threshold - threshold / 4)
+                resize();
+        }
+
+        /**
+         * Double the capacity of the table.
+         */
+        private void resize() {
+            Entry[] oldTab = table;
+            int oldLen = oldTab.length;
+            int newLen = oldLen * 2;
+            Entry[] newTab = new Entry[newLen];
+            int count = 0;
+
+            for (Entry e : oldTab) {
+                if (e != null) {
+                    ThreadLocal<?> k = e.get();
+                    if (k == null) {
+                        e.value = null; // Help the GC
+                    } else {
+                        int h = k.threadLocalHashCode & (newLen - 1);
+                        while (newTab[h] != null)
+                            h = nextIndex(h, newLen);
+                        newTab[h] = e;
+                        count++;
+                    }
+                }
+            }
+
+            setThreshold(newLen);
+            size = count;
+            table = newTab;
+        }
+
+        /**
+         * Expunge all stale entries in the table.
+         */
+        private void expungeStaleEntries() {
+            Entry[] tab = table;
+            int len = tab.length;
+            for (int j = 0; j < len; j++) {
+                Entry e = tab[j];
+                if (e != null && e.get() == null)
+                    expungeStaleEntry(j);
+            }
+        }
+```
+
+
+
+### 2.5 构造函数
+
+```java
+    public ThreadLocal() {
+    }
+```
+
+### 2.6 get
+
+​	获取当前ThreadLocal在当前线程中存的值，如果当前线程ThreadLocalMap为null，则进行初始化
+
+```java
+    public T get() {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        if (map != null) {
+            ThreadLocalMap.Entry e = map.getEntry(this);
+            if (e != null) {
+                @SuppressWarnings("unchecked")
+                T result = (T)e.value;
+                return result;
+            }
+        }
+        return setInitialValue();
+    }
+    ThreadLocalMap getMap(Thread t) {
+        return t.threadLocals;
+    }
+```
+
+### 2.7 setInitialValue
+
+​	设置初始化值
+
+```java
+    private T setInitialValue() {
+        T value = initialValue();
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        if (map != null) {
+            map.set(this, value);
+        } else {
+            createMap(t, value);
+        }
+        if (this instanceof TerminatingThreadLocal) {
+            TerminatingThreadLocal.register((TerminatingThreadLocal<?>) this);
+        }
+        return value;
+    }    
+	void createMap(Thread t, T firstValue) {
+        t.threadLocals = new ThreadLocalMap(this, firstValue);
+    }
+```
+
+### 2.8 isPresent
+
+​	当前线程的ThreadLocal是否设置值
+
+```java
+    boolean isPresent() {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        return map != null && map.getEntry(this) != null;
+    }
+```
+
+### 2.9 set
+
+​	向当前线程的ThreadLocal设置值
+
+```java
+    public void set(T value) {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        if (map != null) {
+            map.set(this, value);
+        } else {
+            createMap(t, value);
+        }
+    }
+```
+
+### 2.10 remove
+
+​	在当前线程中移除当前threadLocal的引用，下次调用get时除非调用了set，否则会重新初始化initialValue
+
+```java
+     public void remove() {
+         ThreadLocalMap m = getMap(Thread.currentThread());
+         if (m != null) {
+             m.remove(this);
+         }
+     }
+```
+
+### 2.11  createInheritedMap
+
+​	创建继承线程的ThreadLocalMap，只在Thread的构造方法中调用
+
+```
+    static ThreadLocalMap createInheritedMap(ThreadLocalMap parentMap) {
+        return new ThreadLocalMap(parentMap);
+    }
+```
+
+### 2.12 childValue
+
+​	在子类`InheritableThreadLocal`中实现，
+
+```java
+    T childValue(T parentValue) {
+        throw new UnsupportedOperationException();
+    }
+```
+

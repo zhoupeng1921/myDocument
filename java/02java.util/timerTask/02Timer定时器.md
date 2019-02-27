@@ -6,7 +6,7 @@
 
 Timer类是线程安全的
 
-多线程任务调度，请使用：`java.util.concurrent.ScheduledThreadPoolExecutor`，可以完全取代`Timer`和				`TimerTask`
+多线程任务调度，请使用：`java.util.concurrent.ScheduledThreadPoolExecutor`，可以完全取代`Timer`和`TimerTask`
 
 注意：所有的构造方法开启一个timer线程
 
@@ -70,7 +70,7 @@ private TimerTask[] queue = new TimerTask[128];
     }
 ```
 
-`get(int i)`：返回指定下表的元素
+`get(int i)`：返回指定下标的元素
 
 ```java
     TimerTask get(int i) {
@@ -100,7 +100,7 @@ private TimerTask[] queue = new TimerTask[128];
     }
 ```
 
-​	移除堆顶元素后，尾元素替换顶元素，然后进行下沉调整。
+​	移除堆顶元素后，尾元素移到顶元素，然后进行下沉调整。
 
 `quickRemove(int i)`：移除第i个元素
 
@@ -153,7 +153,7 @@ private TimerTask[] queue = new TimerTask[128];
 
 ## 3. 内部类TimerThread
 
-这个类实现了定时器任务的执行线程，在任务队列上等待，并且执行任务，重新调整重复执行的任务，移除取消的任务和已经执行的非重复任务。继承Thread类
+这个类实现了定时器任务的执行线程，在任务队列上等待，并且执行任务，重新调整重复执行的任务，移除取消的任务和已经执行的非重复性任务。继承Thread类
 
 ### 3.1 类属性
 

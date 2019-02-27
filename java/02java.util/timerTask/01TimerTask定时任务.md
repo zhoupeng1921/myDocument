@@ -48,7 +48,7 @@ long nextExecutionTime;
 
 
 
-`period`：重复性任务的周期时间，一个正值表明是固定频率`fixed-rate`执行，负值表明固定延迟`fixed-delay`执行，0表示非重复性任务
+`period`：重复性任务的周期时间，一个正值表明是固定频率`fixed-rate`执行，负值表明固定延迟`fixed-delay`执行，0表示非重复性任务。固定频率与固定延迟区别会在Timer定时器中看着代码讲
 
 ```java
  long period = 0;
