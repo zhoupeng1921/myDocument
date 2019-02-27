@@ -24,9 +24,9 @@ public class App
 
 
         //Person clonePerson = person.clone();  //默认浅克隆，复制的引用，没有对属性创建新的对象
-        Person clonePerson = person.clone2();  //深克隆
-        cars.add("野马");
-        System.out.println(clonePerson);
+        //Person clonePerson = person.clone2();  //深克隆
+        //cars.add("野马");
+        //System.out.println(clonePerson);
         /**
          * Person{name='小小', age=25, cars=[宝马, 奔驰]}
          * Person{name='小小', age=25, cars=[宝马, 奔驰, 野马]}
@@ -36,6 +36,8 @@ public class App
          * Person{name='小小', age=25, cars=[宝马, 奔驰]}
          */
 
+        Person person1 = person.clone3();
+        System.out.println(person1);
 
     }
 }
