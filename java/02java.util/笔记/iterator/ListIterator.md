@@ -86,3 +86,4 @@ void add(E e);
 ```
 
 在next和previous元素之间插入一个值，不会影响调用next()方法，如果调用previous()方法，会返回这个新的元素
+
