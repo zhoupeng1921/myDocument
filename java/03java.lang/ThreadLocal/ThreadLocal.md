@@ -15,6 +15,8 @@
 
 
 
+ **Java Doc建议，ThreadLocal应当声明为public static.**
+
 ## 2. 源码解析
 
 ### 2.1 threadLocalHashCode
