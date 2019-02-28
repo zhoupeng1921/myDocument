@@ -44,7 +44,7 @@ default void forEachRemaining(Consumer<? super T> action) {
 
 ## 6. getExactSizeIfKnown
 
-```
+```java
     default long getExactSizeIfKnown() {
         return (characteristics() & SIZED) == 0 ? -1L : estimateSize();
     }
@@ -82,7 +82,7 @@ default void forEachRemaining(Consumer<? super T> action) {
 
 ## 10. ofPrimitive
 
-```
+```java
 public interface OfPrimitive<T, T_CONS, T_SPLITR extends Spliterator.OfPrimitive<T, T_CONS, T_SPLITR>>
             extends Spliterator<T> {
         @Override
