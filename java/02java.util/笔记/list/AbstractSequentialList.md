@@ -1,6 +1,6 @@
 # AbstractSequentialList
 
-这个类提供了依靠顺序`sequential access`访问数据存储的list的框架级实现，如果时随机访问` random access`，应该优先继承`AbstractList`。这个类中的所有操作都是通过操作`listIterator`来实现的。
+这个类提供了依靠顺序`sequential access`访问数据存储的list的框架级实现，如果是随机访问` random access`，应该优先继承`AbstractList`。这个类中的所有操作都是通过操作`listIterator`来实现的。
 
 ```mermaid
 graph BT

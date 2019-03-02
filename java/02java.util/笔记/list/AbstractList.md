@@ -2,7 +2,7 @@
 
 ## 1. 介绍
 
-AbstractList实现了List的一个骨骼级的实现，如果要实现不可修改的list，程序需要去扩展这个类，实现`get`和`size`方法；如果要实现可修改的list，必须额外实现`set`方法，如果集合的大小也可以改变，还需要实现`add`和`remove`方法。`iterator`和`list iterator`已经在这个类实现好了。
+AbstractList是对List的一个主要实现，如果要实现不可修改的list，程序需要去扩展这个类，实现`get`和`size`方法；如果要实现可修改的list，必须额外实现`set`方法，如果集合的大小也可以改变，还需要实现`add`和`remove`方法。`iterator`和`list iterator`已经在这个类实现好了。
 
 ```mermaid
 graph TB
@@ -141,7 +141,7 @@ public E remove(int index) {
 
 ## 11. iterator
 
-```
+```java
     public Iterator<E> iterator() {
         return new Itr();
     }
@@ -199,7 +199,7 @@ private class Itr implements Iterator<E> {
 }
 ```
 
-Iterator时单项向下循环
+Iterator是单项向下循环
 
 `cursor`: 游标的位置
 
@@ -330,7 +330,7 @@ public boolean equals(Object o) {
 
 比较两个集合是否相等
 
-- 先判断是否是当前元素
+- 先判断是否是当前对象
 - 类型是否一样
 - 挨个元素比较
 - 最后一步可以看成长度是否一样
@@ -346,7 +346,7 @@ public boolean equals(Object o) {
     }
 ```
 
-计算hashCode
+计算hashCode，因子是31和String的一样
 
 ## 15. removeRange
 
