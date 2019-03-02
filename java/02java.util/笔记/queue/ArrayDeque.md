@@ -153,7 +153,7 @@ I[length-1]-->head[head]
          }
      ```
 
-     1. 如果需要的长度超过超过最大容量的情况下，如果超出了Integer的最大值，则会跑出异常，如果没超过就返回Integer最大长度。`MAX_ARRAY_SIZE`需要介绍一下：有一些虚拟机需要存储一些头信息在数组里，如果扩容到Integer.MAX_VALUE会造成内存溢出，所以有如下默认值：
+     1. 如果需要的长度超过超过最大容量的情况下，如果超出了Integer的最大值，则会抛出异常，如果没超过就返回Integer最大长度。`MAX_ARRAY_SIZE`需要介绍一下：有一些虚拟机需要存储一些头信息在数组里，如果扩容到Integer.MAX_VALUE会造成内存溢出，所以有如下默认值：
 
         `private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;`
 

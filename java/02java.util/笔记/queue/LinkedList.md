@@ -6,7 +6,7 @@
 
 1. 双链表实现了List和Deque接口，允许元素为null
 2. 不是线程安全的
-3. 如果iterator已经构建，不通过iterator的remove或者add来改变链表，iterator将会跑出一个异常`ConcurrentModificationException`
+3. 如果iterator已经构建，不通过iterator的remove或者add来改变链表，iterator将会抛出一个异常`ConcurrentModificationException`
 
 ```mermaid
 graph BT
