@@ -10,7 +10,7 @@ public class BannerApplication {
     public static void main(String[] args) {
 //          SpringApplication.run(BannerApplication.class, args);
         SpringApplication app = new SpringApplication(BannerApplication.class);
-        app.setBannerMode(Banner.Mode.OFF);
+        app.setBannerMode(Banner.Mode.CONSOLE);
         app.run(args);
 
     }
