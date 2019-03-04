@@ -239,10 +239,14 @@ public class AppTest {
     @Test
     public void testDuration(){
         LocalTime now = LocalTime.now();
-        LocalTime of = LocalTime.of(0, 30, 0);
-        Duration between = Duration.between(now, of);
+        LocalTime of = LocalTime.of(14, 30, 0);
+        Duration between = Duration.between(now, of).abs();
         System.out.println(between.toHours());
         System.out.println(between.toMinutes());
+        System.out.println(between.toNanos());
+
+        LocalTime localTime = of.plusNanos(between.toNanos());
+        System.out.println(localTime);
 
         /**
          * -11
