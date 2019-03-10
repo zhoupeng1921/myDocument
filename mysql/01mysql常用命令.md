@@ -9,3 +9,5 @@
 - 授权
   - `grant all on mytestdb.* to testuser` --赋予某个数据库权限
 
+- 关闭自动提交
+  - `set autocommit=0`
