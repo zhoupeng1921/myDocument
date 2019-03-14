@@ -23,10 +23,10 @@ public class TestApp01 {
 
         //无父加载器
         MyClassLoader loader3 = new MyClassLoader(null,"loader3");
-
         //test(loader1);
         test(loader2);
         test(loader3);
+
 
     }
     public static void test(ClassLoader loader) throws Exception{
