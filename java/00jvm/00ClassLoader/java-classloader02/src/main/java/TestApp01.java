@@ -1,6 +1,7 @@
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
@@ -28,10 +29,19 @@ public class TestApp01 {
         test(loader3);
 
 
+
     }
     public static void test(ClassLoader loader) throws Exception{
         Class<?> clazz = loader.loadClass("Sample");
         Object object = clazz.newInstance();
+
+        Constructor<?>[] constructors =
+                clazz.getConstructors();
+        Object o = constructors[0].newInstance();
+
+//        若Sample和this不是由有关系的classLoader加载的，用Sample找不到类
+        //Sample o1 = (Sample) o;
+        //可以反射获取属性字段值等
     }
 }
 
