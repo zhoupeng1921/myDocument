@@ -13,6 +13,9 @@ class Child extends Parent{
     }
 }
 
+/**
+ * 初始化子类时先初始化父类
+ */
 public class Test02 {
     static {
         System.out.println("Test static block");

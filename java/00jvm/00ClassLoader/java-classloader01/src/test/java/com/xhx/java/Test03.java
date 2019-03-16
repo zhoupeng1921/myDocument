@@ -16,6 +16,9 @@ class Child2 extends Parent2{
     }
 }
 
+/**
+ * 同一个命名空间下，类只初始化一次
+ */
 public class Test03 {
     static {
         System.out.println("Test static block");

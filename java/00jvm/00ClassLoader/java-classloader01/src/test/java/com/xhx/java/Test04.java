@@ -17,6 +17,9 @@ class Child3 extends Parent3{
     }
 }
 
+/**
+ * 通过子类访问父类的成员，不会初始化子类
+ */
 public class Test04 {
 
     @Test
