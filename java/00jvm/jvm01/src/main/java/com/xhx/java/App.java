@@ -19,10 +19,19 @@ import java.util.List;
  *         at com.xhx.java.App.main(App.java:13)
  */
 public class App {
+//    public static void main(String[] args) {
+//        List<Object> list = new ArrayList<>();
+//        while (true){
+//            list.add(new Object());
+//        }
+//    }
+
+    byte[] byteArray = new byte[1*1024*1024];//1M
+
     public static void main(String[] args) {
-        List<Object> list = new ArrayList<>();
-        while (true){
-            list.add(new Object());
+        List<App> appLis = new ArrayList<>();
+        for(int i = 1;i<=40;i++){
+            appLis.add(new App());
         }
     }
 }
