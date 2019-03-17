@@ -45,7 +45,7 @@
 
 Object obj = new Object();
 
-new 时，现在eden中分配，放不下时触发Minor gc
+new 时，先在eden中分配，放不下时触发Minor gc
 
 为什么是8:1:1，
 
