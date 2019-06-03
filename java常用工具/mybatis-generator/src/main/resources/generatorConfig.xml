@@ -56,7 +56,7 @@
         </javaClientGenerator>
 
         <!-- 配置表信息 schema="CASE_RECORD"-->
-        <table tableName="oa_user"
+        <table tableName="sec_user"
                domainObjectName="User"
                enableSelectByPrimaryKey="true"
                enableUpdateByPrimaryKey="true"
