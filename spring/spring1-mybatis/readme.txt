@@ -1,1 +1,0 @@
-mybatisspring1 面向接口编程   dao中调用接口
