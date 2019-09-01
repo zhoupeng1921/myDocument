@@ -1,4 +1,3 @@
-springboot5-4: jpa自动生成JPQL语句
 springboot6: mybatis
 springboot6-2: mybatis BaseTypeHandler 转换数据库字段类型与实体类数据类型
 springboot7: mongodb
