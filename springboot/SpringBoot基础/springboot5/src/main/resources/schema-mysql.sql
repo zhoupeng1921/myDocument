@@ -1,1 +1,0 @@
-create table t_login(id int primary key AUTO_INCREMENT,user_id int,login_time timestamp);

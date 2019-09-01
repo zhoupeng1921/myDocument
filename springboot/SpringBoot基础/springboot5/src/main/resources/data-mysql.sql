@@ -1,1 +1,0 @@
-insert into t_login(user_id,login_time) values (1,now());
