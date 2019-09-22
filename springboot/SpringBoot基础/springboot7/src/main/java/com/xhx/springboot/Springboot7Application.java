@@ -3,6 +3,10 @@ package com.xhx.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * mongoTemplate
+ * MongoRepository
+ */
 @SpringBootApplication
 public class Springboot7Application {
 
