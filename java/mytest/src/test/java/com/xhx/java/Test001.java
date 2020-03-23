@@ -59,4 +59,10 @@ public class Test001 {
          * -12
          */
     }
+
+    @Test
+    public void test06() throws Exception{
+        String str = new String("你好".getBytes("GB2312"), "ISO-8859-1");
+        System.out.println(str);
+    }
 }
